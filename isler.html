@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İşler — Codoge</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="logo">codoge</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Anasayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="isler.html" class="active">İşler</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-label">Portföy</p>
+      <h1>Yaptıklarımız.</h1>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <section class="works-section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobil">Mobil</button>
+        <button class="filter-btn" data-filter="danismanlik">Danışmanlık</button>
+      </div>
+
+      <div class="works-grid" id="worksGrid">
+
+        <a href="is-detay.html?id=1" class="work-card" data-category="web">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Web Uygulaması</span>
+            <h3>Proje Başlığı 1</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+        <a href="is-detay.html?id=2" class="work-card" data-category="mobil">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Mobil</span>
+            <h3>Proje Başlığı 2</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+        <a href="is-detay.html?id=3" class="work-card" data-category="danismanlik">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Danışmanlık</span>
+            <h3>Proje Başlığı 3</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+        <a href="is-detay.html?id=4" class="work-card" data-category="web">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Web Uygulaması</span>
+            <h3>Proje Başlığı 4</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+        <a href="is-detay.html?id=5" class="work-card" data-category="mobil">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Mobil</span>
+            <h3>Proje Başlığı 5</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+        <a href="is-detay.html?id=6" class="work-card" data-category="web">
+          <div class="work-card-img"></div>
+          <div class="work-card-body">
+            <span class="work-tag">Web Uygulaması</span>
+            <h3>Proje Başlığı 6</h3>
+            <p>Projeye dair kısa ve açıklayıcı bir cümle buraya gelecek.</p>
+            <span class="link-arrow">Detayları Gör →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="logo">codoge</span>
+      <span>© 2025 Codoge. Tüm hakları saklıdır.</span>
+      <nav class="footer-nav">
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="isler.html">İşler</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

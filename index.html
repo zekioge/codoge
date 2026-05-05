@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codoge — Yazılım Atölyesi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="index.html" class="logo">codoge</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Anasayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="isler.html">İşler</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-label">Yazılım Atölyesi</p>
+      <h1 class="hero-title">Fikirlerinizi<br><em>koda</em> dönüştürüyoruz.</h1>
+      <p class="hero-sub">Ürün geliştirme, arayüz tasarımı ve yazılım danışmanlığı — baştan sona.</p>
+      <div class="hero-actions">
+        <a href="isler.html" class="btn btn-primary">İşlerimizi Gör</a>
+        <a href="iletisim.html" class="btn btn-ghost">İletişime Geç</a>
+      </div>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-ring"></div>
+      <div class="deco-dot"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Ne yapıyoruz?</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <h3>Ürün Geliştirme</h3>
+          <p>Fikir aşamasından canlıya — kullanıcı odaklı yazılım ürünleri inşa ediyoruz.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <h3>Arayüz Tasarımı</h3>
+          <p>Temiz, işlevsel ve akılda kalıcı dijital deneyimler tasarlıyoruz.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <h3>Yazılım Danışmanlığı</h3>
+          <p>Teknik mimariden süreç iyileştirmeye kadar yanınızdayız.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORKS -->
+  <section class="featured">
+    <div class="container">
+      <div class="featured-header">
+        <h2 class="section-title">Seçili İşler</h2>
+        <a href="isler.html" class="link-arrow">Tümünü gör →</a>
+      </div>
+      <div class="works-list">
+        <a href="is-detay.html?id=1" class="work-item">
+          <div class="work-info">
+            <span class="work-tag">Web Uygulaması</span>
+            <h3>Proje Adı</h3>
+            <p>Kısa bir açıklama buraya gelecek.</p>
+          </div>
+          <span class="work-arrow">→</span>
+        </a>
+        <a href="is-detay.html?id=2" class="work-item">
+          <div class="work-info">
+            <span class="work-tag">Mobil</span>
+            <h3>Proje Adı</h3>
+            <p>Kısa bir açıklama buraya gelecek.</p>
+          </div>
+          <span class="work-arrow">→</span>
+        </a>
+        <a href="is-detay.html?id=3" class="work-item">
+          <div class="work-info">
+            <span class="work-tag">Danışmanlık</span>
+            <h3>Proje Adı</h3>
+            <p>Kısa bir açıklama buraya gelecek.</p>
+          </div>
+          <span class="work-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Bir projeniz mi var?</h2>
+      <p>Fikirlerinizi dinlemekten mutluluk duyarız.</p>
+      <a href="iletisim.html" class="btn btn-primary">Konuşalım</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="logo">codoge</span>
+      <span>© 2025 Codoge. Tüm hakları saklıdır.</span>
+      <nav class="footer-nav">
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="isler.html">İşler</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
