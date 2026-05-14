@@ -1,40 +1,192 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gizlilik Politikası — Kitap Notlarım</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #1c1c1e; line-height: 1.7; }
-  h1 { font-size: 28px; font-weight: 700; }
-  h2 { font-size: 20px; font-weight: 600; margin-top: 32px; }
-  p { color: #3a3a3c; }
-  .date { color: #8e8e93; font-size: 14px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gizlilik Politikası – Kitap Notları</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --cream-dark: #ede7d9;
+      --ink: #1a1510;
+      --ink-light: #4a4035;
+      --accent: #b85c2c;
+      --rule: #c8bfae;
+      --white: #faf8f4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream); border-bottom: 1px solid var(--rule);
+      padding: 0 1.5rem; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; color: var(--ink-light); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--rule); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 1.2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1rem; color: var(--ink-light); text-decoration: none; }
+
+    .page-header {
+      background: var(--cream-dark);
+      border-bottom: 1px solid var(--rule);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .page-header-label { font-family: 'Lora', serif; font-style: italic; color: var(--accent); font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .page-header h1 { font-family: 'Lora', serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
+    .page-header-date { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; margin-top: 0.5rem; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .content section { margin-bottom: 2.5rem; }
+    .content h2 { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .content p { font-size: 0.9rem; color: var(--ink-light); line-height: 1.8; font-weight: 300; margin-bottom: 0.75rem; }
+    .content ul { list-style: none; margin-bottom: 0.75rem; }
+    .content ul li { font-size: 0.9rem; color: var(--ink-light); line-height: 1.8; font-weight: 300; padding-left: 1.25rem; position: relative; }
+    .content ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+    .highlight-box {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box p { margin-bottom: 0; }
+
+    footer { border-top: 1px solid var(--rule); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
+    .footer-copy { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; }
+    .footer-link { font-size: 0.8rem; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-header { padding: 2rem 1.25rem 1.75rem; }
+      .page-header h1 { font-size: 1.5rem; }
+      .content { padding: 2rem 1.25rem 3.5rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
-<h1>Gizlilik Politikası</h1>
-<p class="date">Son güncelleme: 11 Mayıs 2026</p>
 
-<p>Kitap Notlarım uygulamasını kullandığınız için teşekkür ederiz. Gizliliğiniz bizim için önemlidir.</p>
+<nav>
+  <a class="nav-logo" href="index.html">Kitap Notları</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="kullanim-kosullari.html">Kullanım Koşulları</a></li>
+    <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<h2>Toplanan Veriler</h2>
-<p>Kitap Notlarım, kişisel verilerinizi üçüncü taraflarla paylaşmaz. Uygulamaya eklediğiniz kitap ve notlar yalnızca cihazınızda ve iCloud hesabınızda saklanır.</p>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+  <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+</div>
 
-<h2>iCloud Senkronizasyonu</h2>
-<p>Uygulama, verilerinizi cihazlar arasında senkronize etmek için Apple'ın iCloud hizmetini kullanabilir. Bu veriler yalnızca sizin Apple ID'nize bağlıdır ve tarafımızca erişilemez.</p>
+<div class="page-header">
+  <p class="page-header-label">Yasal</p>
+  <h1>Gizlilik Politikası</h1>
+  <p class="page-header-date">Son güncelleme: Ocak 2025</p>
+</div>
 
-<h2>Kamera Kullanımı</h2>
-<p>Uygulama, kitap sayfalarından metin okumak (OCR) ve ISBN barkodu taramak için kamera iznine ihtiyaç duyar. Kamera görüntüleri hiçbir sunucuya gönderilmez, yalnızca cihazınızda işlenir.</p>
+<div class="content">
 
-<h2>Üçüncü Taraf Hizmetler</h2>
-<p>ISBN ile kitap bilgisi getirmek için Open Library API kullanılmaktadır. Bu işlem sırasında yalnızca ISBN numarası iletilir, kişisel bilgi paylaşılmaz.</p>
+  <section>
+    <div class="highlight-box">
+      <p>Kitap Notları, gizliliğinizi ciddiye alır. Verileriniz yalnızca cihazınızda ve isteğe bağlı olarak kendi iCloud hesabınızda saklanır. Verilerinizi üçüncü taraflarla paylaşmıyoruz ve satmıyoruz.</p>
+    </div>
+  </section>
 
-<h2>Abonelik</h2>
-<p>Pro abonelik ödemeleri Apple App Store üzerinden gerçekleştirilir. Ödeme bilgileriniz tarafımızca saklanmaz veya işlenmez.</p>
+  <section>
+    <h2>1. Topladığımız Veriler</h2>
+    <p>Kitap Notları, kullanımınız sırasında aşağıdaki verileri işleyebilir:</p>
+    <ul>
+      <li>Eklediğiniz kitap bilgileri (başlık, yazar, ISBN, kapak görseli)</li>
+      <li>Aldığınız notlar ve sayfa numaraları</li>
+      <li>Okuma durumu bilgileri</li>
+      <li>Okuma istatistikleriniz (Pro kullanıcılar)</li>
+    </ul>
+    <p>Bu veriler yalnızca cihazınızda yerel olarak veya iCloud hesabınızda saklanır.</p>
+  </section>
 
-<h2>İletişim</h2>
-<p>Gizlilik politikamız hakkında sorularınız için: <a href="https://zekioge.github.io/codoge/">zekioge.github.io/codoge</a></p>
+  <section>
+    <h2>2. iCloud Senkronizasyonu</h2>
+    <p>iCloud senkronizasyonu özelliğini etkinleştirirseniz verileriniz Apple'ın iCloud altyapısı üzerinden şifreli biçimde saklanır ve cihazlarınız arasında eşitlenir. Bu verilere bizim erişimimiz yoktur; tamamen Apple'ın Gizlilik Politikası kapsamındadır.</p>
+  </section>
 
+  <section>
+    <h2>3. ISBN Tarayıcısı</h2>
+    <p>ISBN tarayıcısı kullanıldığında, kitap bilgilerini (başlık, yazar, kapak) çekmek amacıyla herkese açık kitap veritabanlarına sorgu gönderilir. Bu sorgular ISBN numarasını içerir ancak size ait herhangi bir kişisel veri içermez.</p>
+  </section>
+
+  <section>
+    <h2>4. Üçüncü Taraf Paylaşımı</h2>
+    <p>Verilerinizi reklam şirketleri, veri aracıları veya başka üçüncü taraflarla paylaşmıyoruz. Uygulamada reklam bulunmamaktadır.</p>
+  </section>
+
+  <section>
+    <h2>5. Analitik</h2>
+    <p>Uygulama, hata ayıklama ve performans iyileştirmesi amacıyla Apple'ın standart çökme raporlama hizmetini kullanabilir. Bu raporlar anonim niteliktedir ve kişisel verilerinizi içermez. Cihaz ayarlarınızdan bu özelliği devre dışı bırakabilirsiniz.</p>
+  </section>
+
+  <section>
+    <h2>6. Çocukların Gizliliği</h2>
+    <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek veri toplamaz. Çocuğunuzun kişisel veri sağladığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>
+  </section>
+
+  <section>
+    <h2>7. Haklarınız</h2>
+    <p>Verilerinizin tamamı cihazınızda bulunduğundan dilediğiniz zaman uygulama içinden tüm içeriğinizi silebilirsiniz. iCloud'daki verilerinizi Apple iCloud ayarları üzerinden yönetebilirsiniz.</p>
+  </section>
+
+  <section>
+    <h2>8. Politika Değişiklikleri</h2>
+    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir. Uygulamayı kullanmaya devam etmeniz güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+  </section>
+
+  <section>
+    <h2>9. İletişim</h2>
+    <p>Gizlilik konusundaki sorularınız için bizimle iletişime geçebilirsiniz.</p>
+  </section>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 Kitap Notları. Tüm hakları saklıdır.</span>
+  <a class="footer-link" href="#">Geliştirici</a>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
