@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gizlilik Politikası – Benim Ajandam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #f0f2f5;
+      --bg-dark:   #e4e7ec;
+      --ink:       #0f1623;
+      --ink-light: #3d4a5c;
+      --accent:    #2455a4;
+      --gold:      #c9983a;
+      --rule:      #cdd3dc;
+      --white:     #f7f8fa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg); border-bottom: 1px solid var(--rule);
+      padding: 0 1.5rem; height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: var(--ink-light); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 1.2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1rem; color: var(--ink-light); text-decoration: none; }
+
+    .page-header {
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--rule);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .page-header-label { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.025em; color: var(--ink); }
+    .page-header-date { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; margin-top: 0.5rem; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .content section { margin-bottom: 2.5rem; }
+    .content h2 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    .content p { font-size: 0.88rem; color: var(--ink-light); line-height: 1.85; font-weight: 300; margin-bottom: 0.75rem; }
+    .content ul { list-style: none; margin-bottom: 0.75rem; }
+    .content ul li { font-size: 0.88rem; color: var(--ink-light); line-height: 1.85; font-weight: 300; padding-left: 1.25rem; position: relative; }
+    .content ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+
+    .highlight-box {
+      background: var(--bg-dark);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box p { margin-bottom: 0; }
+
+    footer { border-top: 1px solid var(--rule); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
+    .footer-copy { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; }
+    .footer-link { font-size: 0.8rem; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-header { padding: 2rem 1.25rem 1.75rem; }
+      .page-header h1 { font-size: 1.5rem; }
+      .content { padding: 2rem 1.25rem 3.5rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Benim <span>Ajandam</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="kullanim-kosullari.html">Kullanım Koşulları</a></li>
+    <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+  <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+</div>
+
+<div class="page-header">
+  <p class="page-header-label">Yasal</p>
+  <h1>Gizlilik Politikası</h1>
+  <p class="page-header-date">Son güncelleme: Ocak 2025</p>
+</div>
+
+<div class="content">
+
+  <section>
+    <div class="highlight-box">
+      <p>Benim Ajandam, gizliliğinizi ciddiye alır. Notlarınız yalnızca cihazınızda ve isteğe bağlı olarak kendi iCloud hesabınızda saklanır. Verilerinizi üçüncü taraflarla paylaşmıyoruz ve satmıyoruz.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>1. Topladığımız Veriler</h2>
+    <p>Benim Ajandam, kullanımınız sırasında aşağıdaki verileri işleyebilir:</p>
+    <ul>
+      <li>Oluşturduğunuz notlar ve içerikleri</li>
+      <li>Not kategorileri ve etiket bilgileri</li>
+      <li>Hatırlatıcı tarih ve saat bilgileri</li>
+      <li>Kullanım istatistikleri (Pro kullanıcılar)</li>
+    </ul>
+    <p>Bu veriler yalnızca cihazınızda yerel olarak veya iCloud hesabınızda saklanır. Sunucularımıza herhangi bir içeriğiniz aktarılmaz.</p>
+  </section>
+
+  <section>
+    <h2>2. iCloud Senkronizasyonu</h2>
+    <p>iCloud senkronizasyonu özelliğini etkinleştirirseniz notlarınız Apple'ın iCloud altyapısı üzerinden şifreli biçimde saklanır ve cihazlarınız arasında eşitlenir. Bu verilere bizim erişimimiz yoktur; tamamen Apple'ın Gizlilik Politikası kapsamındadır.</p>
+  </section>
+
+  <section>
+    <h2>3. Not Kilitleme</h2>
+    <p>Notlarınızı kilitlemek için Face ID, Touch ID veya cihaz şifresi kullanılır. Bu kimlik doğrulama süreci tamamen cihazınızda gerçekleşir; herhangi bir biyometrik veya şifre bilgisi uygulamamız tarafından saklanmaz veya iletilmez.</p>
+  </section>
+
+  <section>
+    <h2>4. Üçüncü Taraf Paylaşımı</h2>
+    <p>Notlarınızı veya kişisel verilerinizi reklam şirketleri, veri aracıları ya da başka üçüncü taraflarla paylaşmıyoruz. Uygulamada reklam bulunmamaktadır.</p>
+  </section>
+
+  <section>
+    <h2>5. Analitik</h2>
+    <p>Uygulama, hata ayıklama ve performans iyileştirmesi amacıyla Apple'ın standart çökme raporlama hizmetini kullanabilir. Bu raporlar anonim niteliktedir ve not içeriklerinizi veya kişisel verilerinizi içermez. Cihaz ayarlarınızdan bu özelliği devre dışı bırakabilirsiniz.</p>
+  </section>
+
+  <section>
+    <h2>6. Çocukların Gizliliği</h2>
+    <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek veri toplamaz. Çocuğunuzun kişisel veri sağladığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>
+  </section>
+
+  <section>
+    <h2>7. Haklarınız</h2>
+    <p>Verilerinizin tamamı cihazınızda bulunduğundan dilediğiniz zaman uygulama içinden tüm notlarınızı ve içeriklerinizi silebilirsiniz. iCloud'daki verilerinizi Apple iCloud ayarları üzerinden yönetebilirsiniz.</p>
+  </section>
+
+  <section>
+    <h2>8. Politika Değişiklikleri</h2>
+    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir. Uygulamayı kullanmaya devam etmeniz güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+  </section>
+
+  <section>
+    <h2>9. İletişim</h2>
+    <p>Gizlilik konusundaki sorularınız için bizimle iletişime geçebilirsiniz.</p>
+  </section>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 Benim Ajandam. Tüm hakları saklıdır.</span>
+  <a class="footer-link" href="#">Geliştirici</a>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
