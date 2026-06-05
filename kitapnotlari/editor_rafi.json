@@ -1,8 +1,40 @@
-{
-  "kitap_adi": "Gece Yarısı Kütüphanesi",
-  "yazar": "Matt Haig",
-  "aciklama": "Pişmanlıklarını telafi etme şansın olsaydı, bazı konularda farklı davranır mıydın?",
-  "kapak_url": "https://covers.openlibrary.org/b/id/12212528-L.jpg",
-  "isbn": "9786051981833",
-  "hafta": "2026-W20"
-}
+[
+  {
+    "tarih": "2026-06-09",
+    "editorNotu": "Bu hafta para ve ekonomi üzerine düşünüyorum. Günlük hayatımızda farkında olmadan verdiğimiz kararların büyük çoğunluğu ekonomik. Bu kitaplar o kararları daha bilinçli vermenize yardımcı olacak.",
+    "tema": "Para & Ekonomi",
+    "soru": "Son bir ayda verdiğiniz en önemli finansal karar neydi? O kararı şimdi nasıl değerlendiriyorsunuz?",
+    "haftaninKitabi": {
+      "ad": "Zengin Baba Yoksul Baba",
+      "yazar": "Robert T. Kiyosaki",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg",
+      "aciklama": "Para hakkında okulda öğretilmeyenleri anlatan bu kitap, varlık ve yükümlülük arasındaki farkı net biçimde ortaya koyuyor.",
+      "isbn": "9781612680194",
+      "sayfaSayisi": 336,
+      "tur": "Ekonomi",
+      "editorYorumu": "Para konusundaki bakış açımı değiştiren ilk kitap buydu. Okumamış herkese tavsiye ediyorum."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Akıllı Yatırımcı",
+        "yazar": "Benjamin Graham",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
+        "aciklama": "Warren Buffett'ın en çok tavsiye ettiği yatırım kitabı.",
+        "isbn": "9780060555665",
+        "sayfaSayisi": 640,
+        "tur": "Ekonomi",
+        "editorYorumu": "Uzun vadeli düşünmeyi öğreten klasik."
+      },
+      {
+        "ad": "Sıfırdan Bir",
+        "yazar": "Peter Thiel",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg",
+        "aciklama": "Girişimcilik ve inovasyon üzerine farklı bir bakış açısı.",
+        "isbn": "9780804139021",
+        "sayfaSayisi": 224,
+        "tur": "Ekonomi",
+        "editorYorumu": "Rekabet yerine tekel yaratmanın neden daha değerli olduğunu anlatan özgün bir kitap."
+      }
+    ]
+  }
+]
