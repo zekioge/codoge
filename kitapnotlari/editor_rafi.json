@@ -1,5 +1,43 @@
 [
   {
+  "tarih": "2026-06-09",
+  "tema": "İnanılması Güç Bir Bakış Açısı",
+  "editorNotu": "Bu hafta gerçekliği sorgulatacak kitaplar seçtim. Bazen en sıradan şeyler, en derin soruları taşır. Varoluşun ağırlığını hisseden, kendi kararlarının ne kadar 'kendi' kararı olduğunu merak eden, toplumun gözüyle değil kendi gözüyle bakmak isteyen herkes için.",
+  "soru": "Kendinizi hiç toplumun beklentilerine tamamen yabancı hissettiniz mi? O an ne yaptınız?",
+  "haftaninKitabi": {
+    "ad": "Bulantı",
+    "yazar": "Jean-Paul Sartre",
+    "kapakURL": "https://covers.openlibrary.org/b/isbn/9789755102108-L.jpg",
+    "aciklama": "Varoluşçuluğun kült romanı. Roquentin'in günlük nesnelere, insanlara ve kendi bedenine duyduğu derin tiksinti, aslında varoluşun kendisiyle yüzleşmektir.",
+    "isbn": "9789755102108",
+    "sayfaSayisi": 260,
+    "tur": "Roman",
+    "editorYorumu": "Bir sabah eline bir bardak alıyorsunuz ve 'bu nesne neden var?' diye soruyorsunuz kendinize. Sartre tam olarak bu soruyu 260 sayfaya yaydı."
+  },
+  "digerKitaplar": [
+    {
+      "ad": "Yabancı",
+      "yazar": "Albert Camus",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9789750748677-L.jpg",
+      "aciklama": "Annesinin cenazesinde ağlamayan, güneşin yüzüne vurduğu için adam öldüren Meursault. Toplumun beklentilerine sığmayan bir varoluşun hikâyesi.",
+      "isbn": "9789750748677",
+      "sayfaSayisi": 112,
+      "tur": "Roman",
+      "editorYorumu": "110 sayfada bu kadar çok şey söyleyen başka bir kitap bilmiyorum."
+    },
+    {
+      "ad": "Akıldışı Ama Öngörülebilir",
+      "yazar": "Dan Ariely",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9786055655396-L.jpg",
+      "aciklama": "Kararlarımızın ne kadarı gerçekten bizim? Ariely, aklın sandığımız kadar akılcı olmadığını deneylerle kanıtlıyor.",
+      "isbn": "9786055655396",
+      "sayfaSayisi": 341,
+      "tur": "Psikoloji",
+      "editorYorumu": "Kitabı okuduktan sonra bir daha 'özgür irade' lafını aynı gözle bakamadım."
+    }
+  ]
+},
+   {
     "tarih": "2026-06-05",
     "editorNotu": "Bu hafta para ve ekonomi üzerine düşünüyorum. Günlük hayatımızda farkında olmadan verdiğimiz kararların büyük çoğunluğu ekonomik. Bu kitaplar o kararları daha bilinçli vermenize yardımcı olacak.",
     "tema": "Para & Ekonomi",
