@@ -35,7 +35,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            justify-content: space-between; /* Header/Main/Footer dengesini tarayıcıya bırakmadan korur */
+            justify-content: space-between;
         }
 
         /* Ambient Arka Plan Parıltıları */
@@ -55,7 +55,7 @@
         .hero {
             max-width: 800px;
             width: 100%;
-            margin: 0 auto; /* Tarayıcı esneklik çöküşünü önleyen sabit hizalama */
+            margin: 0 auto;
             text-align: center;
             padding: 6rem 2rem 4rem 2rem;
             position: relative;
@@ -159,26 +159,27 @@
         .app-name { color: var(--text-main); font-size: 0.85rem; font-weight: 500; letter-spacing: -0.2px; }
         .badge-soon { font-size: 0.65rem; background: rgba(255, 255, 255, 0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-muted); margin-top: -0.3rem; }
 
-        /* --- PREMIUM SLIDE-OVER PANEL --- */
+        /* --- LICKUID GLASS PANEL DÜZENİ --- */
         .detail-panel {
             position: fixed;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: #050508;
+            background: #040406;
             z-index: 2000;
             display: flex;
-            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            flex-direction: row-reverse; /* Sola Slider, Sağa Bilgileri Almak İçin Ters Çevirdik */
+            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .detail-panel.open {
             left: 0;
         }
 
-        /* Sol Alan: Bilgi Bölümü */
-        .panel-left {
-            width: 42%;
+        /* Sağ Alan: Bilgiler Bölümü */
+        .panel-right-info {
+            width: 40%;
             min-width: 400px;
             height: 100%;
             padding: 5rem 4rem;
@@ -187,12 +188,14 @@
             justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
-            border-right: 1px solid var(--glass-border);
-            background: rgba(10, 10, 15, 0.5);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            background: rgba(8, 8, 12, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            position: relative;
+            /* Çizgi kaldırıldı */
         }
 
+        /* Geri Dön Butonu - Sağ üst köşeye şık yerleşim */
         .panel-close-btn {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -211,7 +214,7 @@
         .panel-close-btn:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-2px);
+            transform: translateX(2px);
         }
 
         .panel-icon {
@@ -223,7 +226,7 @@
         .panel-icon img { width: 100%; height: 100%; object-fit: cover; }
 
         .panel-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -1px; }
-        .panel-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 3rem; font-weight: 300; max-width: 90%; }
+        .panel-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 3rem; font-weight: 300; max-width: 95%; }
 
         .btn-download {
             background: #ffffff;
@@ -253,45 +256,91 @@
             border: 1px solid var(--glass-border);
         }
 
-        /* Sağ Alan: Gerçek Kaydırma (Slider) Düzeni */
-        .panel-right {
-            width: 58%;
+        /* Sol Alan: Likit Geçişli Akıcı Galeri Alanı */
+        .panel-left-slider {
+            width: 60%;
             height: 100%;
-            background: #060609;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
             display: flex;
             align-items: center;
             padding: 0 5rem;
             overflow-x: auto; 
             overflow-y: hidden;
-            gap: 3.5rem;
+            gap: 4rem;
             scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
 
-        .panel-right::-webkit-scrollbar { height: 6px; }
-        .panel-right::-webkit-scrollbar-track { background: transparent; }
-        .panel-right::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
+        .panel-left-slider::-webkit-scrollbar { height: 0px; width: 0px; display: none; } /* Temiz görünüm için scrollbar gizlendi */
 
+        /* Liquid Glass Efektli Ekran Görüntüsü Kartları */
         .screenshot-holder {
             flex: 0 0 auto;
             height: 72vh;
             aspect-ratio: 9 / 19.5;
-            background: rgba(255,255,255,0.01);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 35px 70px rgba(0,0,0,0.6);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.7);
             display: flex;
             align-items: center;
             justify-content: center;
             scroll-snap-align: center;
-            transition: transform 0.3s ease;
+            position: relative;
+            
+            /* Likit Glass Animasyon Geçişi */
+            opacity: 0.4;
+            filter: blur(8px) brightness(0.5);
+            transform: scale(0.9) translateY(10px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .screenshot-holder:hover { transform: scale(1.02); }
-        .screenshot-holder img { width: 100%; height: 100%; object-fit: cover; }
 
-        .ss-error-text { color: rgba(255,255,255,0.15); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+        /* Kaydırırken Ekrana Tam Oturan (Aktif) Karta Likit Parıltı ve Netlik Efekti */
+        .screenshot-holder.active-card {
+            opacity: 1;
+            filter: blur(0px) brightness(1);
+            transform: scale(1) translateY(0px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.85), 0 0 40px rgba(255,255,255,0.02);
+        }
+
+        .screenshot-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Resim Olmadığında Devreye Giren Premium CSS Cam İllüstrasyonu */
+        .liquid-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            gap: 1rem;
+        }
+        
+        .liquid-placeholder-icon {
+            font-size: 1.5rem;
+            opacity: 0.3;
+            background: linear-gradient(135deg, #fff, transparent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ss-error-text {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
         .panel-footer-links { margin-top: auto; display: flex; gap: 1.8rem; font-size: 0.8rem; }
         .panel-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
@@ -311,9 +360,9 @@
         @media (max-width: 968px) {
             .detail-panel { flex-direction: column; overflow-y: auto; left: 0; top: -100%; transition: top 0.5s ease; }
             .detail-panel.open { top: 0; }
-            .panel-left { width: 100%; min-width: 100%; height: auto; padding: 6rem 2rem 3rem 2rem; border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .panel-right-info { width: 100%; min-width: 100%; height: auto; padding: 6rem 2rem 3rem 2rem; }
             .panel-close-btn { margin-bottom: 2rem; }
-            .panel-right { width: 100%; height: auto; padding: 4rem 2rem; gap: 2rem; }
+            .panel-left-slider { width: 100%; height: auto; padding: 4rem 2rem; gap: 2rem; }
             .screenshot-holder { height: 55vh; }
         }
     </style>
@@ -355,8 +404,8 @@
     </main>
 
     <div class="detail-panel" id="appPanel">
-        <div class="panel-left">
-            <button class="panel-close-btn" id="closePanel">← Geri Dön</button>
+        <div class="panel-right-info">
+            <button class="panel-close-btn" id="closePanel">Geri Dön →</button>
             <div class="panel-icon" id="pIcon"></div>
             <h2 class="panel-title" id="pTitle"></h2>
             <p class="panel-desc" id="pDesc"></p>
@@ -371,7 +420,7 @@
             </div>
         </div>
 
-        <div class="panel-right" id="pSlider"></div>
+        <div class="panel-left-slider" id="pSlider"></div>
     </div>
 
     <footer>
@@ -416,6 +465,26 @@
         const closePanelBtn = document.getElementById('closePanel');
         const sliderArea = document.getElementById('pSlider');
 
+        // Gerçek zamanlı kaydırma takibi yaparak ortadaki karta "Likit Glass" efekti uygulayan fonksiyon
+        function updateActiveCard() {
+            const cards = sliderArea.querySelectorAll('.screenshot-holder');
+            const sliderCenter = sliderArea.scrollLeft + (sliderArea.offsetWidth / 2);
+
+            cards.forEach(card => {
+                const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+                const distance = Math.abs(sliderCenter - cardCenter);
+
+                // Eğer kart merkeze yakınsa akışkan netlik kazandır
+                if (distance < card.offsetWidth / 1.5) {
+                    card.classList.add('active-card');
+                } else {
+                    card.classList.remove('active-card');
+                }
+            });
+        }
+
+        sliderArea.addEventListener('scroll', updateActiveCard);
+
         document.querySelectorAll('.app-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const appKey = btn.getAttribute('data-app');
@@ -423,6 +492,7 @@
 
                 if (!data) return;
 
+                // Sağ Taraf Bilgi Güncelleme
                 document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
                 document.getElementById('pTitle').innerText = data.title;
                 document.getElementById('pDesc').innerText = data.desc;
@@ -440,17 +510,23 @@
                     downloadBtn.href = data.link;
                 }
 
+                // Sol Taraf Slider Kurulumu
                 sliderArea.innerHTML = '';
-                data.ssList.forEach(ssUrl => {
+                data.ssList.forEach((ssUrl, index) => {
                     const holder = document.createElement('div');
                     holder.className = 'screenshot-holder';
                     
                     const img = document.createElement('img');
                     img.src = ssUrl;
-                    img.alt = "Uygulama Ekran Görüntüsü";
+                    img.alt = "Ekran Görüntüsü";
                     
+                    // Resim yolu hatalı veya boşsa tasarımı bozmayan harika Liquid Cam Görünümü
                     img.onerror = function() {
-                        holder.innerHTML = `<span class="ss-error-text">Görsel Hazırlanıyor</span>`;
+                        holder.innerHTML = `
+                            <div class="liquid-placeholder">
+                                <div class="liquid-placeholder-icon"></div>
+                                <span class="ss-error-text">Önizleme ${index + 1}</span>
+                            </div>`;
                     };
                     
                     holder.appendChild(img);
@@ -459,7 +535,12 @@
 
                 panel.classList.add('open');
                 document.body.style.overflow = 'hidden';
-                sliderArea.scrollLeft = 0;
+                
+                // İlk açılışta animasyon tetiklenmesi için küçük bir gecikmeyle odaklama yapıyoruz
+                setTimeout(() => {
+                    sliderArea.scrollLeft = 0;
+                    updateActiveCard();
+                }, 50);
             });
         });
 
