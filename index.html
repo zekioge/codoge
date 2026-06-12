@@ -312,4 +312,181 @@
             font-size: 0.8rem;
         }
         .panel-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        .
+        .panel-footer-links a:hover { color: #fff; }
+
+        footer {
+            margin-top: auto;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.02);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 968px) {
+            .detail-panel { flex-direction: column; overflow-y: auto; left: 0; top: -100%; transition: top 0.5s ease; }
+            .detail-panel.open { top: 0; }
+            .panel-left { width: 100%; min-width: 100%; height: auto; padding: 6rem 2rem 3rem 2rem; border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .panel-close-btn { margin-bottom: 2rem; }
+            .panel-right { width: 100%; height: auto; padding: 4rem 2rem; gap: 2rem; }
+            .screenshot-holder { height: 55vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <main class="hero">
+        <div class="logo">codoge</div>
+        <br>
+        <div class="hero-tag">Yazılım Atölyesi</div>
+        <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
+        <p>Apple ekosisteminde işlevsellik odaklı, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
+
+        <div class="app-grid">
+            <button class="app-icon-btn" data-app="mutfakdefteri">
+                <div class="app-icon-box">
+                    <img src="mutfakdefteri/mutfakdefteri.png" alt="Mutfak Defteri">
+                </div>
+                <span class="app-name">Mutfak Defteri</span>
+            </button>
+
+            <button class="app-icon-btn" data-app="kitapnotlari">
+                <div class="app-icon-box">
+                    <img src="kitapnotlari/kitapnotlari.png" alt="Kitap Notları">
+                </div>
+                <span class="app-name">Kitap Notları</span>
+            </button>
+
+            <button class="app-icon-btn" data-app="lemoney">
+                <div class="app-icon-box">
+                    <img src="lemoney/lemoney.png" alt="Lemoney">
+                </div>
+                <span class="app-name">Lemoney</span>
+                <span class="badge-soon">YAKINDA</span>
+            </button>
+        </div>
+    </main>
+
+    <div class="detail-panel" id="appPanel">
+        <div class="panel-left">
+            <button class="panel-close-btn" id="closePanel">← Geri Dön</button>
+            <div class="panel-icon" id="pIcon"></div>
+            <h2 class="panel-title" id="pTitle"></h2>
+            <p class="panel-desc" id="pDesc"></p>
+            
+            <a href="#" class="btn-download" id="pLink" target="_blank">
+                <span> App Store'dan İndir</span>
+            </a>
+
+            <div class="panel-footer-links">
+                <a href="#" id="pTerms">Kullanım Koşulları</a>
+                <a href="#" id="pPrivacy">Gizlilik Politikası</a>
+            </div>
+        </div>
+
+        <div class="panel-right" id="pSlider"></div>
+    </div>
+
+    <footer>
+        <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        const appData = {
+            mutfakdefteri: {
+                title: "Mutfak Defteri",
+                iconImg: "mutfakdefteri/mutfakdefteri.png",
+                desc: "Eskiden defterlere karalanan, nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi fotoğraflarla kaydedin ve mutfağınızı profesyonelce yönetin.",
+                link: "https://apps.apple.com/tr/app/mutfak-defteri/id6764518310?l=tr", 
+                termsUrl: "mutfakdefteri/terms.html",
+                privacyUrl: "mutfakdefteri/privacy.html",
+                status: "live",
+                ssList: ["mutfakdefteri/ss1.png", "mutfakdefteri/ss2.png", "mutfakdefteri/ss3.png"]
+            },
+            kitapnotlari: {
+                title: "Kitap Notları",
+                iconImg: "kitapnotlari/kitapnotlari.png",
+                desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, altını çizdiğiniz alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede, en estetik biçimde saklayın.",
+                link: "https://apps.apple.com/tr/app/kitap-notlar%C4%B1/id6768207035?l=tr", 
+                termsUrl: "kitapnotlari/terms.html",
+                privacyUrl: "kitapnotlari/privacy.html",
+                status: "live",
+                ssList: ["kitapnotlari/ss1.png", "kitapnotlari/ss2.png", "kitapnotlari/ss3.png"]
+            },
+            lemoney: {
+                title: "Lemoney",
+                iconImg: "lemoney/lemoney.png",
+                desc: "Finansal durumunuzu, aylık bütçenizi ve tasarruf hedeflerinizi en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil finans asistanınız. Çok yakında App Store'da.",
+                link: "#",
+                termsUrl: "lemoney/terms.html",
+                privacyUrl: "lemoney/privacy.html",
+                status: "soon",
+                ssList: ["lemoney/ss1.png", "lemoney/ss2.png"]
+            }
+        };
+
+        const panel = document.getElementById('appPanel');
+        const closePanelBtn = document.getElementById('closePanel');
+        const sliderArea = document.getElementById('pSlider');
+
+        document.querySelectorAll('.app-icon-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const appKey = btn.getAttribute('data-app');
+                const data = appData[appKey];
+
+                if (!data) return;
+
+                // Sol Alan Veri Dolumu
+                document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
+                document.getElementById('pTitle').innerText = data.title;
+                document.getElementById('pDesc').innerText = data.desc;
+                document.getElementById('pTerms').href = data.termsUrl;
+                document.getElementById('pPrivacy').href = data.privacyUrl;
+
+                const downloadBtn = document.getElementById('pLink');
+                if(data.status === "soon") {
+                    downloadBtn.innerText = "Yapım Aşamasında";
+                    downloadBtn.classList.add('disabled');
+                    downloadBtn.href = "#";
+                } else {
+                    downloadBtn.innerHTML = `<span> App Store'dan İndir</span>`;
+                    downloadBtn.classList.remove('disabled');
+                    downloadBtn.href = data.link;
+                }
+
+                // Sağ Alan Slider Yapılandırması
+                sliderArea.innerHTML = '';
+                data.ssList.forEach(ssUrl => {
+                    const holder = document.createElement('div');
+                    holder.className = 'screenshot-holder';
+                    
+                    const img = document.createElement('img');
+                    img.src = ssUrl;
+                    img.alt = "Uygulama Ekran Görüntüsü";
+                    
+                    // Görsel yoksa veya yüklenemediyse alanı bozmamak için şık hata yakalayıcı
+                    img.onerror = function() {
+                        holder.innerHTML = `<span class="ss-error-text">Görsel Hazırlanıyor</span>`;
+                    };
+                    
+                    holder.appendChild(img);
+                    sliderArea.appendChild(holder);
+                });
+
+                panel.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                sliderArea.scrollLeft = 0; // Her açılışta ilk resme odaklar
+            });
+        });
+
+        closePanelBtn.addEventListener('click', () => {
+            panel.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html>
