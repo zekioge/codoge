@@ -9,15 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- MODERN & LIQUID GLASS CSS SETUP --- */
         :root {
             --bg-color: #08080c;
             --text-main: #f5f5f7;
             --text-muted: #86868b;
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-bg: rgba(255, 255, 255, 0.02);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-radial: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent);
         }
 
         * {
@@ -32,547 +29,374 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Ambient Background Glows (Akışkan Işık Efektleri) */
-        .ambient-glow-1 {
-            position: fixed;
-            top: -20%;
-            left: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .ambient-glow-2 {
-            position: fixed;
-            bottom: -10%;
-            right: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* --- NAVIGATION --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(8, 8, 12, 0.7);
-            border-bottom: 1px solid var(--glass-border);
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--text-main);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
             justify-content: center;
-            align-items: center;
+        }
+
+        /* Ambient Arka Plan Parıltıları */
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, rgba(168, 85, 247, 0.03) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- HERO & LOGO --- */
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            padding: 8rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
             position: relative;
             z-index: 1;
         }
 
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2.5rem;
+            display: inline-block;
+        }
+
         .hero-tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.4rem 1rem;
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             border: 1px solid var(--glass-border);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #a5b4fc;
+            display: inline-block;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            max-width: 900px;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom right, #ffffff 30%, #a1a1aa 100%);
+            background: linear-gradient(to bottom right, #ffffff 40%, #a1a1aa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 3rem;
             font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 3.5rem;
         }
 
-        .cta-group {
+        /* --- APP GRID (ICON ALANI) --- */
+        .app-grid {
             display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 0.9rem 2rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: #fff;
-            color: #000;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 26px rgba(255, 255, 255, 0.25);
-        }
-
-        .btn-secondary {
-            background: var(--glass-bg);
-            color: var(--text-main);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-        }
-
-        /* --- SECTION STRUCTURE --- */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-header span {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #6366f1;
-            font-weight: 600;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-top: 0.5rem;
-        }
-
-        /* --- SERVICES (NEUMORPHIC LIQUID GLASS) --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .service-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--glass-radial);
-            pointer-events: none;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- WORKS (PRODUCT SHOWCASE) --- */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 2.5rem;
-        }
-
-        @media (max-width: 500px) {
-            .works-grid { grid-template-columns: 1fr; }
-        }
-
-        .work-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
+        .app-icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 400px;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .work-card:hover {
-            transform: scale(1.01);
-            border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-        }
-
-        .work-info {
-            padding: 3rem 3rem 1.5rem 3rem;
-            z-index: 2;
-        }
-
-        .work-category {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .work-card h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .work-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            max-width: 90%;
-        }
-
-        /* Premium 3D Device Art Previews (Uygulama İçi Görsel Alanları) */
-        .work-preview-box {
-            height: 200px;
-            margin: 0 2rem 2rem 2rem;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+        .app-icon-box {
+            width: 84px;
+            height: 84px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255,255,255,0.2);
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .work-card:hover .work-preview-box {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.04) 100%);
-            color: rgba(255,255,255,0.6);
-            border-color: rgba(99, 102, 241, 0.2);
-        }
-
-        /* --- CTA SECTION --- */
-        .cta-section {
-            text-align: center;
-            max-width: 800px;
-            padding: 10rem 2rem;
-        }
-
-        .cta-card {
-            background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.1), transparent), rgba(255,255,255,0.01);
-            border: 1px solid var(--glass-border);
-            padding: 5rem 3rem;
-            border-radius: 32px;
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-card h2 {
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
-        .cta-card p {
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
+        /* Uygulamalara Özel Renk Gölgeleri */
+        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .app-icon-btn[data-app="lemoney"] .app-icon-box { background: linear-gradient(135deg, #10b981, #047857); }
+
+        .app-icon-btn:hover {
+            transform: translateY(-4px);
         }
 
-        /* --- FOOTER --- */
-        footer {
-            border-top: 1px solid var(--glass-border);
-            padding: 4rem 2rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .app-icon-btn:hover .app-icon-box {
+            box-shadow: 0 15px 30px rgba(255,255,255,0.05);
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-nav {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .footer-nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-nav a:hover {
+        .app-name {
             color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
         }
 
-        /* --- ANIMATION ENGINE (Scroll Fade-In) --- */
-        .reveal {
+        .badge-soon {
+            font-size: 0.65rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: var(--text-muted);
+            margin-top: -0.3rem;
+        }
+
+        /* --- POPUP (MODAL) PREMIUM DIZAYN --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 4, 6, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 1.5rem;
         }
 
-        .reveal.active {
+        .modal-overlay.open {
             opacity: 1;
-            transform: translateY(0);
+            pointer-events: auto;
         }
 
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .nav-links { display: none; } /* Mobil menü altyapısı için */
-            .hero h1 { font-size: 2.8rem; }
-            .cta-group { flex-direction: column; width: 100%; }
-            .btn { text-align: center; }
+        .modal-wrapper {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            width: 100%;
+            max-width: 540px;
+            border-radius: 28px;
+            padding: 2.5rem;
+            position: relative;
+            transform: scale(0.95) translateY(10px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+
+        .modal-overlay.open .modal-wrapper {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: none; width: 32px; height: 32px;
+            border-radius: 50%; color: #fff;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; transition: background 0.2s;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.1); }
+
+        .modal-icon {
+            width: 80px; height: 80px; border-radius: 18px;
+            margin: 0 auto 1.5rem auto;
+            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+        }
+
+        .modal-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .modal-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; }
+        
+        .modal-preview {
+            width: 100%; height: 160px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px; margin-bottom: 2rem;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.15); font-size: 0.8rem; letter-spacing: 1px;
+        }
+
+        .btn-download {
+            background: #fff; color: #000; padding: 0.8rem 2rem;
+            border-radius: 12px; font-weight: 600; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1); transition: all 0.2s;
+        }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,255,255,0.2); }
+        .btn-download.disabled { background: rgba(255,255,255,0.05); color: var(--text-muted); pointer-events: none; box-shadow: none; border: 1px solid var(--glass-border); }
+
+        .modal-footer-links {
+            margin-top: 2.5rem; padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: center; gap: 1.5rem; font-size: 0.8rem;
+        }
+        .modal-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .modal-footer-links a:hover { color: #fff; }
+
+        footer {
+            margin-top: auto;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.02);
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <div class="ambient-glow"></div>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">codoge</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Anasayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="isler.html">İşler</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
+    <main class="hero">
+        <div class="logo">codoge</div>
+        <br>
+        <div class="hero-tag">Yazılım Atölyesi</div>
+        <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
+        <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
+
+        <!-- UYGULAMA ICON GRID ALANI -->
+        <div class="app-grid">
+            <!-- 1. Mutfak Defteri -->
+            <button class="app-icon-btn" data-app="mutfakdefteri">
+                <div class="app-icon-box">🥘</div>
+                <span class="app-name">Mutfak Defteri</span>
+            </button>
+
+            <!-- 2. Kitap Notları -->
+            <button class="app-icon-btn" data-app="kitapnotlari">
+                <div class="app-icon-box">📚</div>
+                <span class="app-name">Kitap Notları</span>
+            </button>
+
+            <!-- 3. Lemoney -->
+            <button class="app-icon-btn" data-app="lemoney">
+                <div class="app-icon-box">🍋</div>
+                <span class="app-name">Lemoney</span>
+                <span class="badge-soon">YAKINDA</span>
+            </button>
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-tag">Yazılım Atölyesi</div>
-            <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
-            <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
-            <div class="cta-group">
-                <a href="isler.html" class="btn btn-primary">İşlerimizi Gör</a>
-                <a href="iletisim.html" class="btn btn-secondary">İletişime Geç</a>
-            </div>
-        </section>
-
-        <section id="services" class="reveal">
-            <div class="section-header">
-                <span>Yetenekler</span>
-                <h2>Ne Yapıyoruz?</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">✦</div>
-                    <h3>Uygulama Geliştirme</h3>
-                    <p>Fikir aşamasından App Store ekosistemine kadar, Apple platformlarının gücünü tam olarak kullanan yerel ve yüksek performanslı uygulamalar geliştiriyoruz.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✦</div>
-                    <h3>Arayüz Tasarımı</h3>
-                    <p>Kullanıcı odaklı, derinlik hissine sahip, minimal, akışkan ve modern UI/UX mimarileri tasarlayarak dijital deneyimi kusursuzlaştırıyoruz.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✦</div>
-                    <h3>Oyun Mimarisi</h3>
-                    <p>En ince ayrıntısına kadar düşünülmüş mekanikler ve senaryolarla, mobil dünyada iz bırakacak sürükleyici oyun deneyimleri tasarlıyoruz.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="works" class="reveal">
-            <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <div>
-                    <span>Portfolyo</span>
-                    <h2>Seçili İşler</h2>
-                </div>
-                <a href="isler.html" style="color: #6366f1; text-decoration: none; font-weight: 500; font-size: 0.95rem;">Tümünü Gör →</a>
-            </div>
-            
-            <div class="works-grid">
-                <a href="is-detay.html?id=1" class="work-card">
-                    <div class="work-info">
-                        <span class="work-category">iOS Uygulaması</span>
-                        <h3>🥘 Mutfak Defteri</h3>
-                        <p>Eskiden defterlere karalanan tarifler artık akıllı ve dijital. Eşsiz lezzetlerini kaydet, fotoğrafla ve tek kelimeyle zahmetsizce bul.</p>
-                    </div>
-                    <div class="work-preview-box">
-                        INTERFACE PREVIEW // LIVE MODEL
-                    </div>
-                </a>
-
-                <a href="is-detay.html?id=3" class="work-card">
-                    <div class="work-info">
-                        <span class="work-category">iOS / macOS Uygulaması</span>
-                        <h3>💳 Taksit Takip</h3>
-                        <p>Abonelik yüklerini, harcamaları ve sana kazanç sağlayan platformların cashback fırsatlarını tek elden, akıllıca yönet.</p>
-                    </div>
-                    <div class="work-preview-box">
-                        FINANCE ENGINE // UI ARCHITECTURE
-                    </div>
-                </a>
-
-                <a href="is-detay.html?id=2" class="work-card">
-                    <div class="work-info">
-                        <span class="work-category">Mobil Oyun</span>
-                        <h3>🎲 Zor Tavla</h3>
-                        <p>Yapay zekanın en usta haliyle karşı karşıya gel. Stratejini geliştir, hamleni yap ve gerçek ustalığını kanıtla. Çok yakında.</p>
-                    </div>
-                    <div class="work-preview-box">
-                        GAME MECHANICS // CORE ENGINE
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <div class="cta-card">
-                <h2>Bir projeniz mi var?</h2>
-                <p>Geleceği şekillendirecek fikirlerinizi, Apple standartlarında birer ürüne dönüştürmek için sabırsızlanıyoruz.</p>
-                <a href="iletisim.html" class="btn btn-primary" style="display: inline-block;">Konuşalım</a>
-            </div>
-        </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div>
-                <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
+    <!-- DINAMIK POPUP (MODAL) -->
+    <div class="modal-overlay" id="appModal">
+        <div class="modal-wrapper">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-icon" id="mIcon"></div>
+            <h2 class="modal-title" id="mTitle"></h2>
+            <p class="modal-desc" id="mDesc"></p>
+            
+            <div class="modal-preview" id="mPreview">
+                <!-- Buraya gelecekte mockup görselleri <img src="..."> şeklinde gömülebilir -->
+                VISUAL PREVIEW MODEL
             </div>
-            <ul class="footer-nav">
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="isler.html">İşler</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
+
+            <a href="#" class="btn-download" id="mLink" target="_blank">
+                <span> App Store'dan İndir</span>
+            </a>
+
+            <div class="modal-footer-links">
+                <a href="#" id="mTerms">Kullanım Koşulları</a>
+                <a href="#" id="mPrivacy">Gizlilik Politikası</a>
+            </div>
         </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
     </footer>
 
+    <!-- POPUP VERI YÖNETIMI SCRIPT'I -->
     <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+        // Uygulama Detay Veri Havuzu
+        const appData = {
+            mutfakdefteri: {
+                title: "Mutfak Defteri",
+                icon: "🥘",
+                bg: "linear-gradient(135deg, #f59e0b, #d97706)",
+                desc: "Eskiden defterlere karalanan nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi kategorize edin ve mutfağınızı yönetin.",
+                link: "https://apps.apple.com/tr/app/mutfak-defteri", // Gerçek App Store linkini buraya yazabilirsin
+                slug: "mutfakdefteri",
+                status: "live"
+            },
+            kitapnotlari: {
+                title: "Kitap Notları",
+                icon: "📚",
+                bg: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
+                desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede güvenle saklayın.",
+                link: "https://apps.apple.com/tr/app/kitap-notları", // Gerçek App Store linkini buraya yazabilirsin
+                slug: "kitapnotlari",
+                status: "live"
+            },
+            lemoney: {
+                title: "Lemoney",
+                icon: "🍋",
+                bg: "linear-gradient(135deg, #10b981, #047857)",
+                desc: "Finansal durumunuzu, bütçenizi ve tasarruflarınızı en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil asistanınız. Çok yakında App Store'da.",
+                link: "#",
+                slug: "lemoney",
+                status: "soon"
             }
-        }
-        window.addEventListener("scroll", reveal);
-        // İlk açılışta görünür kılmak için tetikle
-        reveal();
+        };
+
+        const modal = document.getElementById('appModal');
+        const closeBtn = document.getElementById('closeModal');
+
+        // Popup Açma Fonksiyonu
+        document.querySelectorAll('.app-icon-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const appKey = btn.getAttribute('data-app');
+                const data = appData[appKey];
+
+                if (!data) return;
+
+                // Popup elemanlarını doldurma
+                document.getElementById('mIcon').innerText = data.icon;
+                document.getElementById('mIcon').style.background = data.bg;
+                document.getElementById('mTitle').innerText = data.title;
+                document.getElementById('mDesc').innerText = data.desc;
+                
+                // Linkler ve Klasör Yapı Sinyalleri
+                document.getElementById('mTerms').href = `${data.slug}/kullanim-kosullari.html`;
+                document.getElementById('mPrivacy').href = `${data.slug}/gizlilik-politikasi.html`;
+
+                const downloadBtn = document.getElementById('mLink');
+                if(data.status === "soon") {
+                    downloadBtn.innerText = "Yapım Aşamasında";
+                    downloadBtn.classList.add('disabled');
+                    downloadBtn.href = "#";
+                } else {
+                    downloadBtn.innerText = " App Store'dan İndir";
+                    downloadBtn.classList.remove('disabled');
+                    downloadBtn.href = data.link;
+                }
+
+                modal.classList.add('open');
+            });
+        });
+
+        // Popup Kapatma Fonksiyonları
+        closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) modal.classList.remove('open');
+        });
     </script>
 </body>
 </html>
