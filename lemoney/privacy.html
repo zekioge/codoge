@@ -14,8 +14,8 @@
             --bg-color: #08080c;
             --text-main: #f5f5f7;
             --text-muted: #86868b;
-            --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
+            --panel-bg: rgba(255, 255, 255, 0.01);
         }
 
         * {
@@ -43,70 +43,114 @@
             transform: translate(-50%, -50%);
             width: 80vw;
             height: 80vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, rgba(168, 85, 247, 0.02) 50%, transparent 100%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(168, 85, 247, 0.01) 50%, transparent 100%);
             pointer-events: none;
             z-index: 0;
         }
 
         .wrapper {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
             position: relative;
             z-index: 1;
         }
 
-        .back-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 0.6rem 1.4rem;
-            border-radius: 100px;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4rem;
-            transition: all 0.2s ease;
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-2px);
-        }
-
         .legal-content {
-            background: rgba(255, 255, 255, 0.01);
+            background: var(--panel-bg);
             border: 1px solid var(--glass-border);
-            padding: 3.5rem;
+            padding: 4rem;
             border-radius: 32px;
             box-shadow: 0 40px 80px rgba(0,0,0,0.5);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to bottom right, #ffffff 40%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* --- ÜST BİLGİ ALANI (Görseldeki Düzen) --- */
+        .header-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 3.5rem;
         }
 
-        .app-tag {
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .app-title-group h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .app-title-group span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- METİN ALANLARI --- */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+
+        .update-date {
             font-size: 0.85rem;
             color: var(--text-muted);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
             margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         h2 {
@@ -114,7 +158,7 @@
             font-weight: 600;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
             color: #ffffff;
         }
 
@@ -124,14 +168,6 @@
             font-weight: 300;
             line-height: 1.65;
             margin-bottom: 1.2rem;
-        }
-
-        .update-date {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.8rem;
-            color: var(--text-muted);
         }
 
         footer {
@@ -151,34 +187,38 @@
     <div class="ambient-glow"></div>
 
     <div class="wrapper">
-        <!-- Atölyeye Geri Dön Butonu -->
-        <a href="../index.html" class="back-btn">← Atölyeye Geri Dön</a>
-
         <div class="legal-content">
-            <h1>Gizlilik Politikası</h1>
-            <div class="app-tag">Lemoney — Abonelik ve Fatura Takibi</div>
+            
+            <!-- Görseldeki Üst Bilgi ve Hizalama Alanı -->
+            <div class="header-meta">
+                <div class="header-left">
+                    <div class="app-icon">
+                        <img src="lemoney.png" alt="Lemoney">
+                    </div>
+                    <div class="app-title-group">
+                        <h3>Lemoney</h3>
+                        <span>Codoge Uygulaması</span>
+                    </div>
+                </div>
+                <a href="../index.html" class="back-btn">← Atölyeye Dön</a>
+            </div>
 
-            <p>Lemoney uygulaması olarak gizliliğinize en üst düzeyde önem veriyoruz. Bu politika, uygulamamızı kullanırken verilerinizin ve kişisel bilgilerinizin nasıl işlendiğini açıkça beyan etmek üzere hazırlanmıştır.</p>
+            <h1>Gizlilik Politikası</h1>
+            <div class="update-date">Son Güncelleme: 12 Haziran 2026</div>
+
+            <p>Lemoney mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm gizlilik şartlarını kabul etmiş olursunuz. Lemoney, gizliliğinize en üst düzeyde önem verir ve verilerinizin güvenliğini tam yerellik ilkesiyle korur.</p>
 
             <h2>1. Veri Yerelliği ve Güvenlik (Sıfır Sunucu İlkesi)</h2>
-            <p>Lemoney, tamamen lokal (yerel) çalışan bir uygulamadır. Uygulama içerisine kaydettiğiniz sabit giderleriniz, abonelik ücretleriniz, faturalarınız veya kredi kartı taksitleriniz gibi hiçbir finansal veri asla harici bir sunucuya gönderilmez, depolanmaz veya üçüncü taraflarla paylaşılmaz.</p>
-            <p>Tüm verileriniz yalnızca kullandığınız Apple cihazının güvenli yerel depolama alanında (SwiftData/CoreData) şifreli olarak tutulur.</p>
+            <p>Lemoney, tamamen lokal (yerel) çalışan bir uygulamadır. Uygulama içerisine kaydettiğiniz sabit giderleriniz, abonelik ücretleriniz, faturalarınız veya kredi kartı taksitleriniz gibi hiçbir finansal veri asla harici bir sunucuya gönderilmez, depolanmaz veya üçüncü taraflarla paylaşılmaz. Tüm verileriniz yalnızca kullandığınız Apple cihazının güvenli yerel depolama alanında şifreli olarak tutulur.</p>
 
-            <h2>2. iCloud Senkronizasyonu</h2>
-            <p>Uygulama içi verilerinizin Apple cihazlarınız arasında (iPhone, iPad, Mac vb.) taşınabilmesi ve yedeklenebilmesi için Apple'ın kendi sağladığı güvenli iCloud altyapısı kullanılır. Bu senkronizasyon doğrudan Apple'ın güvenlik protokolleri altında gerçekleşir ve geliştirici dahil hiç kimsenin bu verilere erişim izni yoktur.</p>
+            <h2>2. iCloud Senkronizasyonu ve Mülkiyet</h2>
+            <p>Uygulama içi verilerinizin Apple cihazlarınız arasında (iPhone, iPad, Mac vb.) taşınabilmesi ve yedeklenebilmesi için Apple'ın kendi sağladığı güvenli iCloud altyapısı kullanılır. Bu senkronizasyon doğrudan Apple'ın güvenlik protokolleri altında gerçekleşir; verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.</p>
 
             <h2>3. Toplanan Veriler</h2>
             <p>Lemoney, uygulamanın çalışması veya optimizasyonu için sizden herhangi bir isim, e-posta adresi, telefon numarası veya banka/kredi kartı bilgisi talep etmez ve toplamaz. Uygulama tamamen anonim olarak kullanılır.</p>
 
             <h2>4. Üçüncü Taraf Analitik Araçları</h2>
             <p>Kullanıcı deneyimini iyileştirmek adına çökme raporları (Crash Logs) Apple'ın standart App Store Connect altyapısı üzerinden isimsiz olarak alınabilir. Bu raporlar hiçbir kişisel veya finansal veri içermez.</p>
-
-            <h2>5. Politika Güncellemeleri</h2>
-            <p>Uygulamaya yeni özellikler eklendikçe veya yasal gereksinimler doğrultusunda bu gizlilik politikası güncellenebilir. Güncel metne her zaman uygulama içinden veya web sitemizden ulaşabilirsiniz.</p>
-
-            <div class="update-date">
-                Son Güncelleme: Haziran 2026
-            </div>
         </div>
     </div>
 
