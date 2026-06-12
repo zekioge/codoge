@@ -14,8 +14,8 @@
             --bg-color: #08080c;
             --text-main: #f5f5f7;
             --text-muted: #86868b;
-            --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
+            --panel-bg: rgba(255, 255, 255, 0.01);
         }
 
         * {
@@ -43,70 +43,114 @@
             transform: translate(-50%, -50%);
             width: 80vw;
             height: 80vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, rgba(168, 85, 247, 0.02) 50%, transparent 100%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(168, 85, 247, 0.01) 50%, transparent 100%);
             pointer-events: none;
             z-index: 0;
         }
 
         .wrapper {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
             position: relative;
             z-index: 1;
         }
 
-        .back-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 0.6rem 1.4rem;
-            border-radius: 100px;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4rem;
-            transition: all 0.2s ease;
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-2px);
-        }
-
         .legal-content {
-            background: rgba(255, 255, 255, 0.01);
+            background: var(--panel-bg);
             border: 1px solid var(--glass-border);
-            padding: 3.5rem;
+            padding: 4rem;
             border-radius: 32px;
             box-shadow: 0 40px 80px rgba(0,0,0,0.5);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to bottom right, #ffffff 40%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* --- ÜST BİLGİ ALANI (Görseldeki Düzen) --- */
+        .header-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 3.5rem;
         }
 
-        .app-tag {
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .app-title-group h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .app-title-group span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- METİN ALANLARI --- */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+
+        .update-date {
             font-size: 0.85rem;
             color: var(--text-muted);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
             margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         h2 {
@@ -114,7 +158,7 @@
             font-weight: 600;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
             color: #ffffff;
         }
 
@@ -124,14 +168,6 @@
             font-weight: 300;
             line-height: 1.65;
             margin-bottom: 1.2rem;
-        }
-
-        .update-date {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.8rem;
-            color: var(--text-muted);
         }
 
         footer {
@@ -151,34 +187,35 @@
     <div class="ambient-glow"></div>
 
     <div class="wrapper">
-        <!-- Atölyeye Geri Dön Butonu -->
-        <a href="../index.html" class="back-btn">← Atölyeye Geri Dön</a>
-
         <div class="legal-content">
-            <h1>Kullanım Koşulları</h1>
-            <div class="app-tag">Lemoney — Abonelik ve Fatura Takibi</div>
-
-            <p>Lemoney uygulamasını indirerek ve kullanarak, aşağıda belirtilen şartları ve koşulları kabul etmiş sayılırsınız. Lütfen uygulamayı kullanmaya başlamadan önce bu maddeleri dikkatlice okuyunuz.</p>
-
-            <h2>1. Hizmet Tanımı</h2>
-            <p>Lemoney; dijital aboneliklerinizi, düzenli faturalarınızı ve taksitli harcamalarınızı tek bir ekranda organize etmenize, bütçe analizi yapmanıza ve yerel hatırlatıcılar kurmanıza olanak tanıyan bağımsız bir asistan uygulamasıdır.</p>
-
-            <h2>2. Sorumluluk Reddi (Yatırım/Finans Danışmanlığı Değildir)</h2>
-            <p>Lemoney, tamamen kullanıcının manuel olarak girdiği veriler doğrultusunda matematiksel hesaplamalar ve listelemeler sunar. Uygulama bir bankacılık veya resmi finans kurumu uygulaması değildir. Lemoney içerisinde sunulan veriler, grafikler ve raporlar hiçbir şekilde finansal, yatırım veya vergi danışmanlığı teşkil etmez.</p>
-            <p>Uygulamadaki döviz kuru dalgalanmaları, kullanıcı tarafından hatalı girilen veriler veya unutulan fatura ödemelerinden doğabilecek doğrudan ya da dolaylı hiçbir maddi zarardan Lemoney ve geliştiricisi sorumlu tutulamaz.</p>
-
-            <h2>3. Veri Güvenliği ve Yedekleme Sorumluluğu</h2>
-            <p>Verileriniz yalnızca kendi cihazınızda ve kişisel iCloud hesabınızda saklanır. Cihazınızın kaybolması, sıfırlanması veya iCloud eşzamanlama hataları nedeniyle oluşabilecek olası veri kayıplarında sorumluluk tamamen kullanıcıya aittir. Geliştiricinin bu verilere uzaktan müdahale etme veya verileri geri getirme yetkisi bulunmamaktadır.</p>
-
-            <h2>4. Fikri Mülkiyet Hakları</h2>
-            <p>Lemoney arayüzü, logoları, kod mimarisi, tasarımı ve markası Codoge atölyesine aittir. Kaynak kodlarının kopyalanması, uygulamanın tersine mühendislik yöntemleriyle değiştirilmesi veya izinsiz olarak yeniden dağıtılması yasaktır.</p>
-
-            <h2>5. Koşullarda Değişiklik</h2>
-            <p>Geliştirici, önceden haber vermeksizin kullanım koşullarında değişiklik yapma hakkını saklı tutar. Uygulamayı kullanmaya devam etmeniz, güncel koşulları kabul ettiğiniz anlamına gelir.</p>
-
-            <div class="update-date">
-                Son Güncelleme: Haziran 2026
+            
+            <!-- Görseldeki Üst Bilgi ve Hizalama Alanı -->
+            <div class="header-meta">
+                <div class="header-left">
+                    <div class="app-icon">
+                        <img src="lemoney.png" alt="Lemoney">
+                    </div>
+                    <div class="app-title-group">
+                        <h3>Lemoney</h3>
+                        <span>Codoge Uygulaması</span>
+                    </div>
+                </div>
+                <a href="../index.html" class="back-btn">← Atölyeye Dön</a>
             </div>
+
+            <h1>Kullanım Koşulları</h1>
+            <div class="update-date">Son Güncelleme: 12 Haziran 2026</div>
+
+            <p>Lemoney mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm şartları kabul etmiş olursunuz. Bu koşulları onaylamıyorsanız lütfen uygulamayı cihazınızdan kaldırın.</p>
+
+            <h2>1. Hizmetin Tanımı ve Kullanımı</h2>
+            <p>Lemoney; dijital aboneliklerinizi, düzenli faturalarınızı ve taksitli harcamalarınızı tek bir ekranda organize etmenize, bütçe analizi yapmanıza ve yerel hatırlatıcılar kurmanıza olanak tanıyan bağımsız bir iOS/macOS verimlilik uygulamasıdır.</p>
+
+            <h2>2. Veri Güvenliği ve Mülkiyet</h2>
+            <p>Uygulama içerisine manuel olarak girdiğiniz tüm içeriklerin mülkiyeti ve yasal sorumluluğu tamamen size (kullanıcıya) aittir. Verileriniz yerel olarak cihazınızda saklanmaktadır ve Apple iCloud altyapınız üzerinden kendi hesaplarınız arasında senkronize edilir. Verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.</p>
+
+            <h2>3. Sorumluluk Reddi Beyanı</h2>
+            <p>Lemoney bir bankacılık veya resmi finans kurumu uygulaması değildir. Uygulama içerisinde sunulan veriler, grafikler ve hesaplamalar hiçbir şekilde finansal veya yatırım danışmanlığı teşkil etmez. Kullanıcı hatalarından veya unutulan ödemelerden doğabilecek doğrudan ya da dolaylı zararlardan Lemoney ve geliştiricisi sorumlu tutulamaz.</p>
         </div>
     </div>
 
