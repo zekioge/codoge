@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemoney — Kullanım Koşulları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #08080c;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-color: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 4rem 2rem; }
+        .container { max-width: 700px; margin: 0 auto; background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 24px; backdrop-filter: blur(20px); }
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .subtitle { color: var(--accent-color); font-size: 0.9rem; font-weight: 500; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #ffffff; }
+        p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; font-weight: 300; }
+        .footer-note { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+        a { color: var(--text-main); text-decoration: none; font-weight: 500; }
+        a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kullanım Koşulları</h1>
+        <div class="subtitle">Lemoney — Abonelik ve Fatura Takibi</div>
+
+        <p>Lemoney uygulamasını indirerek ve kullanarak, aşağıda belirtilen şartları ve koşulları kabul etmiş sayılırsınız. Lütfen uygulamayı kullanmaya başlamadan önce bu maddeleri dikkatlice okuyunuz.</p>
+
+        <h2>1. Hizmet Tanımı</h2>
+        <p>Lemoney; dijital aboneliklerinizi, düzenli faturalarınızı ve taksitli harcamalarınızı tek bir ekranda organize etmenize, bütçe analizi yapmanıza ve yerel hatırlatıcılar kurmanıza olanak tanıyan bağımsız bir asistan uygulamasıdır.</p>
+
+        <h2>2. Sorumluluk Reddi (Yatırım/Finans Danışmanlığı Değildir)</h2>
+        <p>Lemoney, tamamen kullanıcının manuel olarak girdiği veriler doğrultusunda matematiksel hesaplamalar ve listelemeler sunar. Uygulama bir bankacılık veya resmi finans kurumu uygulaması değildir. Lemoney içerisinde sunulan veriler, grafikler ve raporlar **hiçbir şekilde finansal, yatırım veya vergi danışmanlığı teşkil etmez.**</p>
+        <p>Uygulamadaki döviz kuru dalgalanmaları, kullanıcı tarafından hatalı girilen veriler veya unutulan fatura ödemelerinden doğabilecek doğrudan ya da dolaylı hiçbir maddi zarardan Lemoney ve geliştiricisi sorumlu tutulamaz.</p>
+
+        <h2>3. Veri Güvenliği ve Yedekleme Sorumluluğu</h2>
+        <p>Verileriniz yalnızca kendi cihazınızda ve kişisel iCloud hesabınızda saklanır. Cihazınızın kaybolması, sıfırlanması veya iCloud eşzamanlama hataları nedeniyle oluşabilecek olası veri kayıplarında sorumluluk tamamen kullanıcıya aittir. Geliştiricinin bu verilere uzaktan müdahale etme veya verileri geri getirme yetkisi bulunmamaktadır.</p>
+
+        <h2>4. Fikri Mülkiyet Hakları</h2>
+        <p>Lemoney arayüzü, logoları, kod mimarisi, tasarımı ve markası Codoge atölyesine aittir. Kaynak kodlarının kopyalanması, uygulamanın tersine mühendislik yöntemleriyle değiştirilmesi veya izinsiz olarak yeniden dağıtılması yasaktır.</p>
+
+        <h2>5. Koşullarda Değişiklik</h2>
+        <p>Geliştirici, önceden haber vermeksizin kullanım koşullarında değişiklik yapma hakkını saklı tutar. Uygulamayı kullanmaya devam etmeniz, güncel koşulları kabul ettiğiniz anlamına gelir.</p>
+
+        <div class="footer-note">
+            Son Güncelleme: Haziran 2026<br>
+            Sorularınız için: <a href="mailto:support@codoge.com">support@codoge.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
