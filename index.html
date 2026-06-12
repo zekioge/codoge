@@ -18,7 +18,6 @@
             --text-muted: #86868b;
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --accent-blue: #0066cc;
         }
 
         * {
@@ -36,6 +35,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            justify-content: space-between; /* Header/Main/Footer dengesini tarayıcıya bırakmadan korur */
         }
 
         /* Ambient Arka Plan Parıltıları */
@@ -54,11 +54,15 @@
         /* --- HERO & LOGO --- */
         .hero {
             max-width: 800px;
-            margin: auto auto 0 auto;
+            width: 100%;
+            margin: 0 auto; /* Tarayıcı esneklik çöküşünü önleyen sabit hizalama */
             text-align: center;
-            padding: 4rem 2rem 2rem 2rem;
+            padding: 6rem 2rem 4rem 2rem;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo {
@@ -102,6 +106,7 @@
             font-weight: 300;
             line-height: 1.6;
             margin-bottom: 3.5rem;
+            max-width: 680px;
         }
 
         /* --- APP GRID --- */
@@ -110,6 +115,7 @@
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .app-icon-btn {
@@ -163,7 +169,7 @@
             background: #050508;
             z-index: 2000;
             display: flex;
-            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .detail-panel.open {
@@ -185,10 +191,8 @@
             background: rgba(10, 10, 15, 0.5);
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
-            position: relative;
         }
 
-        /* Yenilenmiş Geri Dön Butonu */
         .panel-close-btn {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -221,7 +225,6 @@
         .panel-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -1px; }
         .panel-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 3rem; font-weight: 300; max-width: 90%; }
 
-        /* Yenilenmiş App Store Butonu (Kusursuz Apple Standartı) */
         .btn-download {
             background: #ffffff;
             color: #000000;
@@ -250,7 +253,7 @@
             border: 1px solid var(--glass-border);
         }
 
-        /* Sağ Alan: Kusursuz Slide Mekanizması */
+        /* Sağ Alan: Gerçek Kaydırma (Slider) Düzeni */
         .panel-right {
             width: 58%;
             height: 100%;
@@ -262,7 +265,7 @@
             overflow-y: hidden;
             gap: 3.5rem;
             scroll-behavior: smooth;
-            scroll-snap-type: x mandatory; /* Tık tık yerine oturmayı sağlayan sihirbaz */
+            scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -270,7 +273,6 @@
         .panel-right::-webkit-scrollbar-track { background: transparent; }
         .panel-right::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
 
-        /* Ekran Görüntüsü Kutusu */
         .screenshot-holder {
             flex: 0 0 auto;
             height: 72vh;
@@ -283,39 +285,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            scroll-snap-align: center; /* Kaydırırken tam ortada kilitlenir */
+            scroll-snap-align: center;
             transition: transform 0.3s ease;
         }
-        .screenshot-holder:hover {
-            transform: scale(1.02);
-        }
+        .screenshot-holder:hover { transform: scale(1.02); }
+        .screenshot-holder img { width: 100%; height: 100%; object-fit: cover; }
 
-        .screenshot-holder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .ss-error-text { color: rgba(255,255,255,0.15); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
 
-        /* Resim yoksa beliren şık placeholder metni */
-        .ss-error-text {
-            color: rgba(255,255,255,0.15);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .panel-footer-links {
-            margin-top: auto;
-            display: flex;
-            gap: 1.8rem;
-            font-size: 0.8rem;
-        }
+        .panel-footer-links { margin-top: auto; display: flex; gap: 1.8rem; font-size: 0.8rem; }
         .panel-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
         .panel-footer-links a:hover { color: #fff; }
 
         footer {
-            margin-top: auto;
             padding: 3rem 2rem;
             text-align: center;
             font-size: 0.8rem;
@@ -323,6 +305,7 @@
             border-top: 1px solid rgba(255,255,255,0.02);
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         @media (max-width: 968px) {
@@ -440,7 +423,6 @@
 
                 if (!data) return;
 
-                // Sol Alan Veri Dolumu
                 document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
                 document.getElementById('pTitle').innerText = data.title;
                 document.getElementById('pDesc').innerText = data.desc;
@@ -458,7 +440,6 @@
                     downloadBtn.href = data.link;
                 }
 
-                // Sağ Alan Slider Yapılandırması
                 sliderArea.innerHTML = '';
                 data.ssList.forEach(ssUrl => {
                     const holder = document.createElement('div');
@@ -468,7 +449,6 @@
                     img.src = ssUrl;
                     img.alt = "Uygulama Ekran Görüntüsü";
                     
-                    // Görsel yoksa veya yüklenemediyse alanı bozmamak için şık hata yakalayıcı
                     img.onerror = function() {
                         holder.innerHTML = `<span class="ss-error-text">Görsel Hazırlanıyor</span>`;
                     };
@@ -479,7 +459,7 @@
 
                 panel.classList.add('open');
                 document.body.style.overflow = 'hidden';
-                sliderArea.scrollLeft = 0; // Her açılışta ilk resme odaklar
+                sliderArea.scrollLeft = 0;
             });
         });
 
