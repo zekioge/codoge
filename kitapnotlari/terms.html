@@ -1,221 +1,220 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kullanım Koşulları – Kitap Notları</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --cream: #f5f0e8;
-      --cream-dark: #ede7d9;
-      --ink: #1a1510;
-      --ink-light: #4a4035;
-      --accent: #b85c2c;
-      --rule: #c8bfae;
-      --white: #faf8f4;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanım Koşulları — Kitap Notları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #08080c;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --app-accent: #3b82f6; /* Kitap Notları için Mavi Parlama */
+        }
 
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--cream); border-bottom: 1px solid var(--rule);
-      padding: 0 1.5rem; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.85rem; color: var(--ink-light); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--rule); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 1.2rem; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 1rem; color: var(--ink-light); text-decoration: none; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+            padding: 6rem 2rem;
+        }
 
-    .page-header {
-      background: var(--cream-dark);
-      border-bottom: 1px solid var(--rule);
-      padding: 3rem 2rem 2.5rem;
-      text-align: center;
-    }
-    .page-header-label { font-family: 'Lora', serif; font-style: italic; color: var(--accent); font-size: 0.85rem; margin-bottom: 0.5rem; }
-    .page-header h1 { font-family: 'Lora', serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
-    .page-header-date { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; margin-top: 0.5rem; }
+        /* Arka Plan Yumuşak Mavi Parlama */
+        .ambient-glow {
+            position: fixed;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    .content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 2rem 5rem;
-    }
+        .legal-container {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
 
-    .content section { margin-bottom: 2.5rem; }
+        /* Üst Menü ve Navigasyon Elemanları */
+        .legal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1.5rem;
+        }
 
-    .content h2 {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--rule);
-    }
+        .app-info-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    .content p {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-bottom: 0.75rem;
-    }
+        .app-mini-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+        }
 
-    .content ul {
-      list-style: none;
-      margin-bottom: 0.75rem;
-    }
+        .app-mini-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .content ul li {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.8;
-      font-weight: 300;
-      padding-left: 1.25rem;
-      position: relative;
-    }
+        .app-meta h2 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
 
-    .content ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
+        .app-meta span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
 
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .footer-copy { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; }
-    .footer-link { font-size: 0.8rem; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent); }
+        .back-to-home {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+        }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .page-header { padding: 2rem 1.25rem 1.75rem; }
-      .page-header h1 { font-size: 1.5rem; }
-      .content { padding: 2rem 1.25rem 3.5rem; }
-      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
-    }
-  </style>
+        .back-to-home:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Metin Alanları */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to bottom, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">Kitap Notları</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Ana Sayfa</a></li>
-    <li><a href="terms.html">Kullanım Koşulları</a></li>
-    <li><a href="privacy.html">Gizlilik Politikası</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menü">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <div class="ambient-glow"></div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Ana Sayfa</a>
-  <a href="terms.html">Kullanım Koşulları</a>
-  <a href="privacy.html">Gizlilik Politikası</a>
-</div>
+    <div class="legal-container">
+        <!-- ÜST BİLGİ ALANI -->
+        <div class="legal-header">
+            <div class="app-info-block">
+                <div class="app-mini-icon">
+                    <img src="kitapnotlari.png" alt="Kitap Notları İkonu">
+                </div>
+                <div class="app-meta">
+                    <h2>Kitap Notları</h2>
+                    <span>Codoge Uygulaması</span>
+                </div>
+            </div>
+            <a href="../index.html" class="back-to-home">← Atölyeye Dön</a>
+        </div>
 
-<div class="page-header">
-  <p class="page-header-label">Yasal</p>
-  <h1>Kullanım Koşulları</h1>
-  <p class="page-header-date">Son güncelleme: Ocak 2025</p>
-</div>
+        <!-- ANA BAŞLIK -->
+        <h1>Kullanım Koşulları</h1>
+        <div class="update-date">Son Güncelleme: 12 Haziran 2026</div>
 
-<div class="content">
+        <!-- İÇERİK METNİ -->
+        <p>Kitap Notları mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm şartları kabul etmiş olursunuz. Bu koşulları onaylamıyorsanız lütfen uygulamayı cihazınızdan kaldırın.</p>
 
-  <section>
-    <h2>1. Kabul</h2>
-    <p>Kitap Notları uygulamasını indirerek veya kullanarak bu Kullanım Koşulları'nı kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.</p>
-  </section>
+        <h3>1. Hizmetin Tanımı ve Kullanımı</h3>
+        <p>Kitap Notları, okuduğunuz kitaplara ait kişisel değerlendirmelerinizi, altını çizdiğiniz alıntıları ve kitap özetlerinizi tamamen dijital bir ortamda yapılandırılmış olarak saklamanıza, arşivlemenize ve aramanıza imkan tanıyan bağımsız bir iOS/macOS verimlilik uygulamasıdır.</p>
 
-  <section>
-    <h2>2. Uygulama Hakkında</h2>
-    <p>Kitap Notları, kullanıcıların okudukları kitapları takip etmelerine ve bu kitaplara ilişkin kişisel notlar almalarına imkân tanıyan bir mobil uygulamadır. Uygulama, temel işlevleriyle ücretsiz olarak kullanılabilir; genişletilmiş özellikler için Pro abonelik sunulmaktadır.</p>
-  </section>
+        <h3>2. Veri Güvenliği ve Mülkiyet</h3>
+        <p>Uygulama içerisine manuel olarak girdiğiniz veya taratarak eklediğiniz tüm içeriklerin (notlar, alıntılar, sayfalar, fotoğraflar) mülkiyeti ve yasal sorumluluğu tamamen size (kullanıcıya) aittir. Verileriniz yerel olarak cihazınızda saklanmaktadır ve Apple iCloud altyapınız üzerinden kendi hesaplarınız arasında senkronize edilir. Verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.</p>
 
-  <section>
-    <h2>3. Kullanıcı Yükümlülükleri</h2>
-    <p>Uygulamayı kullanırken aşağıdaki kurallara uymayı kabul edersiniz:</p>
-    <ul>
-      <li>Uygulamayı yalnızca kişisel ve yasal amaçlarla kullanmak</li>
-      <li>Başkalarının haklarını ihlal edecek içerik oluşturmamak</li>
-      <li>Uygulamanın güvenliğini tehdit edecek eylemlerde bulunmamak</li>
-      <li>Uygulamayı tersine mühendislik veya kaynak kodu çıkarma amacıyla kullanmamak</li>
-    </ul>
-  </section>
+        <h3>3. Fikri Mülkiyet Hakları</h3>
+        <p>Uygulamanın arayüz tasarımı, kod yapısı, marka ismi, logoları ve "Codoge" çatısı altında üretilen tüm yazılımsal bileşenler uluslararası telif hakları mevzuatı uyarınca koruma altındadır. Bu kaynakların kopyalanması, tersine mühendislik işlemlerine tabi tutulması veya izinsiz dağıtılması kesinlikle yasaktır.</p>
 
-  <section>
-    <h2>4. Pro Abonelik</h2>
-    <p>Pro sürüm, aylık veya yıllık olarak sunulan bir abonelik modeliyle sunulmaktadır. Abonelik, App Store üzerinden yönetilmekte olup ücretlendirme Apple'ın standart koşulları çerçevesinde gerçekleştirilir.</p>
-    <p>Aboneliğinizi istediğiniz zaman App Store üzerinden iptal edebilirsiniz. İptal işlemi mevcut dönem sona ermeden yapılsa dahi ücret iadesi yapılmaz.</p>
-  </section>
+        <h3>4. Sorumluluk Reddi</h3>
+        <p>Kitap Notları uygulaması "olduğu gibi" mantığıyla sunulmaktadır. Yazılımdan kaynaklanabilecek olası iCloud senkronizasyon gecikmeleri, veri kayıpları veya cihaz kaynaklı teknik aksaklıklardan ötürü Geliştirici doğrudan veya dolaylı olarak sorumlu tutulamaz. Kullanıcıların verilerini iCloud sistemi üzerinde düzenli yedeklemesi kendi sorumluluğundadır.</p>
 
-  <section>
-    <h2>5. Fikri Mülkiyet</h2>
-    <p>Uygulama ve içerikleri (tasarım, kod, grafik vb.) geliştiriciye ait olup telif hakkı yasaları kapsamında koruma altındadır. Kullanıcı tarafından oluşturulan notlar ve içerikler kullanıcıya aittir.</p>
-  </section>
+        <h3>5. Şartların Değiştirilmesi</h3>
+        <p>Codoge, yasal gereksinimler veya uygulama güncellemeleri doğrultusunda bu kullanım koşullarını dilediği an güncelleme hakkını saklı tutar. Güncel koşullar bu adres üzerinde yayınlandığı an itibarıyla geçerlilik kazanır.</p>
 
-  <section>
-    <h2>6. Sorumluluk Sınırlaması</h2>
-    <p>Uygulama "olduğu gibi" sunulmaktadır. Geliştirici, uygulamanın kesintisiz veya hatasız çalışacağını garanti etmez. Herhangi bir veri kaybından doğabilecek zararlardan sorumlu tutulamaz; bu nedenle iCloud yedekleme özelliğini aktif tutmanızı öneririz.</p>
-  </section>
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Codoge Atölyesi. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
 
-  <section>
-    <h2>7. Değişiklikler</h2>
-    <p>Bu koşullar zaman zaman güncellenebilir. Önemli değişiklikler uygulama üzerinden bildirilecektir. Uygulamayı kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.</p>
-  </section>
-
-  <section>
-    <h2>8. İletişim</h2>
-    <p>Kullanım koşullarına ilişkin sorularınız için bizimle iletişime geçebilirsiniz.</p>
-  </section>
-
-</div>
-
-<footer>
-  <span class="footer-copy">© 2025 Kitap Notları. Tüm hakları saklıdır.</span>
-  <a class="footer-link" href="https://zekioge.github.io/codoge/">codoge ® creative by Zeki Öge</a>
-</footer>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
-  });
-</script>
 </body>
 </html>
