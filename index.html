@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codoge — Fikirleri Koda Dönüştüren Atölye</title>
     
-    <!-- Favicon Bağlantısı Korundu -->
     <link rel="icon" type="image/png" href="favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +28,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Body yerleşimi çökme riskine karşı dikey akışa uyarlandı */
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -55,7 +53,7 @@
         /* --- HERO & LOGO --- */
         .hero {
             max-width: 800px;
-            margin: auto auto 0 auto; /* Sayfayı dikeyde ortalamak için güvenli margin */
+            margin: auto auto 0 auto;
             text-align: center;
             padding: 4rem 2rem 2rem 2rem;
             position: relative;
@@ -105,7 +103,7 @@
             margin-bottom: 3.5rem;
         }
 
-        /* --- APP GRID (ICON ALANI) --- */
+        /* --- APP GRID --- */
         .app-grid {
             display: flex;
             justify-content: center;
@@ -145,133 +143,134 @@
             display: block;
         }
 
-        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { 
-            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.25); 
-        }
-        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { 
-            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25); 
-        }
-        .app-icon-btn[data-app="lemoney"] .app-icon-box { 
-            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25); 
-        }
+        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { box-shadow: 0 12px 30px rgba(245, 158, 11, 0.25); }
+        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25); }
+        .app-icon-btn[data-app="lemoney"] .app-icon-box { box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25); }
 
-        .app-icon-btn:hover {
-            transform: translateY(-5px);
-        }
-
+        .app-icon-btn:hover { transform: translateY(-5px); }
         .app-icon-btn[data-app="mutfakdefteri"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(245, 158, 11, 0.4); }
         .app-icon-btn[data-app="kitapnotlari"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(59, 130, 246, 0.4); }
         .app-icon-btn[data-app="lemoney"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(16, 185, 129, 0.4); }
 
-        .app-name {
+        .app-name { color: var(--text-main); font-size: 0.85rem; font-weight: 500; letter-spacing: -0.2px; }
+        .badge-soon { font-size: 0.65rem; background: rgba(255, 255, 255, 0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-muted); margin-top: -0.3rem; }
+
+        /* --- TAM SAYFA PANEL (SLIDE-OVER DETAY) --- */
+        .detail-panel {
+            position: fixed;
+            top: 0;
+            left: -100%; /* Soldan gizli başlar */
+            width: 100%;
+            height: 100%;
+            background: #040406;
+            z-index: 2000;
+            display: flex;
+            transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .detail-panel.open {
+            left: 0; /* Ekranı tam kaplayacak şekilde kayarak gelir */
+        }
+
+        /* Sol Panel: İçerik ve Detaylar */
+        .panel-left {
+            width: 40%;
+            min-width: 360px;
+            height: 100%;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            border-right: 1px solid var(--glass-border);
+            position: relative;
+            background: linear-gradient(to right, rgba(8, 8, 12, 0.6), transparent);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .panel-close-btn {
+            position: absolute;
+            top: 2rem;
+            left: 3rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--glass-border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
             color: var(--text-main);
             font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: -0.2px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+        .panel-close-btn:hover { background: rgba(255,255,255,0.1); }
+
+        .panel-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            margin-bottom: 2rem; border: 1px solid var(--glass-border);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .panel-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        .panel-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -1px; }
+        .panel-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2.5rem; font-weight: 300; }
+
+        /* Sağ Panel: SS Kaydırma Alanı (Slider) */
+        .panel-right {
+            width: 60%;
+            height: 100%;
+            background: #08080c;
+            display: flex;
+            align-items: center;
+            padding: 2rem 4rem;
+            overflow-x: auto; /* Yatayda kaydırma sağlar */
+            gap: 2.5rem;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .badge-soon {
-            font-size: 0.65rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.1rem 0.4rem;
-            border-radius: 4px;
-            color: var(--text-muted);
-            margin-top: -0.3rem;
-        }
+        /* Yatay Scrollbar'ı Gizleme veya Özelleştirme */
+        .panel-right::-webkit-scrollbar { height: 6px; }
+        .panel-right::-webkit-scrollbar-track { background: transparent; }
+        .panel-right::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 
-        /* --- POPUP (MODAL) PREMIUM DIZAYN --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(4, 4, 6, 0.8);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            z-index: 1000;
+        /* Ekran Görüntüsü Kutusu */
+        .screenshot-holder {
+            flex: 0 0 auto; /* Esnemeyi önler, sabit genişlik tutar */
+            height: 70vh;
+            aspect-ratio: 9 / 19; /* Tam iPhone ekran en-boy oranı */
+            background: rgba(255,255,255,0.01);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 1.5rem;
         }
 
-        .modal-overlay.open {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-wrapper {
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--glass-border);
+        .screenshot-holder img {
             width: 100%;
-            max-width: 540px;
-            border-radius: 28px;
-            padding: 2.5rem;
-            position: relative;
-            transform: scale(0.95) translateY(10px);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            text-align: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            height: 100%;
+            object-fit: cover;
         }
 
-        .modal-overlay.open .modal-wrapper {
-            transform: scale(1) translateY(0);
+        .panel-footer-links {
+            margin-top: auto;
+            padding-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
         }
-
-        .modal-close {
-            position: absolute;
-            top: 1.5rem; right: 1.5rem;
-            background: rgba(255,255,255,0.05);
-            border: none; width: 32px; height: 32px;
-            border-radius: 50%; color: #fff;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; transition: background 0.2s;
-        }
-        .modal-close:hover { background: rgba(255,255,255,0.1); }
-
-        .modal-icon {
-            width: 80px; height: 80px; border-radius: 18px;
-            margin: 0 auto 1.5rem auto;
-            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-        }
-        .modal-icon img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-
-        .modal-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        .modal-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; font-weight: 300; }
-        
-        .modal-preview {
-            width: 100%; height: 160px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px; margin-bottom: 2rem;
-            display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.15); font-size: 0.8rem; letter-spacing: 1px;
-        }
-
-        .btn-download {
-            background: #fff; color: #000; padding: 0.8rem 2rem;
-            border-radius: 12px; font-weight: 600; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.1); transition: all 0.2s;
-        }
-        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,255,255,0.2); }
-        .btn-download.disabled { background: rgba(255,255,255,0.05); color: var(--text-muted); pointer-events: none; box-shadow: none; border: 1px solid var(--glass-border); }
-
-        .modal-footer-links {
-            margin-top: 2.5rem; padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex; justify-content: center; gap: 1.5rem; font-size: 0.8rem;
-        }
-        .modal-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        .modal-footer-links a:hover { color: #fff; }
+        .panel-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .panel-footer-links a:hover { color: #fff; }
 
         footer {
-            margin-top: auto; /* Sayfa altı footer düzeni korundu */
+            margin-top: auto;
             padding: 3rem 2rem;
             text-align: center;
             font-size: 0.8rem;
@@ -279,6 +278,16 @@
             border-top: 1px solid rgba(255,255,255,0.02);
             position: relative;
             z-index: 1;
+        }
+
+        /* Mobil Cihazlar İçin Duyarlı Düzen */
+        @media (max-width: 868px) {
+            .detail-panel { flex-direction: column; overflow-y: auto; left: 0; top: -100%; transition: top 0.5s ease; }
+            .detail-panel.open { top: 0; }
+            .panel-left { width: 100%; min-height: auto; padding: 6rem 2rem 2rem 2rem; border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .panel-right { width: 100%; height: auto; padding: 3rem 2rem; }
+            .screenshot-holder { height: 50vh; }
+            .panel-close-btn { top: 1.5rem; left: 2rem; }
         }
     </style>
 </head>
@@ -293,9 +302,7 @@
         <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
         <p>Apple ekosisteminde işlevsellik odaklı, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
 
-        <!-- UYGULAMA ICON GRID ALANI -->
         <div class="app-grid">
-            <!-- 1. Mutfak Defteri -->
             <button class="app-icon-btn" data-app="mutfakdefteri">
                 <div class="app-icon-box">
                     <img src="mutfakdefteri/mutfakdefteri.png" alt="Mutfak Defteri">
@@ -303,7 +310,6 @@
                 <span class="app-name">Mutfak Defteri</span>
             </button>
 
-            <!-- 2. Kitap Notları -->
             <button class="app-icon-btn" data-app="kitapnotlari">
                 <div class="app-icon-box">
                     <img src="kitapnotlari/kitapnotlari.png" alt="Kitap Notları">
@@ -311,7 +317,6 @@
                 <span class="app-name">Kitap Notları</span>
             </button>
 
-            <!-- 3. Lemoney -->
             <button class="app-icon-btn" data-app="lemoney">
                 <div class="app-icon-box">
                     <img src="lemoney/lemoney.png" alt="Lemoney">
@@ -322,35 +327,33 @@
         </div>
     </main>
 
-    <!-- DINAMIK POPUP (MODAL) -->
-    <div class="modal-overlay" id="appModal">
-        <div class="modal-wrapper">
-            <button class="modal-close" id="closeModal">✕</button>
-            <div class="modal-icon" id="mIcon"></div>
-            <h2 class="modal-title" id="mTitle"></h2>
-            <p class="modal-desc" id="mDesc"></p>
+    <div class="detail-panel" id="appPanel">
+        <div class="panel-left">
+            <button class="panel-close-btn" id="closePanel">← Geri Dön</button>
+            <div class="panel-icon" id="pIcon"></div>
+            <h2 class="panel-title" id="pTitle"></h2>
+            <p class="panel-desc" id="pDesc"></p>
             
-            <div class="modal-preview" id="mPreview">
-                VISUAL PREVIEW MODEL
-            </div>
-
-            <a href="#" class="btn-download" id="mLink" target="_blank">
+            <a href="#" class="btn-download" id="pLink" target="_blank">
                 <span> App Store'dan İndir</span>
             </a>
 
-            <div class="modal-footer-links">
-                <a href="#" id="mterms">Kullanım Koşulları</a>
-                <a href="#" id="mprivacy">Gizlilik Politikası</a>
+            <div class="panel-footer-links">
+                <a href="#" id="pTerms">Kullanım Koşulları</a>
+                <a href="#" id="pPrivacy">Gizlilik Politikası</a>
             </div>
         </div>
+
+        <div class="panel-right" id="pSlider">
+            </div>
     </div>
 
     <footer>
         <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
     </footer>
 
-    <!-- POPUP VERI VE LINK YÖNETIMI -->
     <script>
+        // Uygulama verilerine her uygulama için 3 adet örnek ekran görüntüsü dizisi (ssList) ekledik
         const appData = {
             mutfakdefteri: {
                 title: "Mutfak Defteri",
@@ -359,7 +362,8 @@
                 link: "https://apps.apple.com/tr/app/mutfak-defteri/id6764518310?l=tr", 
                 termsUrl: "mutfakdefteri/terms.html",
                 privacyUrl: "mutfakdefteri/privacy.html",
-                status: "live"
+                status: "live",
+                ssList: ["mutfakdefteri/ss1.png", "mutfakdefteri/ss2.png", "mutfakdefteri/ss3.png"] // Kendi görsellerini bu isimlerle klasöre atabilirsin
             },
             kitapnotlari: {
                 title: "Kitap Notları",
@@ -368,7 +372,8 @@
                 link: "https://apps.apple.com/tr/app/kitap-notlar%C4%B1/id6768207035?l=tr", 
                 termsUrl: "kitapnotlari/terms.html",
                 privacyUrl: "kitapnotlari/privacy.html",
-                status: "live"
+                status: "live",
+                ssList: ["kitapnotlari/ss1.png", "kitapnotlari/ss2.png", "kitapnotlari/ss3.png"]
             },
             lemoney: {
                 title: "Lemoney",
@@ -377,12 +382,14 @@
                 link: "#",
                 termsUrl: "lemoney/terms.html",
                 privacyUrl: "lemoney/privacy.html",
-                status: "soon"
+                status: "soon",
+                ssList: ["lemoney/ss1.png", "lemoney/ss2.png"]
             }
         };
 
-        const modal = document.getElementById('appModal');
-        const closeBtn = document.getElementById('closeModal');
+        const panel = document.getElementById('appPanel');
+        const closePanelBtn = document.getElementById('closePanel');
+        const sliderArea = document.getElementById('pSlider');
 
         document.querySelectorAll('.app-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -391,14 +398,14 @@
 
                 if (!data) return;
 
-                document.getElementById('mIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
-                document.getElementById('mTitle').innerText = data.title;
-                document.getElementById('mDesc').innerText = data.desc;
-                
-                document.getElementById('mterms').href = data.termsUrl;
-                document.getElementById('mprivacy').href = data.privacyUrl;
+                // Sol İçerik Alanlarını Doldur
+                document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
+                document.getElementById('pTitle').innerText = data.title;
+                document.getElementById('pDesc').innerText = data.desc;
+                document.getElementById('pTerms').href = data.termsUrl;
+                document.getElementById('pPrivacy').href = data.privacyUrl;
 
-                const downloadBtn = document.getElementById('mLink');
+                const downloadBtn = document.getElementById('pLink');
                 if(data.status === "soon") {
                     downloadBtn.innerText = "Yapım Aşamasında";
                     downloadBtn.classList.add('disabled');
@@ -409,13 +416,28 @@
                     downloadBtn.href = data.link;
                 }
 
-                modal.classList.add('open');
+                // Sağ Bölümdeki Slider'ı Temizle ve Yeni SS'leri Yükle
+                sliderArea.innerHTML = '';
+                data.ssList.forEach(ssUrl => {
+                    const holder = document.createElement('div');
+                    holder.className = 'screenshot-holder';
+                    
+                    // Not: Görseller yüklenene kadar boş kalmaması için şık bir alt kırılma stili verdik
+                    holder.innerHTML = `<img src="${ssUrl}" alt="Uygulama Ekran Görüntüsü" onerror="this.style.display='none'; this.parentNode.innerText='Görsel Bekleniyor';">`;
+                    sliderArea.appendChild(holder);
+                });
+
+                // Paneli soldan içeri kaydır
+                panel.classList.add('open');
+                // Sayfa arkasının kaymasını engelle
+                document.body.style.overflow = 'hidden';
             });
         });
 
-        closeBtn.addEventListener('click', () => modal.classList.remove('open'));
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) modal.classList.remove('open');
+        // Paneli Kapatma Fonksiyonu
+        closePanelBtn.addEventListener('click', () => {
+            panel.classList.remove('open');
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>
