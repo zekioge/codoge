@@ -1,192 +1,231 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gizlilik Politikası – Kitap Notları</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --cream: #f5f0e8;
-      --cream-dark: #ede7d9;
-      --ink: #1a1510;
-      --ink-light: #4a4035;
-      --accent: #b85c2c;
-      --rule: #c8bfae;
-      --white: #faf8f4;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası — Kitap Notları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #08080c;
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --app-accent: #3b82f6; /* Kitap Notları için Mavi Parlama */
+        }
 
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--cream); border-bottom: 1px solid var(--rule);
-      padding: 0 1.5rem; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.85rem; color: var(--ink-light); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--rule); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 1.2rem; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 1rem; color: var(--ink-light); text-decoration: none; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+            padding: 6rem 2rem;
+        }
 
-    .page-header {
-      background: var(--cream-dark);
-      border-bottom: 1px solid var(--rule);
-      padding: 3rem 2rem 2.5rem;
-      text-align: center;
-    }
-    .page-header-label { font-family: 'Lora', serif; font-style: italic; color: var(--accent); font-size: 0.85rem; margin-bottom: 0.5rem; }
-    .page-header h1 { font-family: 'Lora', serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); }
-    .page-header-date { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; margin-top: 0.5rem; }
+        /* Arka Plan Yumuşak Mavi Parlama */
+        .ambient-glow {
+            position: fixed;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    .content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-    .content section { margin-bottom: 2.5rem; }
-    .content h2 { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
-    .content p { font-size: 0.9rem; color: var(--ink-light); line-height: 1.8; font-weight: 300; margin-bottom: 0.75rem; }
-    .content ul { list-style: none; margin-bottom: 0.75rem; }
-    .content ul li { font-size: 0.9rem; color: var(--ink-light); line-height: 1.8; font-weight: 300; padding-left: 1.25rem; position: relative; }
-    .content ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+        .legal-container {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
 
-    .highlight-box {
-      background: var(--cream-dark);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-    .highlight-box p { margin-bottom: 0; }
+        /* Üst Menü ve Navigasyon Elemanları */
+        .legal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1.5rem;
+        }
 
-    footer { border-top: 1px solid var(--rule); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
-    .footer-copy { font-size: 0.8rem; color: var(--ink-light); font-weight: 300; }
-    .footer-link { font-size: 0.8rem; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
-    .footer-link:hover { color: var(--accent); }
+        .app-info-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .page-header { padding: 2rem 1.25rem 1.75rem; }
-      .page-header h1 { font-size: 1.5rem; }
-      .content { padding: 2rem 1.25rem 3.5rem; }
-      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
-    }
-  </style>
+        .app-mini-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .app-mini-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-meta h2 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .app-meta span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .back-to-home {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+        }
+
+        .back-to-home:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Metin Alanları */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to bottom, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Vurgulu Bilgi Kutusu (Feature Card Mantığı) */
+        .privacy-highlight {
+            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+        
+        .privacy-highlight p {
+            margin-bottom: 0;
+            color: #fff;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">Kitap Notları</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Ana Sayfa</a></li>
-    <li><a href="terms.html">Kullanım Koşulları</a></li>
-    <li><a href="privacy.html">Gizlilik Politikası</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menü">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <div class="ambient-glow"></div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Ana Sayfa</a>
-  <a href="terms.html">Kullanım Koşulları</a>
-  <a href="privacy.html">Gizlilik Politikası</a>
-</div>
+    <div class="legal-container">
+        <!-- ÜST BİLGİ ALANI -->
+        <div class="legal-header">
+            <div class="app-info-block">
+                <div class="app-mini-icon">
+                    <img src="kitapnotlari.png" alt="Kitap Notları İkonu">
+                </div>
+                <div class="app-meta">
+                    <h2>Kitap Notları</h2>
+                    <span>Codoge Uygulaması</span>
+                </div>
+            </div>
+            <a href="../index.html" class="back-to-home">← Atölyeye Dön</a>
+        </div>
 
-<div class="page-header">
-  <p class="page-header-label">Yasal</p>
-  <h1>Gizlilik Politikası</h1>
-  <p class="page-header-date">Son güncelleme: Ocak 2025</p>
-</div>
+        <!-- ANA BAŞLIK -->
+        <h1>Gizlilik Politikası</h1>
+        <div class="update-date">Son Güncelleme: 12 Haziran 2026</div>
 
-<div class="content">
+        <!-- İÇERİK METNİ -->
+        <p>Gizliliğiniz bizim için en yüksek önceliğe sahiptir. Kitap Notları uygulaması, kullanıcıların kişisel verilerinin korunması ve gizli tutulması amacıyla "Sıfır Veri Toplama" prensibiyle geliştirilmiştir.</p>
 
-  <section>
-    <div class="highlight-box">
-      <p>Kitap Notları, gizliliğinizi ciddiye alır. Verileriniz yalnızca cihazınızda ve isteğe bağlı olarak kendi iCloud hesabınızda saklanır. Verilerinizi üçüncü taraflarla paylaşmıyoruz ve satmıyoruz.</p>
+        <div class="privacy-highlight">
+            <p>🔒 Özetle: Kitap Notları uygulaması hiçbir kişisel verinizi, kitap notunuzu, alıntınızı veya arama geçmişinizi kendi sunucularına kaydetmez, işlemez ve üçüncü taraflarla kesinlikle paylaşmaz.</p>
+        </div>
+
+        <h3>1. Toplanan Veriler</h3>
+        <p>Uygulamayı kullanırken oluşturduğunuz kitap listeleri, eklediğiniz notlar, sayfalar ve alıntılar tamamen yerel olarak cihazınızın kendi hafızasında saklanır. Geliştirici dahil olmak üzere hiçbir harici merci bu verilere uzaktan erişemez veya bunları görüntüleyemez.</p>
+
+        <h3>2. iCloud Eşzamanlaması ve Yedekleme</h3>
+        <p>Uygulama, verilerinizin Apple cihazlarınız (iPhone, iPad, Mac) arasında senkronize olabilmesi için tamamen Apple'ın yerel iCloud (SwiftData/CloudKit) altyapısını kullanır. Bu veriler doğrudan sizin kişisel iCloud hesabınızda şifrelenmiş olarak barındırılır. Apple'ın gizlilik ve güvenlik protokolleri haricinde hiçbir sunucu yapısı devreye girmez.</p>
+
+        <h3>3. Üçüncü Taraf Analitik ve Reklamlar</h3>
+        <p>Uygulama içerisinde kullanıcı davranışlarını izleyen harici analitik araçlar (SDK'lar), reklam ağları veya takip çerezleri bulunmamaktadır. Uygulama içi deneyiminiz tamamen anonimdir.</p>
+
+        <h3>4. Kamera Kullanımı ve İzinler</h3>
+        <p>Uygulama içerisindeki "ISBN Barkod Tarama" özelliği, yalnızca kitap detaylarını otomatik bulabilmek amacıyla cihazınızın kamerasını kullanır. Kamera üzerinden alınan anlık görüntü işlendikten sonra hemen imha edilir; hiçbir görsel kaydedilmez veya harici bir sunucuya yüklenmez.</p>
+
+        <h3>5. Çocukların Gizliliği</h3>
+        <p>Uygulamamız hiçbir kişisel bilgi toplamadığı için, çocukların gizliliğini ihlal edecek herhangi bir veri işleme faaliyeti de söz konusu değildir ve her yaş grubundan kullanıcı için tamamen güvenlidir.</p>
+
+        <h3>6. İletişim</h3>
+        <p>Bu gizlilik politikası hakkında aklınıza takılan herhangi bir soru veya geri bildirim olursa, Codoge Atölyesi üzerinden bizimle dilediğiniz zaman iletişime geçebilirsiniz.</p>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Codoge Atölyesi. Tüm hakları saklıdır.</p>
+        </footer>
     </div>
-  </section>
 
-  <section>
-    <h2>1. Topladığımız Veriler</h2>
-    <p>Kitap Notları, kullanımınız sırasında aşağıdaki verileri işleyebilir:</p>
-    <ul>
-      <li>Eklediğiniz kitap bilgileri (başlık, yazar, ISBN, kapak görseli)</li>
-      <li>Aldığınız notlar ve sayfa numaraları</li>
-      <li>Okuma durumu bilgileri</li>
-      <li>Okuma istatistikleriniz (Pro kullanıcılar)</li>
-    </ul>
-    <p>Bu veriler yalnızca cihazınızda yerel olarak veya iCloud hesabınızda saklanır.</p>
-  </section>
-
-  <section>
-    <h2>2. iCloud Senkronizasyonu</h2>
-    <p>iCloud senkronizasyonu özelliğini etkinleştirirseniz verileriniz Apple'ın iCloud altyapısı üzerinden şifreli biçimde saklanır ve cihazlarınız arasında eşitlenir. Bu verilere bizim erişimimiz yoktur; tamamen Apple'ın Gizlilik Politikası kapsamındadır.</p>
-  </section>
-
-  <section>
-    <h2>3. ISBN Tarayıcısı</h2>
-    <p>ISBN tarayıcısı kullanıldığında, kitap bilgilerini (başlık, yazar, kapak) çekmek amacıyla herkese açık kitap veritabanlarına sorgu gönderilir. Bu sorgular ISBN numarasını içerir ancak size ait herhangi bir kişisel veri içermez.</p>
-  </section>
-
-  <section>
-    <h2>4. Üçüncü Taraf Paylaşımı</h2>
-    <p>Verilerinizi reklam şirketleri, veri aracıları veya başka üçüncü taraflarla paylaşmıyoruz. Uygulamada reklam bulunmamaktadır.</p>
-  </section>
-
-  <section>
-    <h2>5. Analitik</h2>
-    <p>Uygulama, hata ayıklama ve performans iyileştirmesi amacıyla Apple'ın standart çökme raporlama hizmetini kullanabilir. Bu raporlar anonim niteliktedir ve kişisel verilerinizi içermez. Cihaz ayarlarınızdan bu özelliği devre dışı bırakabilirsiniz.</p>
-  </section>
-
-  <section>
-    <h2>6. Çocukların Gizliliği</h2>
-    <p>Uygulama, 13 yaşın altındaki çocuklardan bilerek veri toplamaz. Çocuğunuzun kişisel veri sağladığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>
-  </section>
-
-  <section>
-    <h2>7. Haklarınız</h2>
-    <p>Verilerinizin tamamı cihazınızda bulunduğundan dilediğiniz zaman uygulama içinden tüm içeriğinizi silebilirsiniz. iCloud'daki verilerinizi Apple iCloud ayarları üzerinden yönetebilirsiniz.</p>
-  </section>
-
-  <section>
-    <h2>8. Politika Değişiklikleri</h2>
-    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir. Uygulamayı kullanmaya devam etmeniz güncel politikayı kabul ettiğiniz anlamına gelir.</p>
-  </section>
-
-  <section>
-    <h2>9. İletişim</h2>
-    <p>Gizlilik konusundaki sorularınız için bizimle iletişime geçebilirsiniz.</p>
-  </section>
-
-</div>
-
-<footer>
-  <span class="footer-copy">© 2025 Kitap Notları. Tüm hakları saklıdır.</span>
-  <a class="footer-link" href="https://zekioge.github.io/codoge/">codoge ® creative by Zeki Öge</a>
-</footer>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
-  });
-</script>
 </body>
 </html>
