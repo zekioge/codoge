@@ -105,7 +105,7 @@
         .app-grid {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
 
@@ -125,29 +125,42 @@
             width: 84px;
             height: 84px;
             border-radius: 20px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
             position: relative;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
 
-        /* Uygulamalara Özel Renk Gölgeleri */
-        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { background: linear-gradient(135deg, #f59e0b, #d97706); }
-        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-        .app-icon-btn[data-app="lemoney"] .app-icon-box { background: linear-gradient(135deg, #10b981, #047857); }
+        /* PNG İkon Stili */
+        .app-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Uygulamalara Özel Premium Renkli Gölgeler */
+        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { 
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.25); 
+        }
+        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { 
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25); 
+        }
+        .app-icon-btn[data-app="lemoney"] .app-icon-box { 
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25); 
+        }
 
         .app-icon-btn:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
         }
 
-        .app-icon-btn:hover .app-icon-box {
-            box-shadow: 0 15px 30px rgba(255,255,255,0.05);
-        }
+        /* Hover Durumunda Parlamayı Artır */
+        .app-icon-btn[data-app="mutfakdefteri"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(245, 158, 11, 0.4); }
+        .app-icon-btn[data-app="kitapnotlari"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(59, 130, 246, 0.4); }
+        .app-icon-btn[data-app="lemoney"]:hover .app-icon-box { box-shadow: 0 18px 40px rgba(16, 185, 129, 0.4); }
 
         .app-name {
             color: var(--text-main);
@@ -158,7 +171,7 @@
 
         .badge-soon {
             font-size: 0.65rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 0.1rem 0.4rem;
             border-radius: 4px;
             color: var(--text-muted);
@@ -220,6 +233,11 @@
             width: 80px; height: 80px; border-radius: 18px;
             margin: 0 auto 1.5rem auto;
             display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        .modal-icon img {
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         .modal-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
@@ -270,25 +288,31 @@
         <br>
         <div class="hero-tag">Yazılım Atölyesi</div>
         <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
-        <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
+        <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler og kusursuz dijital mimariler inşa ediyoruz.</p>
 
         <!-- UYGULAMA ICON GRID ALANI -->
         <div class="app-grid">
             <!-- 1. Mutfak Defteri -->
             <button class="app-icon-btn" data-app="mutfakdefteri">
-                <div class="app-icon-box">🥘</div>
+                <div class="app-icon-box">
+                    <img src="mutfakdefteri/mutfakdefteri.png" alt="Mutfak Defteri">
+                </div>
                 <span class="app-name">Mutfak Defteri</span>
             </button>
 
             <!-- 2. Kitap Notları -->
             <button class="app-icon-btn" data-app="kitapnotlari">
-                <div class="app-icon-box">📚</div>
+                <div class="app-icon-box">
+                    <img src="kitapnotlari/kitapnotlari.png" alt="Kitap Notları">
+                </div>
                 <span class="app-name">Kitap Notları</span>
             </button>
 
             <!-- 3. Lemoney -->
             <button class="app-icon-btn" data-app="lemoney">
-                <div class="app-icon-box">🍋</div>
+                <div class="app-icon-box">
+                    <img src="lemoney/lemoney.png" alt="Lemoney">
+                </div>
                 <span class="app-name">Lemoney</span>
                 <span class="badge-soon">YAKINDA</span>
             </button>
@@ -304,7 +328,6 @@
             <p class="modal-desc" id="mDesc"></p>
             
             <div class="modal-preview" id="mPreview">
-                <!-- Buraya gelecekte mockup görselleri <img src="..."> şeklinde gömülebilir -->
                 VISUAL PREVIEW MODEL
             </div>
 
@@ -323,33 +346,30 @@
         <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
     </footer>
 
-    <!-- POPUP VERI YÖNETIMI SCRIPT'I -->
+    <!-- POPUP VERI VE MODEL YÖNETIMI -->
     <script>
-        // Uygulama Detay Veri Havuzu
+        // Uygulamaların İçerik Yönetimi
         const appData = {
             mutfakdefteri: {
                 title: "Mutfak Defteri",
-                icon: "🥘",
-                bg: "linear-gradient(135deg, #f59e0b, #d97706)",
-                desc: "Eskiden defterlere karalanan nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi kategorize edin ve mutfağınızı yönetin.",
-                link: "https://apps.apple.com/tr/app/mutfak-defteri", // Gerçek App Store linkini buraya yazabilirsin
+                iconImg: "mutfakdefteri/mutfakdefteri.png",
+                desc: "Eskiden defterlere karalanan, nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi fotoğraflarla kaydedin ve mutfağınızı profesyonelce yönetin.",
+                link: "https://apps.apple.com/tr/app/mutfak-defteri", 
                 slug: "mutfakdefteri",
                 status: "live"
             },
             kitapnotlari: {
                 title: "Kitap Notları",
-                icon: "📚",
-                bg: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
-                desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede güvenle saklayın.",
-                link: "https://apps.apple.com/tr/app/kitap-notları", // Gerçek App Store linkini buraya yazabilirsin
+                iconImg: "kitapnotlari/kitapnotlari.png",
+                desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, altını çizdiğiniz alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede, en estetik biçimde saklayın.",
+                link: "https://apps.apple.com/tr/app/kitap-notlari", 
                 slug: "kitapnotlari",
                 status: "live"
             },
             lemoney: {
                 title: "Lemoney",
-                icon: "🍋",
-                bg: "linear-gradient(135deg, #10b981, #047857)",
-                desc: "Finansal durumunuzu, bütçenizi ve tasarruflarınızı en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil asistanınız. Çok yakında App Store'da.",
+                iconImg: "lemoney/lemoney.png",
+                desc: "Finansal durumunuzu, aylık bütçenizi ve tasarruf hedeflerinizi en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil finans asistanınız. Çok yakında App Store'da.",
                 link: "#",
                 slug: "lemoney",
                 status: "soon"
@@ -359,7 +379,7 @@
         const modal = document.getElementById('appModal');
         const closeBtn = document.getElementById('closeModal');
 
-        // Popup Açma Fonksiyonu
+        // Butonlara Tıklandığında Popup İçeriğini Değiştir ve Aç
         document.querySelectorAll('.app-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const appKey = btn.getAttribute('data-app');
@@ -367,16 +387,16 @@
 
                 if (!data) return;
 
-                // Popup elemanlarını doldurma
-                document.getElementById('mIcon').innerText = data.icon;
-                document.getElementById('mIcon').style.background = data.bg;
+                // Görsel, Başlık ve Açıklamaları basıyoruz
+                document.getElementById('mIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
                 document.getElementById('mTitle').innerText = data.title;
                 document.getElementById('mDesc').innerText = data.desc;
                 
-                // Linkler ve Klasör Yapı Sinyalleri
-                document.getElementById('mTerms').href = `${data.slug}/kullanim-kosullari.html`;
+                // Klasör yollarına dinamik yönlendirme
+                document.getElementById('mTerms').href = `${data.slug}/kullananim-kosullari.html`;
                 document.getElementById('mPrivacy').href = `${data.slug}/gizlilik-politikasi.html`;
 
+                // İndirme butonunun durum kontrolü
                 const downloadBtn = document.getElementById('mLink');
                 if(data.status === "soon") {
                     downloadBtn.innerText = "Yapım Aşamasında";
@@ -392,7 +412,7 @@
             });
         });
 
-        // Popup Kapatma Fonksiyonları
+        // Kapatma tetikleyicileri
         closeBtn.addEventListener('click', () => modal.classList.remove('open'));
         modal.addEventListener('click', (e) => {
             if(e.target === modal) modal.classList.remove('open');
