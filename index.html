@@ -38,7 +38,6 @@
             justify-content: space-between;
         }
 
-        /* Ambient Arka Plan Parıltıları */
         .ambient-glow {
             position: fixed;
             top: 50%;
@@ -255,51 +254,62 @@
             border: 1px solid var(--glass-border);
         }
 
-        /* Sol Alan: Likit Otomatik Slide Alanı */
+        /* Sol Alan: Kusursuz CSS Sinematik Akış Alanı */
         .panel-left-slider {
             width: 60%;
             height: 100%;
             background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
             display: flex;
             align-items: center;
-            padding: 0 5rem;
-            overflow-x: auto; 
-            overflow-y: hidden;
-            gap: 4rem;
-            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            overflow: hidden; /* Taşmaları gizleyerek pürüzsüz bir pencere sunar */
+            position: relative;
         }
 
-        .panel-left-slider::-webkit-scrollbar { height: 0px; width: 0px; display: none; }
+        /* Animasyonu Taşıyan Gerçek Hat (CSS Marquee) */
+        .slider-track {
+            display: flex;
+            gap: 4rem;
+            padding-left: 4rem;
+            width: max-content;
+            will-change: transform;
+        }
 
-        /* Liquid Glass İkonik Kart Tasarımları */
+        /* Donanım Destekli Akışkan CSS Animasyonu */
+        @keyframes liquidMarquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(var(--move-distance), 0, 0); }
+        }
+
+        /* Tüm Kartlar İçin Genel Akışkan Cam Efekti */
         .screenshot-holder {
             flex: 0 0 auto;
-            height: 72vh;
+            height: 68vh;
             aspect-ratio: 9 / 19.5;
             background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             
-            /* Likit Erime ve Geçiş Başlangıcı */
-            opacity: 0.3;
-            filter: blur(10px) brightness(0.4);
-            transform: scale(0.88) translateY(15px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Liquid Glass: Varsayılan olarak hafif erime ve şeffaflık */
+            opacity: 0.6;
+            filter: blur(3px) brightness(0.7);
+            transform: scale(0.94);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Aktifleşen Karta Likit Akışkanlık Verme */
+        /* JS ile Merkez Odak Noktasına Gelen Kartın Likit Olarak Parlaması */
         .screenshot-holder.active-card {
             opacity: 1;
             filter: blur(0px) brightness(1);
-            transform: scale(1) translateY(0px);
+            transform: scale(1);
             border-color: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.85), 0 0 50px rgba(255,255,255,0.03);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 40px rgba(255,255,255,0.03);
         }
 
         .screenshot-holder img {
@@ -357,8 +367,8 @@
             .detail-panel.open { top: 0; }
             .panel-right-info { width: 100%; min-width: 100%; height: auto; padding: 6rem 2rem 3rem 2rem; }
             .panel-close-btn { margin-bottom: 2rem; }
-            .panel-left-slider { width: 100%; height: auto; padding: 4rem 2rem; gap: 2rem; }
-            .screenshot-holder { height: 55vh; }
+            .panel-left-slider { width: 100%; height: 450px; padding: 2rem 0; }
+            .screenshot-holder { height: 350px; }
         }
     </style>
 </head>
@@ -415,7 +425,8 @@
             </div>
         </div>
 
-        <div class="panel-left-slider" id="pSlider"></div>
+        <div class="panel-left-slider" id="pSlider">
+            </div>
     </div>
 
     <footer>
@@ -458,81 +469,28 @@
 
         const panel = document.getElementById('appPanel');
         const closePanelBtn = document.getElementById('closePanel');
-        const sliderArea = document.getElementById('pSlider');
-        
-        let isLoopingIgnore = false; 
-        let autoplayTimer = null;
-        let currentActiveIndex = 1; // Klon kartı geçip 1. gerçek karttan başlıyoruz
+        const sliderContainer = document.getElementById('pSlider');
+        let checkActiveInterval = null;
 
-        // Kartların durumunu kontrol eden fonksiyon
-        function updateActiveCard() {
-            const cards = sliderArea.querySelectorAll('.screenshot-holder');
-            const sliderCenter = sliderArea.scrollLeft + (sliderArea.offsetWidth / 2);
+        // Ekranın tam ortasına denk gelen kartı bulan ve parlatan algılayıcı
+        function monitorActiveCard(track) {
+            if (!track) return;
+            const cards = track.querySelectorAll('.screenshot-holder');
+            const sliderRect = sliderContainer.getBoundingClientRect();
+            const sliderCenter = sliderRect.left + (sliderRect.width / 2);
 
-            cards.forEach((card, idx) => {
-                const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.left + (cardRect.width / 2);
                 const distance = Math.abs(sliderCenter - cardCenter);
 
-                if (distance < card.offsetWidth / 1.6) {
+                if (distance < cardRect.width / 1.5) {
                     card.classList.add('active-card');
-                    if (!isLoopingIgnore) {
-                        currentActiveIndex = idx; // Otomatik oynatmanın şaşırmaması için indeksi güncelliyoruz
-                    }
                 } else {
                     card.classList.remove('active-card');
                 }
             });
         }
-
-        // Otomatik İleri Sarma Fonksiyonu
-        function startAutoplay() {
-            stopAutoplay(); // Güvenlik amacıyla eski sayacı temizle
-            autoplayTimer = setInterval(() => {
-                const cards = sliderArea.querySelectorAll('.screenshot-holder');
-                if (cards.length === 0) return;
-
-                const cardWidth = cards[0].offsetWidth + 64; 
-                currentActiveIndex++;
-                
-                // Yumuşak animasyonlu otomatik kaydırma tetiği
-                sliderArea.scrollTo({
-                    left: currentActiveIndex * cardWidth - (sliderArea.offsetWidth / 2) + (cards[0].offsetWidth / 2),
-                    behavior: 'smooth'
-                });
-            }, 3000); // 3 Saniyede bir kendi kendine kayar
-        }
-
-        function stopAutoplay() {
-            if (autoplayTimer) clearInterval(autoplayTimer);
-        }
-
-        // Sonsuz Döngü Sınır Kontrolü
-        sliderArea.addEventListener('scroll', () => {
-            const cards = sliderArea.querySelectorAll('.screenshot-holder');
-            if (cards.length === 0) return;
-
-            const cardWidth = cards[0].offsetWidth + 64;
-            const realCount = cards.length - 2;
-
-            if (sliderArea.scrollLeft <= 0) {
-                isLoopingIgnore = true;
-                currentActiveIndex = realCount;
-                sliderArea.scrollLeft = realCount * cardWidth;
-                setTimeout(() => { isLoopingIgnore = false; }, 30);
-            } 
-            else if (sliderArea.scrollLeft >= (cards.length - 1) * cardWidth - sliderArea.offsetWidth + 64) {
-                isLoopingIgnore = true;
-                currentActiveIndex = 1;
-                sliderArea.scrollLeft = cardWidth;
-                setTimeout(() => { isLoopingIgnore = false; }, 30);
-            }
-
-            updateActiveCard();
-        });
-
-        // Kullanıcı fareyle üstüne gelirse akışı durdur, çekince devam et
-        sliderArea.addEventListener('mouseenter', stopAutoplay);
-        sliderArea.addEventListener('mouseleave', startAutoplay);
 
         document.querySelectorAll('.app-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -541,6 +499,7 @@
 
                 if (!data) return;
 
+                // Bilgileri Güncelle
                 document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
                 document.getElementById('pTitle').innerText = data.title;
                 document.getElementById('pDesc').innerText = data.desc;
@@ -558,11 +517,16 @@
                     downloadBtn.href = data.link;
                 }
 
-                // Slider Yapılandırması (Klonlama Dahil)
-                sliderArea.innerHTML = '';
-                const extendedList = [data.ssList[data.ssList.length - 1], ...data.ssList, data.ssList[0]];
+                // --- GARANTİLİ CSS MARQUEE KURULUMU ---
+                sliderContainer.innerHTML = '';
+                
+                const track = document.createElement('div');
+                track.className = 'slider-track';
 
-                extendedList.forEach((ssUrl, index) => {
+                // Sonsuz döngü için listeyi 3 defa yan yana çoğaltıp tek sıra yapıyoruz
+                const tripleList = [...data.ssList, ...data.ssList, ...data.ssList];
+
+                tripleList.forEach((ssUrl, index) => {
                     const holder = document.createElement('div');
                     holder.className = 'screenshot-holder';
                     
@@ -571,40 +535,51 @@
                     img.alt = "Ekran Görüntüsü";
                     
                     img.onerror = function() {
-                        let displayIndex = index;
-                        if (index === 0) displayIndex = data.ssList.length;
-                        else if (index === extendedList.length - 1) displayIndex = 1;
-                        
+                        const originalIndex = (index % data.ssList.length) + 1;
                         holder.innerHTML = `
                             <div class="liquid-placeholder">
                                 <div class="liquid-placeholder-icon"></div>
-                                <span class="ss-error-text">Önizleme ${displayIndex}</span>
+                                <span class="ss-error-text">Önizleme ${originalIndex}</span>
                             </div>`;
                     };
                     
                     holder.appendChild(img);
-                    sliderArea.appendChild(holder);
+                    track.appendChild(holder);
                 });
+
+                sliderContainer.appendChild(track);
 
                 panel.classList.add('open');
                 document.body.style.overflow = 'hidden';
-                
-                // Başlangıç konumlandırması ve Otomatik Akış Başlatıcı
+
+                // Kart genişliğini hesaplayıp tam 1 tur bittiğinde CSS'in başa saracağı mesafeyi atıyoruz
                 setTimeout(() => {
-                    const firstRealCard = sliderArea.querySelectorAll('.screenshot-holder')[1];
-                    const cardWidth = firstRealCard.offsetWidth + 64;
-                    sliderArea.scrollLeft = cardWidth;
-                    currentActiveIndex = 1;
-                    updateActiveCard();
-                    startAutoplay(); // Otomatik oynatmayı panel açıldığı an tetikliyoruz
-                }, 100);
+                    const singleSetCount = data.ssList.length;
+                    const cardElement = track.querySelector('.screenshot-holder');
+                    const cardWidth = cardElement.offsetWidth;
+                    const gapWidth = 64; // 4rem gap
+                    
+                    // Tam bir setin kapladığı piksel mesafesi
+                    const moveDistance = -(singleSetCount * (cardWidth + gapWidth));
+                    
+                    // CSS değişkenini dinamik enjekte et
+                    track.style.setProperty('--move-distance', `${moveDistance}px`);
+                    
+                    // Hıza müdahale edin: Toplam resim sayısına göre akış hızı (Örn: resim başı 4 saniye)
+                    const duration = singleSetCount * 4;
+                    track.style.animation = `liquidMarquee ${duration}s linear infinite`;
+
+                    // Likit efekt takibini başlat
+                    if(checkActiveInterval) clearInterval(checkActiveInterval);
+                    checkActiveInterval = setInterval(() => monitorActiveCard(track), 100);
+                }, 150);
             });
         });
 
         closePanelBtn.addEventListener('click', () => {
             panel.classList.remove('open');
             document.body.style.overflow = 'auto';
-            stopAutoplay(); // Panel kapanınca arka planda işlemciyi yormasın diye durduruyoruz
+            if(checkActiveInterval) clearInterval(checkActiveInterval);
         });
     </script>
 </body>
