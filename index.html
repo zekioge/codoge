@@ -288,7 +288,7 @@
         <br>
         <div class="hero-tag">Yazılım Atölyesi</div>
         <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
-        <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler og kusursuz dijital mimariler inşa ediyoruz.</p>
+        <p>Apple ekosisteminde yerel, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
 
         <!-- UYGULAMA ICON GRID ALANI -->
         <div class="app-grid">
@@ -336,6 +336,7 @@
             </a>
 
             <div class="modal-footer-links">
+                <!-- ID'ler tamamen temiz ve küçük harfli hale getirildi -->
                 <a href="#" id="mterms">Kullanım Koşulları</a>
                 <a href="#" id="mprivacy">Gizlilik Politikası</a>
             </div>
@@ -346,16 +347,17 @@
         <p>© 2026 Codoge. Tüm hakları saklıdır.</p>
     </footer>
 
-    <!-- POPUP VERI VE MODEL YÖNETIMI -->
+    <!-- POPUP VERI VE LINK YÖNETIMI -->
     <script>
-        // Uygulamaların İçerik Yönetimi
+        // Her uygulamanın tüm yolları ve dosya isimleri burada bağımsızca yönetiliyor
         const appData = {
             mutfakdefteri: {
                 title: "Mutfak Defteri",
                 iconImg: "mutfakdefteri/mutfakdefteri.png",
                 desc: "Eskiden defterlere karalanan, nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi fotoğraflarla kaydedin ve mutfağınızı profesyonelce yönetin.",
-                link: "https://apps.apple.com/tr/app/mutfak-defteri/id6764518310?l=tr Mutfak Defteri", 
-                slug: "mutfakdefteri",
+                link: "https://apps.apple.com/tr/app/mutfak-defteri/id6764518310?l=tr", 
+                termsUrl: "mutfakdefteri/terms.html",
+                privacyUrl: "mutfakdefteri/privacy.html",
                 status: "live"
             },
             kitapnotlari: {
@@ -363,7 +365,8 @@
                 iconImg: "kitapnotlari/kitapnotlari.png",
                 desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, altını çizdiğiniz alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede, en estetik biçimde saklayın.",
                 link: "https://apps.apple.com/tr/app/kitap-notlar%C4%B1/id6768207035?l=tr", 
-                slug: "kitapnotlari",
+                termsUrl: "kitapnotlari/terms.html",
+                privacyUrl: "kitapnotlari/privacy.html",
                 status: "live"
             },
             lemoney: {
@@ -371,7 +374,8 @@
                 iconImg: "lemoney/lemoney.png",
                 desc: "Finansal durumunuzu, aylık bütçenizi ve tasarruf hedeflerinizi en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil finans asistanınız. Çok yakında App Store'da.",
                 link: "#",
-                slug: "lemoney",
+                termsUrl: "lemoney/terms.html",
+                privacyUrl: "lemoney/privacy.html",
                 status: "soon"
             }
         };
@@ -379,7 +383,7 @@
         const modal = document.getElementById('appModal');
         const closeBtn = document.getElementById('closeModal');
 
-        // Butonlara Tıklandığında Popup İçeriğini Değiştir ve Aç
+        // Butonlara tıklandığında popup içeriğini tamamen dinamik eşleştir
         document.querySelectorAll('.app-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const appKey = btn.getAttribute('data-app');
@@ -387,16 +391,16 @@
 
                 if (!data) return;
 
-                // Görsel, Başlık ve Açıklamaları basıyoruz
+                // İçerikleri basıyoruz
                 document.getElementById('mIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
                 document.getElementById('mTitle').innerText = data.title;
                 document.getElementById('mDesc').innerText = data.desc;
                 
-                // Klasör yollarına dinamik yönlendirme
-                document.getElementById('mTerms').href = `${data.slug}/kullananim-kosullari.html`;
-                document.getElementById('mPrivacy').href = `${data.slug}/gizlilik-politikasi.html`;
+                // Doğrudan nesneden gelen bağımsız dosya isimlerini linklere aktarıyoruz
+                document.getElementById('mterms').href = data.termsUrl;
+                document.getElementById('mprivacy').href = data.privacyUrl;
 
-                // İndirme butonunun durum kontrolü
+                // App Store İndirme buton kontrolü
                 const downloadBtn = document.getElementById('mLink');
                 if(data.status === "soon") {
                     downloadBtn.innerText = "Yapım Aşamasında";
@@ -412,7 +416,7 @@
             });
         });
 
-        // Kapatma tetikleyicileri
+        // Kapatma Mekanizmaları
         closeBtn.addEventListener('click', () => modal.classList.remove('open'));
         modal.addEventListener('click', (e) => {
             if(e.target === modal) modal.classList.remove('open');
