@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codoge — Fikirleri Koda Dönüştüren Atölye</title>
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
     
     <style>
+        /* Modern CSS Reset & Değişkenler */
         :root {
-            --bg-color: #08080c;
+            --bg-color: #0b0d19;
+            --accent-color: #0071e3; /* Apple Blue */
             --text-main: #f5f5f7;
             --text-muted: #86868b;
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shine: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -32,555 +33,613 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: space-between;
-        }
-
-        .ambient-glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            height: 80vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, rgba(168, 85, 247, 0.03) 50%, transparent 100%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* --- HERO & LOGO --- */
-        .hero {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 6rem 2rem 4rem 2rem;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 2.5rem;
-            display: inline-block;
-        }
-
-        .hero-tag {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--glass-border);
-            margin-bottom: 1.5rem;
-            color: #a5b4fc;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -1.5px;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom right, #ffffff 40%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-muted);
-            font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 3.5rem;
-            max-width: 680px;
         }
 
-        /* --- APP GRID --- */
-        .app-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            width: 100%;
-        }
-
-        .app-icon-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .app-icon-box {
-            width: 84px;
-            height: 84px;
-            border-radius: 20px;
+        /* Arka Plan Sıvı Cam / Işık Efektleri (Liquid Glass Aura) */
+        .blur-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s ease;
+            pointer-events: none;
         }
-
-        .app-icon-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
         }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-color); }
+        .orb-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #8622ff; }
 
-        .app-icon-btn[data-app="mutfakdefteri"] .app-icon-box { box-shadow: 0 12px 30px rgba(245, 158, 11, 0.25); }
-        .app-icon-btn[data-app="kitapnotlari"] .app-icon-box { box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25); }
-        .app-icon-btn[data-app="lemoney"] .app-icon-box { box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25); }
-
-        .app-icon-btn:hover { transform: translateY(-5px); }
-
-        .app-name { color: var(--text-main); font-size: 0.85rem; font-weight: 500; letter-spacing: -0.2px; }
-        .badge-soon { font-size: 0.65rem; background: rgba(255, 255, 255, 0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-muted); margin-top: -0.3rem; }
-
-        /* --- LIQUID GLASS PANEL DÜZENİ --- */
-        .detail-panel {
+        /* Global Header (Navigasyon) */
+        header {
             position: fixed;
             top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: #040406;
-            z-index: 2000;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(11, 13, 25, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: row-reverse;
-            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .detail-panel.open {
-            left: 0;
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
-
-        /* Sağ Alan: Bilgiler Bölümü */
-        .panel-right-info {
-            width: 40%;
-            min-width: 400px;
-            height: 100%;
-            padding: 5rem 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: left;
-            background: rgba(8, 8, 12, 0.4);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            position: relative;
-            z-index: 5;
-        }
-
-        .panel-close-btn {
-            background: var(--glass-bg);
+        .nav-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
             border: 1px solid var(--glass-border);
-            padding: 0.6rem 1.4rem;
-            border-radius: 100px;
-            color: var(--text-main);
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--glass-bg);
+        }
+
+        /* Ana Konteyner */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        /* Hero Bölümü */
+        .hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 6rem auto;
+            padding-top: 2rem;
+        }
+        .hero-badge {
+            display: inline-block;
             font-size: 0.85rem;
             font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4rem;
-            transition: all 0.2s ease;
+            color: var(--accent-color);
+            background: rgba(0, 113, 227, 0.1);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 113, 227, 0.2);
         }
-        .panel-close-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(2px);
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom, #ffffff 40%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
         }
 
-        .panel-icon {
-            width: 90px; height: 90px; border-radius: 20px;
-            margin-bottom: 1.8rem; border: 1px solid var(--glass-border);
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-        .panel-icon img { width: 100%; height: 100%; object-fit: cover; }
-
-        .panel-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -1px; }
-        .panel-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 3rem; font-weight: 300; max-width: 95%; }
-
-        .btn-download {
-            background: #ffffff;
-            color: #000000;
-            padding: 0.9rem 2.2rem;
-            border-radius: 14px;
+        /* Projeler Grid Yapısı */
+        .section-title {
+            font-size: 1.5rem;
             font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.95rem;
-            box-shadow: 0 10px 25px rgba(255,255,255,0.08);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid transparent;
         }
-        .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(255,255,255,0.15);
-            background: #f5f5f7;
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
         }
-        .btn-download.disabled {
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-muted);
-            pointer-events: none;
-            box-shadow: none;
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        /* Liquid Glass Efektli Kart Tasarımları */
+        .project-card {
+            background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-        }
-
-        /* Sol Alan: Kusursuz CSS Sinematik Akış Alanı */
-        .panel-left-slider {
-            width: 60%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
-            display: flex;
-            align-items: center;
-            padding: 0;
-            overflow: hidden; /* Taşmaları gizleyerek pürüzsüz bir pencere sunar */
+            border-radius: 24px;
+            padding: 2.5rem;
             position: relative;
-        }
-
-        /* Animasyonu Taşıyan Gerçek Hat (CSS Marquee) */
-        .slider-track {
-            display: flex;
-            gap: 4rem;
-            padding-left: 4rem;
-            width: max-content;
-            will-change: transform;
-        }
-
-        /* Donanım Destekli Akışkan CSS Animasyonu */
-        @keyframes liquidMarquee {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(var(--move-distance), 0, 0); }
-        }
-
-        /* Tüm Kartlar İçin Genel Akışkan Cam Efekti */
-        .screenshot-holder {
-            flex: 0 0 auto;
-            height: 68vh;
-            aspect-ratio: 9 / 19.5;
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 440px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, box-shadow 0.4s;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--glass-shine) 0%, transparent 40%);
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            
-            /* Liquid Glass: Varsayılan olarak hafif erime ve şeffaflık */
-            opacity: 0.6;
-            filter: blur(3px) brightness(0.7);
-            transform: scale(0.94);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.05);
         }
 
-        /* JS ile Merkez Odak Noktasına Gelen Kartın Likit Olarak Parlaması */
-        .screenshot-holder.active-card {
-            opacity: 1;
-            filter: blur(0px) brightness(1);
-            transform: scale(1);
-            border-color: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 40px rgba(255,255,255,0.03);
-        }
-
-        .screenshot-holder img {
+        .project-icon {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .liquid-placeholder {
+        .status-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+        }
+        .status-badge.upcoming {
+            color: #ff9f0a;
+            background: rgba(255, 159, 10, 0.1);
+            border-color: rgba(255, 159, 10, 0.2);
+        }
+
+        .project-body h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .project-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Alt Butonlar ve Linkler Grubu */
+        .project-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .appstore-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.2s;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+        }
+
+        .appstore-btn:hover {
+            background: #f5f5f7;
+            transform: scale(1.01);
+        }
+
+        /* Yasal Sözleşme Satırı */
+        .legal-buttons-row {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .legal-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+            padding: 8px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 400;
+            text-align: center;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .legal-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .disabled-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            width: 100%;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        /* Footer Alt Bilgisi */
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(11, 13, 25, 0.4);
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            gap: 1.5rem;
             text-align: center;
-            gap: 1rem;
         }
-        
-        .liquid-placeholder-icon {
-            font-size: 1.5rem;
-            opacity: 0.3;
-            background: linear-gradient(135deg, #fff, transparent);
+        .contact-trigger {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s, transform 0.2s;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .contact-trigger:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Modern Apple Style Popup / Modal Altyapısı */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 9, 19, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background: rgba(20, 24, 43, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border-radius: 28px;
+            width: 90%;
+            max-width: 480px;
+            padding: 2.5rem;
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 300;
+            transition: background 0.2s, color 0.2s;
+        }
+        .modal-close-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+        }
+        .modal-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .ss-error-text {
-            color: rgba(255, 255, 255, 0.25);
+        
+        /* İletişim Bilgileri Tasarımı */
+        .info-group {
+            margin-bottom: 1.25rem;
+        }
+        .info-label {
             font-size: 0.75rem;
-            letter-spacing: 2px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 0.35rem;
             font-weight: 600;
         }
-
-        .panel-footer-links { margin-top: auto; display: flex; gap: 1.8rem; font-size: 0.8rem; }
-        .panel-footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        .panel-footer-links a:hover { color: #fff; }
-
-        footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255,255,255,0.02);
-            position: relative;
-            z-index: 1;
-            width: 100%;
+        .info-value {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 400;
+        }
+        .info-value a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .info-value a:hover {
+            color: var(--accent-color);
         }
 
-        @media (max-width: 968px) {
-            .detail-panel { flex-direction: column; overflow-y: auto; left: 0; top: -100%; transition: top 0.5s ease; }
-            .detail-panel.open { top: 0; }
-            .panel-right-info { width: 100%; min-width: 100%; height: auto; padding: 6rem 2rem 3rem 2rem; }
-            .panel-close-btn { margin-bottom: 2rem; }
-            .panel-left-slider { width: 100%; height: 450px; padding: 2rem 0; }
-            .screenshot-holder { height: 350px; }
+        /* Tamamen Mobil Uyumlu (Responsive) Ayarlar */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.4rem;
+                letter-spacing: -1px;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            main {
+                padding: 7rem 1.5rem 3rem 1.5rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .project-card {
+                padding: 2rem;
+                min-height: auto;
+            }
+            .modal-content {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+    <div class="blur-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
-    <main class="hero">
-        <div class="logo">codoge</div>
-        <br>
-        <div class="hero-tag">Yazılım Atölyesi</div>
-        <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
-        <p>Apple ekosisteminde işlevsellik odaklı, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">codoge</a>
+            <div class="nav-tag">Yazılım Atölyesi</div>
+        </div>
+    </header>
 
-        <div class="app-grid">
-            <button class="app-icon-btn" data-app="mutfakdefteri">
-                <div class="app-icon-box">
-                    <img src="mutfakdefteri/mutfakdefteri.png" alt="Mutfak Defteri">
+    <main>
+        <section class="hero">
+            <div class="hero-badge">Apple Ekosistemi</div>
+            <h1>Fikirlerinizi ham koda ve saf deneyime dönüştürüyoruz.</h1>
+            <p>İşlevsellik odaklı, yüksek performanslı uygulamalar, minimal arayüzler ve kusursuz dijital mimariler inşa ediyoruz.</p>
+        </section>
+
+        <h2 class="section-title">Atölyeden Çıkanlar</h2>
+
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon-wrapper">
+                        <img src="mutfakdefteri/mutfakdefteri.png" alt="Mutfak Defteri" class="project-icon">
+                    </div>
+                    <span class="status-badge">Aktif</span>
                 </div>
-                <span class="app-name">Mutfak Defteri</span>
-            </button>
-
-            <button class="app-icon-btn" data-app="kitapnotlari">
-                <div class="app-icon-box">
-                    <img src="kitapnotlari/kitapnotlari.png" alt="Kitap Notları">
+                <div class="project-body">
+                    <h3>Mutfak Defteri</h3>
+                    <p>Mutfaktaki düzeninizi optimize eden, tariflerinizi ve eksiklerinizi pratik bir şekilde arşivleyen akıllı asistan.</p>
                 </div>
-                <span class="app-name">Kitap Notları</span>
-            </button>
-
-            <button class="app-icon-btn" data-app="lemoney">
-                <div class="app-icon-box">
-                    <img src="lemoney/lemoney.png" alt="Lemoney">
+                <div class="project-footer">
+                    <a href="#" class="appstore-btn">
+                        <span> App Store'dan İndir</span>
+                    </a>
+                    <div class="legal-buttons-row">
+                        <a href="#" class="legal-btn">Kullanım Koşulları</a>
+                        <a href="#" class="legal-btn">Gizlilik Politikası</a>
+                    </div>
                 </div>
-                <span class="app-name">Lemoney</span>
-                <span class="badge-soon">YAKINDA</span>
-            </button>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon-wrapper">
+                        <img src="kitapnotlari/kitapnotlari.png" alt="Kitap Notları" class="project-icon">
+                    </div>
+                    <span class="status-badge">Aktif</span>
+                </div>
+                <div class="project-body">
+                    <h3>Kitap Notları</h3>
+                    <p>Okuma alışkanlıklarınızı hedeflere dönüştüren, kitap içi kütüphanenizi ve aldığınız notları yapılandırılmış biçimde saklayan katalog uygulaması.</p>
+                </div>
+                <div class="project-footer">
+                    <a href="#" class="appstore-btn">
+                        <span> App Store'dan İndir</span>
+                    </a>
+                    <div class="legal-buttons-row">
+                        <a href="#" class="legal-btn">Kullanım Koşulları</a>
+                        <a href="#" class="legal-btn">Gizlilik Politikası</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon-wrapper">
+                        <img src="lemoney/lemoney.png" alt="Lemoney" class="project-icon">
+                    </div>
+                    <span class="status-badge upcoming">Yakında</span>
+                </div>
+                <div class="project-body">
+                    <h3>Lemoney</h3>
+                    <p>Dijital aboneliklerinizi, ödeme dönemlerinizi ve bütçe/cashback kazanımlarınızı tek noktadan takip eden yalın finansal yönetim aracı.</p>
+                </div>
+                <div class="project-footer">
+                    <a href="#" class="disabled-btn" onclick="return false;">
+                        <span>Çok Yakında</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <div class="detail-panel" id="appPanel">
-        <div class="panel-right-info">
-            <button class="panel-close-btn" id="closePanel">Geri Dön →</button>
-            <div class="panel-icon" id="pIcon"></div>
-            <h2 class="panel-title" id="pTitle"></h2>
-            <p class="panel-desc" id="pDesc"></p>
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+            <h3>İletişim</h3>
             
-            <a href="#" class="btn-download" id="pLink" target="_blank">
-                <span> App Store'dan İndir</span>
-            </a>
-
-            <div class="panel-footer-links">
-                <a href="#" id="pTerms">Kullanım Koşulları</a>
-                <a href="#" id="pPrivacy">Gizlilik Politikası</a>
+            <div class="info-group">
+                <div class="info-label">Adres</div>
+                <div class="info-value">Buraya açık adresinizi yazabilirsiniz. Örn: Maslak, Büyükdere Cd. No:123, Şişli/İstanbul</div>
+            </div>
+            
+            <div class="info-group">
+                <div class="info-label">Telefon</div>
+                <div class="info-value"><a href="tel:+905000000000">+90 (500) 000 00 00</a></div>
+            </div>
+            
+            <div class="info-group">
+                <div class="info-label">E-Posta</div>
+                <div class="info-value"><a href="mailto:info@codoge.com">info@codoge.com</a></div>
             </div>
         </div>
-
-        <div class="panel-left-slider" id="pSlider">
-            </div>
     </div>
 
     <footer>
-        <p>Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.</p>
+        <div class="footer-container">
+            <button class="contact-trigger" id="openModalBtn">İletişim</button>
+            <p class="copyright">Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.</p>
+        </div>
     </footer>
 
     <script>
-        const appData = {
-            mutfakdefteri: {
-                title: "Mutfak Defteri",
-                iconImg: "mutfakdefteri/mutfakdefteri.png",
-                desc: "Eskiden defterlere karalanan, nesilden nesile aktarılan tarifler artık akıllı, organize ve her an elinizin altında. Tariflerinizi fotoğraflarla kaydedin ve mutfağınızı profesyonelce yönetin.",
-                link: "https://apps.apple.com/tr/app/mutfak-defteri/id6764518310?l=tr", 
-                termsUrl: "mutfakdefteri/terms.html",
-                privacyUrl: "mutfakdefteri/privacy.html",
-                status: "live",
-                ssList: ["mutfakdefteri/ss1.png", "mutfakdefteri/ss2.png", "mutfakdefteri/ss3.png"]
-            },
-            kitapnotlari: {
-                title: "Kitap Notları",
-                iconImg: "kitapnotlari/kitapnotlari.png",
-                desc: "Okuduğunuz kitaplardan çıkardığınız önemli satır başlarını, altını çizdiğiniz alıntıları ve kişisel değerlendirmelerinizi tek bir dijital kütüphanede, en estetik biçimde saklayın.",
-                link: "https://apps.apple.com/tr/app/kitap-notlar%C4%B1/id6768207035?l=tr", 
-                termsUrl: "kitapnotlari/terms.html",
-                privacyUrl: "kitapnotlari/privacy.html",
-                status: "live",
-                ssList: ["kitapnotlari/ss1.png", "kitapnotlari/ss2.png", "kitapnotlari/ss3.png"]
-            },
-            lemoney: {
-                title: "Lemoney",
-                iconImg: "lemoney/lemoney.png",
-                desc: "Finansal durumunuzu, aylık bütçenizi ve tasarruf hedeflerinizi en yalın, en taze arayüzle takip etmeniz için tasarlanan yeni nesil finans asistanınız. Çok yakında App Store'da.",
-                link: "#",
-                termsUrl: "lemoney/terms.html",
-                privacyUrl: "lemoney/privacy.html",
-                status: "soon",
-                ssList: ["lemoney/ss1.png", "lemoney/ss2.png"]
-            }
-        };
+        const modal = document.getElementById('contactModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
 
-        const panel = document.getElementById('appPanel');
-        const closePanelBtn = document.getElementById('closePanel');
-        const sliderContainer = document.getElementById('pSlider');
-        let checkActiveInterval = null;
-
-        // Ekranın tam ortasına denk gelen kartı bulan ve parlatan algılayıcı
-        function monitorActiveCard(track) {
-            if (!track) return;
-            const cards = track.querySelectorAll('.screenshot-holder');
-            const sliderRect = sliderContainer.getBoundingClientRect();
-            const sliderCenter = sliderRect.left + (sliderRect.width / 2);
-
-            cards.forEach(card => {
-                const cardRect = card.getBoundingClientRect();
-                const cardCenter = cardRect.left + (cardRect.width / 2);
-                const distance = Math.abs(sliderCenter - cardCenter);
-
-                if (distance < cardRect.width / 1.5) {
-                    card.classList.add('active-card');
-                } else {
-                    card.classList.remove('active-card');
-                }
-            });
-        }
-
-        document.querySelectorAll('.app-icon-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const appKey = btn.getAttribute('data-app');
-                const data = appData[appKey];
-
-                if (!data) return;
-
-                // Bilgileri Güncelle
-                document.getElementById('pIcon').innerHTML = `<img src="${data.iconImg}" alt="${data.title}">`;
-                document.getElementById('pTitle').innerText = data.title;
-                document.getElementById('pDesc').innerText = data.desc;
-                document.getElementById('pTerms').href = data.termsUrl;
-                document.getElementById('pPrivacy').href = data.privacyUrl;
-
-                const downloadBtn = document.getElementById('pLink');
-                if(data.status === "soon") {
-                    downloadBtn.innerText = "Yapım Aşamasında";
-                    downloadBtn.classList.add('disabled');
-                    downloadBtn.href = "#";
-                } else {
-                    downloadBtn.innerHTML = `<span> App Store'dan İndir</span>`;
-                    downloadBtn.classList.remove('disabled');
-                    downloadBtn.href = data.link;
-                }
-
-                // --- GARANTİLİ CSS MARQUEE KURULUMU ---
-                sliderContainer.innerHTML = '';
-                
-                const track = document.createElement('div');
-                track.className = 'slider-track';
-
-                // Sonsuz döngü için listeyi 3 defa yan yana çoğaltıp tek sıra yapıyoruz
-                const tripleList = [...data.ssList, ...data.ssList, ...data.ssList];
-
-                tripleList.forEach((ssUrl, index) => {
-                    const holder = document.createElement('div');
-                    holder.className = 'screenshot-holder';
-                    
-                    const img = document.createElement('img');
-                    img.src = ssUrl;
-                    img.alt = "Ekran Görüntüsü";
-                    
-                    img.onerror = function() {
-                        const originalIndex = (index % data.ssList.length) + 1;
-                        holder.innerHTML = `
-                            <div class="liquid-placeholder">
-                                <div class="liquid-placeholder-icon"></div>
-                                <span class="ss-error-text">Önizleme ${originalIndex}</span>
-                            </div>`;
-                    };
-                    
-                    holder.appendChild(img);
-                    track.appendChild(holder);
-                });
-
-                sliderContainer.appendChild(track);
-
-                panel.classList.add('open');
-                document.body.style.overflow = 'hidden';
-
-                // Kart genişliğini hesaplayıp tam 1 tur bittiğinde CSS'in başa saracağı mesafeyi atıyoruz
-                setTimeout(() => {
-                    const singleSetCount = data.ssList.length;
-                    const cardElement = track.querySelector('.screenshot-holder');
-                    const cardWidth = cardElement.offsetWidth;
-                    const gapWidth = 64; // 4rem gap
-                    
-                    // Tam bir setin kapladığı piksel mesafesi
-                    const moveDistance = -(singleSetCount * (cardWidth + gapWidth));
-                    
-                    // CSS değişkenini dinamik enjekte et
-                    track.style.setProperty('--move-distance', `${moveDistance}px`);
-                    
-                    // Hıza müdahale edin: Toplam resim sayısına göre akış hızı (Örn: resim başı 4 saniye)
-                    const duration = singleSetCount * 4;
-                    track.style.animation = `liquidMarquee ${duration}s linear infinite`;
-
-                    // Likit efekt takibini başlat
-                    if(checkActiveInterval) clearInterval(checkActiveInterval);
-                    checkActiveInterval = setInterval(() => monitorActiveCard(track), 100);
-                }, 150);
-            });
+        // Popup'ı Aç
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; /* Arka plan kaymasını engeller */
         });
 
-        closePanelBtn.addEventListener('click', () => {
-            panel.classList.remove('open');
-            document.body.style.overflow = 'auto';
-            if(checkActiveInterval) clearInterval(checkActiveInterval);
+        // Popup'ı Kapat (Buton ile)
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Popup'ı Kapat (Dışarıdaki boşluğa tıklayarak)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     </script>
+
 </body>
 </html>
