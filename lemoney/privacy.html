@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lemoney — Gizlilik Politikası</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Modern CSS Reset & Değişkenler */
         :root {
-            --bg-color: #08080c;
+            --bg-color: #0b0d19;
+            --accent-color: #0071e3; /* Apple Blue */
             --text-main: #f5f5f7;
             --text-muted: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --panel-bg: rgba(255, 255, 255, 0.01);
+            --glass-shine: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -29,201 +31,239 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .ambient-glow {
+        /* Arka Plan Sıvı Cam / Işık Efektleri (Liquid Glass Aura) */
+        .blur-bg {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            height: 80vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(168, 85, 247, 0.01) 50%, transparent 100%);
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
             pointer-events: none;
-            z-index: 0;
         }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-color); }
+        .orb-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #8622ff; }
 
-        .wrapper {
-            max-width: 900px;
+        /* Global Header (Uygulama Bilgisi ve Geri Dönüş) */
+        header {
+            position: fixed;
+            top: 0;
             width: 100%;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .legal-content {
-            background: var(--panel-bg);
-            border: 1px solid var(--glass-border);
-            padding: 4rem;
-            border-radius: 32px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            background: rgba(11, 13, 25, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
         }
-
-        /* --- ÜST BİLGİ ALANI (Görseldeki Düzen) --- */
-        .header-meta {
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            width: 100%;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            margin-bottom: 3.5rem;
+            align-items: center;
         }
-
-        .header-left {
+        .app-info {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 12px;
         }
-
         .app-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            overflow: hidden;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
-        }
-
-        .app-icon img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
         }
-
-        .app-title-group {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .app-title-group h3 {
-            font-size: 1rem;
+        .app-name {
             font-weight: 600;
-            color: #ffffff;
+            font-size: 1.1rem;
+            letter-spacing: -0.3px;
+            color: #fff;
         }
-
-        .app-title-group span {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
         .back-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            padding: 0.5rem 1.2rem;
-            border-radius: 100px;
-            color: var(--text-main);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            cursor: pointer;
+            color: var(--text-main);
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: 14px;
+            transition: background 0.2s, border-color 0.2s;
         }
-
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* --- METİN ALANLARI --- */
-        h1 {
+        /* Ana Konteyner */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        /* Başlık Alanı */
+        .page-title {
+            margin-bottom: 2.5rem;
+        }
+        .page-title h1 {
             font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 0.6rem;
-            color: #ffffff;
+            background: linear-gradient(to bottom, #ffffff 60%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .page-title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .update-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
+        /* Yasal Metin Paneli (Liquid Glass) */
+        .terms-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .terms-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--glass-shine) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        /* Tipografi ve Doküman Düzeni */
+        .terms-content h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        .terms-content p {
+            color: rgba(245, 245, 247, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
             font-weight: 400;
         }
-
-        h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.2px;
-            color: #ffffff;
-        }
-
-        p {
+        .terms-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: rgba(245, 245, 247, 0.8);
             font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 300;
-            line-height: 1.65;
-            margin-bottom: 1.2rem;
+        }
+        .terms-content li {
+            margin-bottom: 0.5rem;
         }
 
+        /* Footer Alt Bilgisi */
         footer {
-            padding: 3rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            padding: 2.5rem 2rem;
+            margin-top: 4rem;
             text-align: center;
-            font-size: 0.8rem;
+        }
+        .copyright {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            border-top: 1px solid rgba(255,255,255,0.02);
-            position: relative;
-            z-index: 1;
-            width: 100%;
+        }
+
+        /* Mobil Uyum Ayarları */
+        @media (max-width: 768px) {
+            main {
+                padding: 7rem 1.5rem 3rem 1.5rem;
+            }
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            .terms-container {
+                padding: 1.75rem;
+            }
+            .app-name {
+                font-size: 0.95rem;
+            }
+            .back-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
-
-    <div class="wrapper">
-        <div class="legal-content">
-            
-            <!-- Görseldeki Üst Bilgi ve Hizalama Alanı -->
-            <div class="header-meta">
-                <div class="header-left">
-                    <div class="app-icon">
-                        <img src="lemoney.png" alt="Lemoney">
-                    </div>
-                    <div class="app-title-group">
-                        <h3>Lemoney</h3>
-                        <span>Codoge Uygulaması</span>
-                    </div>
-                </div>
-                <a href="../index.html" class="back-btn">← Atölyeye Dön</a>
-            </div>
-
-            <h1>Gizlilik Politikası</h1>
-            <div class="update-date">Son Güncelleme: 12 Haziran 2026</div>
-
-            <p>Lemoney mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm gizlilik şartlarını kabul etmiş olursunuz. Lemoney, gizliliğinize en üst düzeyde önem verir ve verilerinizin güvenliğini tam yerellik ilkesiyle korur.</p>
-
-            <h2>1. Veri Yerelliği ve Güvenlik (Sıfır Sunucu İlkesi)</h2>
-            <p>Lemoney, tamamen lokal (yerel) çalışan bir uygulamadır. Uygulama içerisine kaydettiğiniz sabit giderleriniz, abonelik ücretleriniz, faturalarınız veya kredi kartı taksitleriniz gibi hiçbir finansal veri asla harici bir sunucuya gönderilmez, depolanmaz veya üçüncü taraflarla paylaşılmaz. Tüm verileriniz yalnızca kullandığınız Apple cihazının güvenli yerel depolama alanında şifreli olarak tutulur.</p>
-
-            <h2>2. iCloud Senkronizasyonu ve Mülkiyet</h2>
-            <p>Uygulama içi verilerinizin Apple cihazlarınız arasında (iPhone, iPad, Mac vb.) taşınabilmesi ve yedeklenebilmesi için Apple'ın kendi sağladığı güvenli iCloud altyapısı kullanılır. Bu senkronizasyon doğrudan Apple'ın güvenlik protokolleri altında gerçekleşir; verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.</p>
-
-            <h2>3. Toplanan Veriler</h2>
-            <p>Lemoney, uygulamanın çalışması veya optimizasyonu için sizden herhangi bir isim, e-posta adresi, telefon numarası veya banka/kredi kartı bilgisi talep etmez ve toplamaz. Uygulama tamamen anonim olarak kullanılır.</p>
-
-            <h2>4. Üçüncü Taraf Analitik Araçları</h2>
-            <p>Kullanıcı deneyimini iyileştirmek adına çökme raporları (Crash Logs) Apple'ın standart App Store Connect altyapısı üzerinden isimsiz olarak alınabilir. Bu raporlar hiçbir kişisel veya finansal veri içermez.</p>
-        </div>
+    <div class="blur-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
     </div>
 
+    <header>
+        <div class="nav-container">
+            <div class="app-info">
+                <img src="lemoney.png" alt="Kitap Notları" class="app-icon">
+                <h1>Lemoney</h1>
+            </div>
+            <a href="../index.html" class="back-btn">Kapat</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h1>Gizlilik Politikası</h1>
+            <p>Son güncelleme: Haziran 2026</p>
+            <p>Lemoney mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm gizlilik şartlarını kabul etmiş olursunuz. Lemoney, gizliliğinize en üst düzeyde önem verir ve verilerinizin güvenliğini tam yerellik ilkesiyle korur.</p>
+        </div>
+
+        <div class="terms-container">
+            <div class="terms-content">
+                
+                <h2>1. Veri Yerelliği ve Güvenlik (Sıfır Sunucu İlkesi)</h2>
+                <p>Lemoney, tamamen lokal (yerel) çalışan bir uygulamadır. Uygulama içerisine kaydettiğiniz sabit giderleriniz, abonelik ücretleriniz, faturalarınız veya kredi kartı taksitleriniz gibi hiçbir finansal veri asla harici bir sunucuya gönderilmez, depolanmaz veya üçüncü taraflarla paylaşılmaz. Tüm verileriniz yalnızca kullandığınız Apple cihazının güvenli yerel depolama alanında şifreli olarak tutulur.</p>
+
+                <h2>2. iCloud Senkronizasyonu ve Mülkiyet</h2>
+                <p>Uygulama içi verilerinizin Apple cihazlarınız arasında (iPhone, iPad, Mac vb.) taşınabilmesi ve yedeklenebilmesi için Apple'ın kendi sağladığı güvenli iCloud altyapısı kullanılır. Bu senkronizasyon doğrudan Apple'ın güvenlik protokolleri altında gerçekleşir; verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.</p>
+
+                <h2>3. Toplanan Veriler</h2>
+                <p>Lemoney, uygulamanın çalışması veya optimizasyonu için sizden herhangi bir isim, e-posta adresi, telefon numarası veya banka/kredi kartı bilgisi talep etmez ve toplamaz. Uygulama tamamen anonim olarak kullanılır.</p>
+
+                <h2>4. Çocukların Gizliliği</h2>
+                <p>Lemoney uygulaması hiçbir kişisel bilgi toplamadığı ve işlemediği için çocukların kullanımı açısından tamamen güvenlidir ve her yaş grubundan okuyucu için uygundur.</p>
+
+                <h2>5. Üçüncü Taraf Analitik Araçları</h2>
+                <p>Kullanıcı deneyimini iyileştirmek adına çökme raporları (Crash Logs) Apple'ın standart App Store Connect altyapısı üzerinden isimsiz olarak alınabilir. Bu raporlar hiçbir kişisel veya finansal veri içermez.</p>
+
+            </div>
+        </div>
+    </main>
+
     <footer>
-        <p>Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.</p>
+        <p class="copyright">Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
