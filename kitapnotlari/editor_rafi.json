@@ -1,4 +1,42 @@
 [
+{
+    "tarih": "2026-06-16",
+    "editorNotu": "Bu hafta zaman tüneline giriyoruz. 20. yüzyıl; savaşların, ideolojilerin ve büyük dönüşümlerin yüzyılıydı. O dönemi anlamak, bugünü anlamlandırmak için belki de en kısa yol.",
+    "tema": "Tarih & Medeniyet",
+    "soru": "Tarihin seyrini en çok değiştirdiğini düşündüğünüz olay hangisi? Neden?",
+    "haftaninKitabi": {
+      "ad": "Sapiens: İnsan Türünün Kısa Bir Tarihi",
+      "yazar": "Yuval Noah Harari",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+      "aciklama": "Homo sapiens'in taş devrinden dijital çağa uzanan yolculuğunu anlatan, insanlık tarihine bambaşka bir perspektiften bakan çığır açıcı bir eser.",
+      "isbn": "9780062316097",
+      "sayfaSayisi": 443,
+      "tur": "Tarih",
+      "editorYorumu": "Bu kitabı okuduktan sonra dünyaya bakışım değişti. İnsan olmanın ne anlama geldiğini sorgulatan, bir o kadar da heyecan veren bir okuma deneyimi."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "İkinci Dünya Savaşı",
+        "yazar": "Antony Beevor",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780316023740-L.jpg",
+        "aciklama": "20. yüzyılın en kanlı çatışmasını tüm cepheleriyle, insan hikayeleriyle harmanlayan kapsamlı bir savaş tarihi.",
+        "isbn": "9780316023740",
+        "sayfaSayisi": 880,
+        "tur": "Tarih",
+        "editorYorumu": "Savaşın yalnızca cephelerde değil, insanların yüreklerinde nasıl şekillendiğini anlatan ağır ama çok değerli bir kitap."
+      },
+      {
+        "ad": "Soğuk Savaş",
+        "yazar": "John Lewis Gaddis",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143038276-L.jpg",
+        "aciklama": "ABD ile Sovyetler Birliği arasındaki yarım asırlık gerilimi, gizli belgeler ve yeni kaynaklar ışığında masaya yatıran otoriter bir eser.",
+        "isbn": "9780143038276",
+        "sayfaSayisi": 352,
+        "tur": "Tarih",
+        "editorYorumu": "Nükleer savaşın eşiğinden nasıl döndüğümüzü okurken içim ürperdi. Tarihi anlayan, geleceği daha net görür."
+      }
+    ]
+  },
   {
   "tarih": "2026-06-09",
   "tema": "İnanılması Güç Bir Bakış Açısı",
