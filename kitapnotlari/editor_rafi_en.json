@@ -1,0 +1,116 @@
+[
+  {
+    "tarih": "2026-06-16",
+    "editorNotu": "This week we step into a time tunnel. The 20th century was the century of wars, ideologies, and great transformations. Understanding that era is perhaps the shortest path to making sense of today.",
+    "tema": "History & Civilization",
+    "soru": "Which event do you think changed the course of history the most? Why?",
+    "haftaninKitabi": {
+      "ad": "Sapiens: A Brief History of Humankind",
+      "yazar": "Yuval Noah Harari",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+      "aciklama": "A groundbreaking work that follows the journey of Homo sapiens from the Stone Age to the digital era, offering a radically different perspective on human history.",
+      "isbn": "9780062316097",
+      "sayfaSayisi": 443,
+      "tur": "History",
+      "editorYorumu": "After reading this book, the way I see the world changed. A reading experience that makes you question what it means to be human — and thrills you at the same time."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Second World War",
+        "yazar": "Antony Beevor",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780316023740-L.jpg",
+        "aciklama": "A comprehensive war history that covers the bloodiest conflict of the 20th century across all fronts, weaving in the personal stories of those who lived it.",
+        "isbn": "9780316023740",
+        "sayfaSayisi": 880,
+        "tur": "History",
+        "editorYorumu": "A heavy but deeply valuable book that shows how war took shape not only on the battlefield, but in the hearts of human beings."
+      },
+      {
+        "ad": "The Cold War: A New History",
+        "yazar": "John Lewis Gaddis",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143038276-L.jpg",
+        "aciklama": "An authoritative account of the half-century of tension between the US and the Soviet Union, examined through declassified documents and new sources.",
+        "isbn": "9780143038276",
+        "sayfaSayisi": 352,
+        "tur": "History",
+        "editorYorumu": "Reading about how close we came to the edge of nuclear war sent a chill down my spine. Those who understand history see the future more clearly."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-09",
+    "editorNotu": "This week I picked books that will make you question reality. Sometimes the most ordinary things carry the deepest questions. For anyone who feels the weight of existence, wonders how much of their decisions are truly their own, and wants to see the world through their own eyes — not society's.",
+    "tema": "An Unbelievable Perspective",
+    "soru": "Have you ever felt completely alienated from society's expectations? What did you do in that moment?",
+    "haftaninKitabi": {
+      "ad": "Nausea",
+      "yazar": "Jean-Paul Sartre",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9789755102108-L.jpg",
+      "aciklama": "The cult novel of existentialism. Roquentin's deep repulsion toward everyday objects, people, and his own body is, in truth, a confrontation with existence itself.",
+      "isbn": "9789755102108",
+      "sayfaSayisi": 260,
+      "tur": "Novel",
+      "editorYorumu": "One morning you pick up a glass and ask yourself, 'why does this object exist?' Sartre stretched exactly that question across 260 pages."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Stranger",
+        "yazar": "Albert Camus",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9789750748677-L.jpg",
+        "aciklama": "Meursault didn't cry at his mother's funeral, and killed a man because the sun was in his eyes. The story of an existence that doesn't fit society's expectations.",
+        "isbn": "9789750748677",
+        "sayfaSayisi": 112,
+        "tur": "Novel",
+        "editorYorumu": "I don't know another book that says this much in just 110 pages."
+      },
+      {
+        "ad": "Predictably Irrational",
+        "yazar": "Dan Ariely",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9786055655396-L.jpg",
+        "aciklama": "How much of our decisions are truly ours? Ariely proves through experiments that the mind is far less rational than we think.",
+        "isbn": "9786055655396",
+        "sayfaSayisi": 341,
+        "tur": "Psychology",
+        "editorYorumu": "After reading this book, I could never look at the phrase 'free will' the same way again."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-05",
+    "editorNotu": "This week I've been thinking about money and economics. The vast majority of the decisions we make in daily life, without even realizing it, are economic. These books will help you make those decisions more consciously.",
+    "tema": "Money & Economics",
+    "soru": "What was the most important financial decision you made in the last month? How do you evaluate it now?",
+    "haftaninKitabi": {
+      "ad": "Rich Dad Poor Dad",
+      "yazar": "Robert T. Kiyosaki",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg",
+      "aciklama": "This book covers what school never taught us about money, clearly laying out the difference between assets and liabilities.",
+      "isbn": "9781612680194",
+      "sayfaSayisi": 336,
+      "tur": "Economics",
+      "editorYorumu": "This was the first book that changed my perspective on money. I recommend it to everyone who hasn't read it yet."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Intelligent Investor",
+        "yazar": "Benjamin Graham",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
+        "aciklama": "The investment book most recommended by Warren Buffett.",
+        "isbn": "9780060555665",
+        "sayfaSayisi": 640,
+        "tur": "Economics",
+        "editorYorumu": "A classic that teaches you to think long-term."
+      },
+      {
+        "ad": "Zero to One",
+        "yazar": "Peter Thiel",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg",
+        "aciklama": "A different perspective on entrepreneurship and innovation.",
+        "isbn": "9780804139021",
+        "sayfaSayisi": 224,
+        "tur": "Economics",
+        "editorYorumu": "An original book that explains why creating a monopoly is more valuable than competing."
+      }
+    ]
+  }
+]
