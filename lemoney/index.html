@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemoney – Abonelik Takibi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue-dark: #1a237e;
+      --blue-mid:  #283593;
+      --blue-accent: #3949ab;
+      --gold: #f9a825;
+      --text: #1a1a2e;
+      --muted: #555577;
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --border: #e0e4f0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      text-decoration: none;
+    }
+    .nav-logo .crown {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-accent));
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 14px; color: var(--muted);
+      text-decoration: none; font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--blue-dark); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-accent) 100%);
+      color: white;
+      padding: 80px 40px 90px;
+      text-align: center;
+    }
+    .hero-icon {
+      width: 88px; height: 88px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 24px;
+      margin: 0 auto 28px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px;
+      backdrop-filter: blur(10px);
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 18px;
+      opacity: 0.85;
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 99px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* FEATURES */
+    .features {
+      max-width: 960px;
+      margin: 64px auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 40px;
+      letter-spacing: -0.5px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: #eef0fb;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* SUPPORT */
+    .support {
+      max-width: 960px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .support-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+    }
+    .support-card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .support-card > p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+    .faq { display: flex; flex-direction: column; gap: 20px; }
+    .faq-item { border-top: 1px solid var(--border); padding-top: 20px; }
+    .faq-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .faq-item p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-accent));
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.8); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: white; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 56px 24px 64px; }
+      .support-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="crown">👑</div>
+    Lemoney
+  </a>
+  <div class="nav-links">
+    <a href="#features">Özellikler</a>
+    <a href="#support">Destek</a>
+    <a href="privacy.html">Gizlilik</a>
+    <a href="terms.html">Kullanım Koşulları</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">🍋</div>
+  <h1>Aboneliklerinizin<br><span>kontrolü sizde.</span></h1>
+  <p>Lemoney ile tüm aboneliklerinizi tek bir yerde takip edin. Ne ödediğinizi, ne zaman ödediğinizi ve ne kadar harcadığınızı net olarak görün.</p>
+  <div class="badge">📱 iOS için ücretsiz indir</div>
+</section>
+
+<section class="features" id="features">
+  <div class="section-label">Özellikler</div>
+  <div class="section-title">İhtiyacınız olan her şey</div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">♾️</div>
+      <h3>Sınırsız Abonelik</h3>
+      <p>Pro ile istediğiniz kadar abonelik ekleyin, hiçbiri gözden kaçmasın.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Kategori Raporları</h3>
+      <p>Hangi kategoriye ne kadar harcadığınızı detaylı grafiklerle görün.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔲</div>
+      <h3>Ana Ekran Widget'ı</h3>
+      <p>Aylık toplam ve kategorileri ana ekranınızdan takip edin.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔔</div>
+      <h3>Akıllı Hatırlatıcılar</h3>
+      <p>Ödeme günü ve bir gün öncesinde bildirim alın, sürpriz kesinti olmaz.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎙️</div>
+      <h3>Siri Desteği</h3>
+      <p>Sesli komutla abonelik ekleyin: "Siri, Lemoney'e Netflix ekle."</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Cashback Takibi</h3>
+      <p>Kart cashback'lerinizi hesaplayın, gerçek net harcamanızı görün.</p>
+    </div>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="support-card">
+    <h2>Destek</h2>
+    <p>Sorularınız için sık sorulan sorulara göz atın veya bize ulaşın.</p>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Satın aldığım Pro'yu nasıl geri yüklerim?</h4>
+        <p>Ayarlar ekranında "Satın Almayı Geri Yükle" butonuna dokunun. Aynı Apple ID ile giriş yapılmış olması yeterli.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Verilerim nerede saklanıyor?</h4>
+        <p>Tüm verileriniz yalnızca cihazınızda saklanır. Hiçbir sunucuya gönderilmez.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Widget çalışmıyor, ne yapmalıyım?</h4>
+        <p>Ana ekranda widget'a uzun basın, "Widget'ı Düzenle" seçin ve uygulamayı yeniden ekleyin. Sorun devam ederse uygulamayı kapatıp açın.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Aboneliğimi iptal etmek istiyorum.</h4>
+        <p>iPhone Ayarlar → Apple ID → Abonelikler yolundan Lemoney aboneliğinizi yönetebilirsiniz.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Başka bir sorunum var.</h4>
+        <p>Aşağıdaki e-posta adresinden bize ulaşabilirsiniz, en kısa sürede dönüş yaparız.</p>
+      </div>
+    </div>
+
+    <a class="contact-btn" href="mailto:support@codoge.com">
+      ✉️ Bize Yazın
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2025 codoge · Zeki ÖGE
+    &nbsp;·&nbsp;
+    <a href="privacy.html">Gizlilik Politikası</a>
+    <a href="terms.html">Kullanım Koşulları</a>
+  </p>
+</footer>
+
+</body>
+</html>
