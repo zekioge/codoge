@@ -1,0 +1,444 @@
+{
+  "yemekler": [
+    {
+      "id": "corba_001",
+      "ad": "Mercimek Çorbası",
+      "kategori": "Çorba",
+      "sure": 30,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_1",
+      "malzeme": "Kırmızı mercimek, soğan, havuç, sarımsak, tereyağı, zeytinyağı, tuz, kırmızı pul biber, kimyon, limon",
+      "tarif": "Mercimeği yıkayın. Soğan ve havucu zeytinyağında kavurun. Mercimek, sarımsak ve suyu ekleyip 20 dakika haşlayın. Blenderdan geçirin. Üzerine kızdırılmış tereyağı ve pul biber gezdirerek servis edin."
+    },
+    {
+      "id": "corba_002",
+      "ad": "Tarhana Çorbası",
+      "kategori": "Çorba",
+      "sure": 25,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_2",
+      "malzeme": "Tarhana, soğan, tereyağı, domates salçası, tuz, pul biber, nane",
+      "tarif": "Tarhana'yı soğuk suda ıslatın. Tereyağında salçayı kavurun. Tarhana ve suyu ekleyip karıştırarak pişirin. Nane ve pul biberle servis edin."
+    },
+    {
+      "id": "corba_003",
+      "ad": "Ezogelin Çorbası",
+      "kategori": "Çorba",
+      "sure": 35,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_3",
+      "malzeme": "Kırmızı mercimek, bulgur, pirinç, soğan, domates salçası, biber salçası, tereyağı, nane, pul biber",
+      "tarif": "Mercimek, bulgur ve pirinci yıkayın. Salçayı tereyağında kavurun. Malzemeleri ekleyip 30 dakika pişirin. Tereyağında nane ve pul biber kızartıp üzerine dökün."
+    },
+    {
+      "id": "corba_004",
+      "ad": "Keşkek Çorbası",
+      "kategori": "Çorba",
+      "sure": 120,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_4",
+      "malzeme": "Dövme buğday, tavuk eti, soğan, tereyağı, tuz, karabiber, pul biber",
+      "tarif": "Dövme buğdayı bir gece suda bekletin. Tavuğu haşlayın, etini ayırın. Buğday ve et suyunu birlikte uzun süre pişirip yoğurun. Üzerine tereyağı ve pul biber gezdirin."
+    },
+    {
+      "id": "corba_005",
+      "ad": "Yayla Çorbası",
+      "kategori": "Çorba",
+      "sure": 30,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_5",
+      "malzeme": "Yoğurt, pirinç, un, yumurta, tereyağı, nane, tuz",
+      "tarif": "Pirinci haşlayın. Yoğurt, yumurta ve unu çırpın. Sıcak suya yavaşça ekleyip karıştırın. Pilav ve terbiyeyi birleştirip kaynatın. Kızgın tereyağı ve neyle servis edin."
+    },
+    {
+      "id": "corba_006",
+      "ad": "Isırgan Otu Çorbası",
+      "kategori": "Çorba",
+      "sure": 40,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_6",
+      "malzeme": "Taze ısırgan otu, patates, soğan, sarımsak, zeytinyağı, krema, tuz, karabiber",
+      "tarif": "Isırgan otunu eldiven takarak yıkayın. Soğan ve sarımsağı kavurun. Patates ve ısırgan otunu ekleyip haşlayın. Blenderdan geçirip krema ekleyin, servis edin."
+    },
+    {
+      "id": "corba_007",
+      "ad": "Mısır Unu Çorbası",
+      "kategori": "Çorba",
+      "sure": 35,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_7",
+      "malzeme": "Mısır unu, tereyağı, tuz, karabiber, taze nane, süt",
+      "tarif": "Mısır ununu kuru tavada hafifçe kavurun. Süt ve suyu ekleyip karıştırarak pişirin. Tuz ve karabiberle tatlandırın. Üzerine eritilmiş tereyağı ve nane ile servis edin."
+    },
+    {
+      "id": "corba_008",
+      "ad": "Kuzugöbeği Mantar Çorbası",
+      "kategori": "Çorba",
+      "sure": 45,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_8",
+      "malzeme": "Kuzugöbeği mantar, soğan, sarımsak, tereyağı, krema, kekik, tuz, karabiber",
+      "tarif": "Mantarları ıslatıp süzün. Soğan ve sarımsağı tereyağında kavurun. Mantarları ekleyin. Su ve kremayı ilave edip pişirin. Kekik ve biberle servis edin."
+    },
+    {
+      "id": "corba_009",
+      "ad": "Karadeniz Lahana Çorbası",
+      "kategori": "Çorba",
+      "sure": 50,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_9",
+      "malzeme": "Beyaz lahana, mısır unu, tereyağı, soğan, tuz, karabiber, sarımsak",
+      "tarif": "Lahanayı ince doğrayın. Soğan ve sarımsağı kavurun. Lahanayı ekleyip soteleyin. Suyu ilave edip pişirin. Mısır ununu ekleyip koyulaştırın, tereyağıyla servis edin."
+    },
+    {
+      "id": "corba_010",
+      "ad": "Tarator Çorbası",
+      "kategori": "Çorba",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_10",
+      "malzeme": "Yoğurt, salatalık, ceviz, sarımsak, zeytinyağı, dereotu, tuz, soğuk su",
+      "tarif": "Yoğurdu soğuk suyla açın. Rendelenmiş salatalık, ezilmiş sarımsak, dövülmüş ceviz ekleyin. Zeytinyağı ve dereotu ile karıştırın. Soğuk servis edin."
+    },
+    {
+      "id": "kahvalti_001",
+      "ad": "Klasik Sade Omlet",
+      "kategori": "Kahvaltı",
+      "sure": 10,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_11",
+      "malzeme": "3 yumurta, tereyağı, tuz, karabiber",
+      "tarif": "Yumurtaları çırpın, tuz ve karabiber ekleyin. Tereyağını eritin. Yumurtaları dökün, kenarları katlayarak omlet şekli verin. Altın sarısı renk alınca servis edin."
+    },
+    {
+      "id": "kahvalti_002",
+      "ad": "Peynirli Ispanaklı Omlet",
+      "kategori": "Kahvaltı",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_12",
+      "malzeme": "3 yumurta, taze ıspanak, beyaz peynir, tereyağı, tuz, karabiber",
+      "tarif": "Ispanakları tereyağında soteleyin. Yumurtaları çırpıp dökün. Pişmeye başlayınca ıspanak ve ufalanmış peyniri yarısına yerleştirin. Katlayıp servis edin."
+    },
+    {
+      "id": "kahvalti_003",
+      "ad": "Domates Biberli Omlet",
+      "kategori": "Kahvaltı",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_13",
+      "malzeme": "3 yumurta, domates, yeşil biber, soğan, zeytinyağı, tuz, pul biber",
+      "tarif": "Soğan ve biberi zeytinyağında kavurun. Domatesi ekleyip soteleyin. Çırpılmış yumurtaları dökün. Kısık ateşte pişirip servis edin."
+    },
+    {
+      "id": "kahvalti_004",
+      "ad": "Mantar Sosisli Omlet",
+      "kategori": "Kahvaltı",
+      "sure": 20,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_14",
+      "malzeme": "3 yumurta, mantar, sosis, soğan, tereyağı, tuz, karabiber, maydanoz",
+      "tarif": "Sosisi ve mantarı tereyağında kavurun. Soğanı ekleyip soteleyin. Yumurtaları çırpıp dökün. Maydanoz serpip katlayarak servis edin."
+    },
+    {
+      "id": "kahvalti_005",
+      "ad": "Kaşarlı Fırın Omleti",
+      "kategori": "Kahvaltı",
+      "sure": 25,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_15",
+      "malzeme": "4 yumurta, kaşar peyniri, süt, tereyağı, tuz, karabiber, fırın kabı",
+      "tarif": "Yumurta, süt, tuz ve biberi çırpın. Tereyağlı fırın kabına dökün. Üzerine rendelenmiş kaşar serpin. 180 derecede 15 dakika pişirin."
+    },
+    {
+      "id": "anayemek_001",
+      "ad": "Karnıyarık",
+      "kategori": "Ana Yemek",
+      "sure": 60,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_16",
+      "malzeme": "Patlıcan, kıyma, soğan, domates, biber, sarımsak, zeytinyağı, maydanoz, domates salçası",
+      "tarif": "Patlıcanları zeytinyağında kızartın. Kıyma, soğan ve sarımsağı kavurun. Domates ve salçayı ekleyin. Patlıcanları sıraya dizin, harcı doldurun. 180 derecede 30 dakika pişirin."
+    },
+    {
+      "id": "anayemek_002",
+      "ad": "İmam Bayıldı",
+      "kategori": "Ana Yemek",
+      "sure": 75,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_17",
+      "malzeme": "Patlıcan, soğan, sarımsak, domates, zeytinyağı, maydanoz, tuz, şeker",
+      "tarif": "Patlıcanları zeytinyağında kızartın. Soğan, sarımsak ve domatesi kavurun. Patlıcanları çentiğin içine bu harcı doldurun. Zeytinyağı ve su ekleyip kısık ateşte pişirin."
+    },
+    {
+      "id": "anayemek_003",
+      "ad": "Köfte",
+      "kategori": "Ana Yemek",
+      "sure": 30,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_18",
+      "malzeme": "Kıyma, soğan, ekmek içi, yumurta, sarımsak, kimyon, pul biber, maydanoz, tuz",
+      "tarif": "Tüm malzemeleri iyice yoğurun. 15 dakika dinlendirin. Şekil verip ızgarada veya tavada her iki tarafını pişirin."
+    },
+    {
+      "id": "anayemek_004",
+      "ad": "Keşan Tava",
+      "kategori": "Ana Yemek",
+      "sure": 50,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_19",
+      "malzeme": "Kuzu but eti, soğan, sarımsak, domates, biber, tereyağı, tuz, karabiber, kekik",
+      "tarif": "Eti küp küp kesin, tereyağında mühürleyin. Soğan ve sarımsağı ekleyip kavurun. Domates ve biberleri ekleyin. Fırın kabına alıp 190 derecede 35 dakika pişirin."
+    },
+    {
+      "id": "anayemek_005",
+      "ad": "Çorum Harası",
+      "kategori": "Ana Yemek",
+      "sure": 90,
+      "zorluk": "Zor",
+      "gorselURL": "https://GORSEL_URL_20",
+      "malzeme": "Kuzu eti, nohut, soğan, domates, tereyağı, tarhun, tuz, karabiber",
+      "tarif": "Nohutu bir gece bekletin. Eti haşlayıp suyunu alın. Soğan ve domatesi kavurun. Nohut, et ve tarhunu ekleyin. Kısık ateşte uzun süre pişirin."
+    },
+    {
+      "id": "anayemek_006",
+      "ad": "Kaygana",
+      "kategori": "Ana Yemek",
+      "sure": 20,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_21",
+      "malzeme": "Yumurta, un, süt, tereyağı, tuz, peynir ya da bal",
+      "tarif": "Yumurta, un ve sütü çırpın. Tereyağlı tavada ince tabakalar halinde pişirin. Üzerine peynir veya bal ile servis edin. Karadeniz'e özgü geleneksel bir lezzet."
+    },
+    {
+      "id": "anayemek_007",
+      "ad": "Göce Aşı",
+      "kategori": "Ana Yemek",
+      "sure": 70,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_22",
+      "malzeme": "Göce (yarma buğday), nohut, soğan, tereyağı, domates salçası, tuz, pul biber",
+      "tarif": "Göceyi yıkayın. Soğanı tereyağında kavurun, salçayı ekleyin. Haşlanmış nohut ve göceyi ilave edin. Suyu ekleyip kısık ateşte 50 dakika pişirin."
+    },
+    {
+      "id": "anayemek_008",
+      "ad": "Perde Pilavı",
+      "kategori": "Ana Yemek",
+      "sure": 80,
+      "zorluk": "Zor",
+      "gorselURL": "https://GORSEL_URL_23",
+      "malzeme": "Pirinç, tavuk, fıstık, bademn kuru üzüm, tereyağı, yufka, tuz, karabiber, tarçın",
+      "tarif": "Pilavı pişirin. Tavuğu haşlayıp parçalayın. Pilav, tavuk, fıstık, badem ve üzümü karıştırın. Yağlanmış kaba yufka serin, harcı doldurun, yufkayla kapatın. Fırında pişirin."
+    },
+    {
+      "id": "anayemek_009",
+      "ad": "Mıhlamalı Kuymak",
+      "kategori": "Ana Yemek",
+      "sure": 25,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_24",
+      "malzeme": "Mısır unu, tereyağı, kolot peyniri ya da tulum peyniri, su, tuz",
+      "tarif": "Tereyağını eritin. Mısır ununu ekleyip kavurun. Suyu yavaşça ilave edip karıştırın. Peyniri ekleyin ve eriyene dek karıştırarak pişirin. Sıcak servis edin."
+    },
+    {
+      "id": "anayemek_010",
+      "ad": "Sini Kebabı",
+      "kategori": "Ana Yemek",
+      "sure": 90,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_25",
+      "malzeme": "Kuzu eti (but veya omuz), patates, soğan, domates, biber, zeytinyağı, tuz, karabiber, kekik",
+      "tarif": "Eti büyük parçalar halinde kesin. Tüm sebzeleri dilimleyin. Siniyi yağlayın. Eti altına, sebzeleri üstüne dizin. Baharatlayıp zeytinyağı gezdirin. 180 derecede 75 dakika pişirin."
+    },
+    {
+      "id": "salata_001",
+      "ad": "Yeşil Detoks Salata",
+      "kategori": "Salata",
+      "sure": 10,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_26",
+      "malzeme": "Roka, ıspanak, salatalık, avokado, limon, zeytinyağı, tuz, karabiber, çam fıstığı",
+      "tarif": "Tüm yeşillikleri yıkayın. Avokadoyu dilimleyin. Zeytinyağı ve limonla sos yapın. Malzemeleri karıştırıp çam fıstığı serpin."
+    },
+    {
+      "id": "salata_002",
+      "ad": "Kinoa Protein Salatası",
+      "kategori": "Salata",
+      "sure": 20,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_27",
+      "malzeme": "Kinoa, nohut, salatalık, domates, maydanoz, limon, zeytinyağı, tuz, karabiber",
+      "tarif": "Kinoayı haşlayıp soğutun. Nohutla karıştırın. Doğranmış sebzeleri ekleyin. Limon ve zeytinyağıyla harmanlayın."
+    },
+    {
+      "id": "salata_003",
+      "ad": "Rezene Portakal Salatası",
+      "kategori": "Salata",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_28",
+      "malzeme": "Rezene, portakal, roka, zeytinyağı, limon, tuz, siyah zeytin",
+      "tarif": "Rezeneyi ince dilimleyin. Portakalı soyup dilimleyin. Roka ile birleştirin. Zeytinyağı, limon ve tuzla soslandırın. Siyah zeytinle süsleyin."
+    },
+    {
+      "id": "salata_004",
+      "ad": "Turşu Havuç Salatası",
+      "kategori": "Salata",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_29",
+      "malzeme": "Havuç, elma sirkesi, sarımsak, zencefil, zeytinyağı, tuz, maydanoz, kuru üzüm",
+      "tarif": "Havuçları rendeleyin. Sirke, sarımsak ve zencefili karıştırın. Havuçla harmanlayın, 10 dakika dinlendirin. Kuru üzüm ve maydanoz ekleyin."
+    },
+    {
+      "id": "salata_005",
+      "ad": "Gavurdağı Salatası",
+      "kategori": "Salata",
+      "sure": 15,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_30",
+      "malzeme": "Domates, salatalık, ceviz, maydanoz, soğan, nar ekşisi, zeytinyağı, tuz, pul biber",
+      "tarif": "Tüm sebzeleri iri iri doğrayın. Cevizleri kırın. Maydanoz ekleyin. Nar ekşisi, zeytinyağı ve tuzla karıştırın."
+    },
+    {
+      "id": "salata_006",
+      "ad": "Arap Salatası (Şakşuka)",
+      "kategori": "Salata",
+      "sure": 20,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_31",
+      "malzeme": "Közlenmiş kırmızı biber, domates, sarımsak, limon, zeytinyağı, maydanoz, tuz, kimyon",
+      "tarif": "Biberleri közleyip soyun, ince doğrayın. Domates ve sarımsağı ekleyin. Limon, zeytinyağı ve kimyon ile soslandırın. Soğuk veya oda sıcaklığında servis edin."
+    },
+    {
+      "id": "salata_007",
+      "ad": "Antep Peynirli Semizotu Salatası",
+      "kategori": "Salata",
+      "sure": 10,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_32",
+      "malzeme": "Semizotu, beyaz peynir, domates, soğan, zeytinyağı, limon, tuz, pul biber",
+      "tarif": "Semizotunu yıkayın. Domatesi doğrayın. Peyniri ufalayın. Hepsini karıştırıp zeytinyağı ve limonla tatlandırın. Soğan ve pul biberle servis edin."
+    },
+    {
+      "id": "tatli_001",
+      "ad": "Bitter Çikolatalı Lav Kek",
+      "kategori": "Tatlı",
+      "sure": 20,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_33",
+      "malzeme": "Bitter çikolata, tereyağı, yumurta, toz şeker, un, tuz, vanilin",
+      "tarif": "Çikolata ve tereyağını eritin. Şeker ve yumurtayı çırpın. Çikolatayı ekleyin, un ve tuzu ilave edin. Yağlı kalıplara dökün. 200 derecede tam 10 dakika pişirin. Ortası akışkan çıkmalı."
+    },
+    {
+      "id": "tatli_002",
+      "ad": "Fıstıklı Katmer",
+      "kategori": "Tatlı",
+      "sure": 30,
+      "zorluk": "Orta",
+      "gorselURL": "https://GORSEL_URL_34",
+      "malzeme": "Yufka, antep fıstığı, kaymak, tereyağı, toz şeker",
+      "tarif": "Yufkayı açın, üzerine kaymak ve fıstık serpin. Katlayıp tereyağlı tavada pişirin. Her iki taraf da altın rengi olunca toz şeker serpin. Sıcak servis edin."
+    },
+    {
+      "id": "tatli_003",
+      "ad": "Dondurmalı Kayısı Tart",
+      "kategori": "Tatlı",
+      "sure": 45,
+      "zorluk": "Zor",
+      "gorselURL": "https://GORSEL_URL_35",
+      "malzeme": "Un, tereyağı, toz şeker, yumurta, taze kayısı, kayısı reçeli, vanilyalı dondurma, limon",
+      "tarif": "Tart hamurunu yoğurun, dinlendirin. Kalıba serin, körce pişirin. Kayısıları yarım kesin, tartın üzerine dizin. Reçeli fırçalayın. Servis esnasında dondurmayla sunun."
+    },
+    {
+      "id": "icecek_001",
+      "ad": "Karamel Soğuk Brew",
+      "kategori": "İçecek",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_36",
+      "malzeme": "Soğuk demleme kahve, karamel sos, süt, buz, tuz",
+      "tarif": "Bardağa bol buz koyun. Soğuk demleme kahveyi ekleyin. Bir tutam deniz tuzu atın. Karamel sosu gezdirin, karıştırın. İsteğe göre süt ekleyin."
+    },
+    {
+      "id": "icecek_002",
+      "ad": "Fındıklı Buzlu Latte",
+      "kategori": "İçecek",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_37",
+      "malzeme": "Espresso, fındık şurubu, süt, buz, köpük",
+      "tarif": "Espressoyu demleyin. Bardağa buz ve fındık şurubunu koyun. Espressoyu ekleyin. Üzerine soğuk süt dökün. İsteğe göre krema ekleyin."
+    },
+    {
+      "id": "icecek_003",
+      "ad": "Lavanta Buzlu Lemonade Kahve",
+      "kategori": "İçecek",
+      "sure": 10,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_38",
+      "malzeme": "Espresso, limon suyu, lavanta şurubu, sparkling water, buz, limon dilimi",
+      "tarif": "Bardağa buz koyun. Lavanta şurubunu ekleyin. Limon suyunu ilave edin. Espressoyu üzerine dökün. Sparkling water ile tamamlayın. Limon dilimi ile süsleyin."
+    },
+    {
+      "id": "icecek_004",
+      "ad": "Matcha Buzlu Latte",
+      "kategori": "İçecek",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_39",
+      "malzeme": "Matcha tozu, sıcak su, badem sütü, vanilyalı şurup, buz",
+      "tarif": "Matcha tozunu sıcak suyla çırpın, pürüzsüz hale getirin. Bardağa buz doldurun. Vanilyalı şurubu ekleyin. Soğuk badem sütü dökün. Matcha karışımını üzerine yavaşça gezdirin."
+    },
+    {
+      "id": "atistirmalik_001",
+      "ad": "Çıtır Nohut",
+      "kategori": "Atıştırmalık",
+      "sure": 35,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_40",
+      "malzeme": "Nohut, zeytinyağı, tuz, pul biber, kimyon, sarımsak tozu",
+      "tarif": "Nohutları kurulayın. Zeytinyağı ve baharatlarla karıştırın. 200 derecede 25-30 dakika çıtır olana dek pişirin. Soğuyunca çıtırlığı artar."
+    },
+    {
+      "id": "atistirmalik_002",
+      "ad": "Tahin Pekmez Wrap",
+      "kategori": "Atıştırmalık",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_41",
+      "malzeme": "Lavaş, tahin, pekmez, muz, ceviz",
+      "tarif": "Lavaşın üzerine tahin ve pekmezi eşit şekilde sürün. Dilimlenmiş muz ve kırık ceviz ekleyin. Sıkıca rulo yapın, dilimleyerek servis edin."
+    },
+    {
+      "id": "atistirmalik_003",
+      "ad": "Fıstık Ezmeli Elma Dilimleri",
+      "kategori": "Atıştırmalık",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_42",
+      "malzeme": "Elma, fıstık ezmesi, granola, tarçın",
+      "tarif": "Elmayı dilimleyin. Her dilimin üzerine fıstık ezmesi sürün. Granola ve tarçın serpin. Hızlı, doyurucu bir atıştırmalık."
+    },
+    {
+      "id": "atistirmalik_004",
+      "ad": "Lor Peynirli Salatalık",
+      "kategori": "Atıştırmalık",
+      "sure": 5,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_43",
+      "malzeme": "Salatalık, lor peyniri, dereotu, zeytinyağı, tuz, karabiber",
+      "tarif": "Salatalıkları halkalar halinde kesin. Lor peynirini dereotu, tuz ve biberle karıştırın. Her halkanın üzerine bir kaşık lor koyun. Zeytinyağı gezdirip servis edin."
+    },
+    {
+      "id": "atistirmalik_005",
+      "ad": "Çikolatalı Granola Bar",
+      "kategori": "Atıştırmalık",
+      "sure": 40,
+      "zorluk": "Kolay",
+      "gorselURL": "https://GORSEL_URL_44",
+      "malzeme": "Yulaf, bal, fıstık ezmesi, bitter çikolata, kuru meyveler, tuz",
+      "tarif": "Yulaf, bal ve fıstık ezmesini karıştırın. Kuru meyveleri ekleyin. Kalıba bastırın. Eritilmiş çikolatayı üzerine dökün. 30 dakika soğutun, dilimleyerek servis edin."
+    }
+  ]
+}
