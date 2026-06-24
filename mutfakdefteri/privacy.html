@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutfak Defteri — Gizlilik Politikası</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+            background: #f8f9fa;
+            color: #2b2d42;
+            line-height: 1.7;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8ee;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .app-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #EF233C, #D90429);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .app-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        .close-btn {
+            font-size: 14px;
+            color: #EF233C;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1.5px solid #EF233C;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #EF233C;
+            color: white;
+        }
+
+        /* İçerik */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2b2d42;
+            margin-bottom: 8px;
+        }
+
+        .update-date {
+            font-size: 14px;
+            color: #8d99ae;
+            margin-bottom: 32px;
+        }
+
+        .intro {
+            font-size: 16px;
+            color: #2b2d42;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #e2e8ee;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e2e8ee;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 20px;
+            border-bottom: 1px solid #e2e8ee;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        .section-body {
+            padding: 16px 20px;
+            font-size: 15px;
+            color: #4a4e69;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #8d99ae;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8ee;
+        }
+
+        .footer a {
+            color: #EF233C;
+            text-decoration: none;
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body { background: #1c1c1e; color: #f2f2f7; }
+            .header { background: #2c2c2e; border-bottom-color: #3a3a3c; }
+            .app-name { color: #f2f2f7; }
+            .page-title { color: #f2f2f7; }
+            .intro { background: #2c2c2e; border-color: #3a3a3c; color: #f2f2f7; }
+            .section { background: #2c2c2e; border-color: #3a3a3c; }
+            .section-header { border-bottom-color: #3a3a3c; }
+            .section-title { color: #f2f2f7; }
+            .section-body { color: #ebebf5cc; }
+            .footer { border-top-color: #3a3a3c; }
+        }
+
+        @media (max-width: 480px) {
+            .page-title { font-size: 26px; }
+            .container { padding: 28px 16px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <div class="app-icon">🍳</div>
+            <span class="app-name">Mutfak Defteri</span>
+        </div>
+        <a href="https://zekioge.github.io/codoge/index.html" class="close-btn">Kapat</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">Gizlilik Politikası</h1>
+        <p class="update-date">Son güncelleme: Haziran 2026</p>
+
+        <div class="intro">
+            Mutfak Defteri mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak bu sözleşmede yer alan tüm gizlilik şartlarını kabul etmiş olursunuz. Mutfak Defteri, gizliliğinize en üst düzeyde önem verir ve verilerinizin güvenliğini tam yerellik ilkesiyle korur.
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#fff3f5;">🔒</div>
+                <span class="section-title">1. Veri Yerelliği ve Güvenlik (Sıfır Sunucu İlkesi)</span>
+            </div>
+            <div class="section-body">
+                Mutfak Defteri, tamamen lokal (yerel) çalışan bir uygulamadır. Uygulama içerisine kaydettiğiniz tarifler, alışveriş listeleri, market bilgileri ve diğer veriler asla harici bir sunucuya gönderilmez, depolanmaz veya üçüncü taraflarla paylaşılmaz. Tüm verileriniz yalnızca kullandığınız Apple cihazının güvenli yerel depolama alanında (SwiftData) tutulur.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f0f4ff;">☁️</div>
+                <span class="section-title">2. iCloud Senkronizasyonu ve Mülkiyet</span>
+            </div>
+            <div class="section-body">
+                Uygulama içi verilerinizin Apple cihazlarınız arasında (iPhone, iPad, Mac vb.) taşınabilmesi ve yedeklenebilmesi için Apple'ın kendi sağladığı güvenli iCloud altyapısı kullanılır. Bu senkronizasyon doğrudan Apple'ın güvenlik protokolleri altında gerçekleşir; verilerinizin üçüncü taraflarca yedeklenmesi veya işlenmesi söz konusu değildir.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f0fff4;">📋</div>
+                <span class="section-title">3. Toplanan Veriler</span>
+            </div>
+            <div class="section-body">
+                Mutfak Defteri, uygulamanın çalışması veya optimizasyonu için sizden herhangi bir isim, e-posta adresi, telefon numarası veya ödeme bilgisi talep etmez ve toplamaz. Uygulama tamamen anonim olarak kullanılır.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#fffbf0;">👶</div>
+                <span class="section-title">4. Çocukların Gizliliği</span>
+            </div>
+            <div class="section-body">
+                Mutfak Defteri uygulaması hiçbir kişisel bilgi toplamadığı ve işlemediği için çocukların kullanımı açısından tamamen güvenlidir ve her yaş grubundan kullanıcı için uygundur.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f5f0ff;">📊</div>
+                <span class="section-title">5. Üçüncü Taraf Analitik Araçları</span>
+            </div>
+            <div class="section-body">
+                Kullanıcı deneyimini iyileştirmek adına çökme raporları (Crash Logs) Apple'ın standart App Store Connect altyapısı üzerinden isimsiz olarak alınabilir. Bu raporlar hiçbir kişisel veri içermez.
+            </div>
+        </div>
+
+        <div class="footer">
+            Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.<br>
+            <a href="mailto:destek@codoge.com">destek@codoge.com</a>
+        </div>
+    </div>
+
+</body>
+</html>

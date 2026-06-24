@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutfak Defteri — Kullanım Koşulları</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+            background: #f8f9fa;
+            color: #2b2d42;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8ee;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .app-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #EF233C, #D90429);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .app-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        .close-btn {
+            font-size: 14px;
+            color: #EF233C;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1.5px solid #EF233C;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #EF233C;
+            color: white;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2b2d42;
+            margin-bottom: 8px;
+        }
+
+        .update-date {
+            font-size: 14px;
+            color: #8d99ae;
+            margin-bottom: 32px;
+        }
+
+        .intro {
+            font-size: 16px;
+            color: #2b2d42;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #e2e8ee;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e2e8ee;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 20px;
+            border-bottom: 1px solid #e2e8ee;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        .section-body {
+            padding: 16px 20px;
+            font-size: 15px;
+            color: #4a4e69;
+            line-height: 1.8;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #8d99ae;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8ee;
+        }
+
+        .footer a {
+            color: #EF233C;
+            text-decoration: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body { background: #1c1c1e; color: #f2f2f7; }
+            .header { background: #2c2c2e; border-bottom-color: #3a3a3c; }
+            .app-name { color: #f2f2f7; }
+            .page-title { color: #f2f2f7; }
+            .intro { background: #2c2c2e; border-color: #3a3a3c; color: #f2f2f7; }
+            .section { background: #2c2c2e; border-color: #3a3a3c; }
+            .section-header { border-bottom-color: #3a3a3c; }
+            .section-title { color: #f2f2f7; }
+            .section-body { color: #ebebf5cc; }
+            .footer { border-top-color: #3a3a3c; }
+        }
+
+        @media (max-width: 480px) {
+            .page-title { font-size: 26px; }
+            .container { padding: 28px 16px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <div class="app-icon">🍳</div>
+            <span class="app-name">Mutfak Defteri</span>
+        </div>
+        <a href="https://zekioge.github.io/codoge/index.html" class="close-btn">Kapat</a>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">Kullanım Koşulları</h1>
+        <p class="update-date">Son güncelleme: Haziran 2026</p>
+
+        <div class="intro">
+            Mutfak Defteri mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak aşağıdaki kullanım koşullarını kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#fff3f5;">📱</div>
+                <span class="section-title">1. Uygulamanın Kullanımı</span>
+            </div>
+            <div class="section-body">
+                Mutfak Defteri, tarif kaydetme, alışveriş listesi oluşturma ve mutfak organizasyonu amacıyla geliştirilmiş kişisel kullanım odaklı bir uygulamadır. Uygulama yalnızca kişisel ve ticari olmayan amaçlarla kullanılabilir. Uygulamayı yasadışı, zararlı veya başkalarının haklarını ihlal edecek şekillerde kullanamazsınız.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f0f4ff;">🍽️</div>
+                <span class="section-title">2. İçerik ve Tarifler</span>
+            </div>
+            <div class="section-body">
+                Uygulama içinde sunulan hazır tarifler yalnızca bilgilendirme amaçlıdır. Tariflerin doğruluğu, beslenme değerleri ve sağlık üzerindeki etkileri konusunda herhangi bir garanti verilmemektedir. Kullanıcı tarafından eklenen tarifler ve içerikler tamamen kullanıcının sorumluluğundadır.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f0fff4;">💾</div>
+                <span class="section-title">3. Veri Sorumluluğu</span>
+            </div>
+            <div class="section-body">
+                Uygulamaya girdiğiniz tüm veriler yalnızca cihazınızda yerel olarak saklanır. Cihaz kaybı, fabrika ayarlarına sıfırlama veya uygulama silinmesi durumunda verileriniz geri alınamayabilir. Verilerinizin yedeklenmesinden kullanıcı sorumludur. iCloud yedekleme özelliği aktifse Apple'ın yedekleme altyapısı devreye girer.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#fffbf0;">⚖️</div>
+                <span class="section-title">4. Fikri Mülkiyet</span>
+            </div>
+            <div class="section-body">
+                Uygulamada yer alan tüm tasarım, ikon, kod ve içerikler Codoge — Creative by Zeki Öge'ye aittir ve telif hukuku kapsamında korunmaktadır. Uygulamanın herhangi bir bölümü izinsiz kopyalanamaz, dağıtılamaz veya ticari amaçlarla kullanılamaz.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f5f0ff;">🔄</div>
+                <span class="section-title">5. Güncellemeler ve Değişiklikler</span>
+            </div>
+            <div class="section-body">
+                Codoge, bu kullanım koşullarını önceden haber vermeksizin güncelleme hakkını saklı tutar. Güncellenmiş koşullar uygulama veya web sitesi üzerinden yayınlandığı andan itibaren geçerli olur. Uygulamayı kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#fff8f0;">🚫</div>
+                <span class="section-title">6. Sorumluluk Reddi</span>
+            </div>
+            <div class="section-body">
+                Mutfak Defteri "olduğu gibi" sunulmaktadır. Uygulama kullanımından doğabilecek doğrudan veya dolaylı zararlar, veri kayıpları veya hizmet kesintilerinden Codoge sorumlu tutulamaz. Uygulama kesintisiz veya hatasız çalışacağına dair bir garanti verilmemektedir.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background:#f0fff4;">📬</div>
+                <span class="section-title">7. İletişim</span>
+            </div>
+            <div class="section-body">
+                Bu kullanım koşullarına ilişkin soru ve görüşleriniz için bize ulaşabilirsiniz:<br><br>
+                <strong>E-posta:</strong> <a href="mailto:destek@codoge.com" style="color:#EF233C;">destek@codoge.com</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.<br>
+            <a href="mailto:destek@codoge.com">destek@codoge.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
