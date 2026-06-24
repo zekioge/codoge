@@ -3,265 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutfak Defteri — Kullanım Koşulları</title>
+    <title>Mutfak Defteri - Kullanım Koşulları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Modern CSS Reset & Değişkenler */
+        :root {
+            --bg-color: #0b0d19;
+            --accent-color: #0071e3; /* Apple Blue */
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shine: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-            background: #f8f9fa;
-            color: #2b2d42;
-            line-height: 1.7;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .header {
-            background: #ffffff;
-            border-bottom: 1px solid #e2e8ee;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
+        /* Arka Plan Sıvı Cam / Işık Efektleri (Liquid Glass Aura) */
+        .blur-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
             top: 0;
-            z-index: 10;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
         }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-color); }
+        .orb-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #8622ff; }
 
-        .header-left {
+        /* Global Header (Uygulama Bilgisi ve Geri Dönüş) */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(11, 13, 25, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .app-info {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
         .app-icon {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
-            background: linear-gradient(135deg, #EF233C, #D90429);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
+            border: 1px solid var(--glass-border);
+            object-fit: cover;
         }
-
         .app-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #2b2d42;
-        }
-
-        .close-btn {
-            font-size: 14px;
-            color: #EF233C;
-            text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.3px;
+            color: #fff;
+        }
+        .back-btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
             padding: 8px 16px;
-            border: 1.5px solid #EF233C;
-            border-radius: 20px;
-            transition: all 0.2s;
+            border-radius: 14px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .close-btn:hover {
-            background: #EF233C;
-            color: white;
-        }
-
-        .container {
-            max-width: 720px;
+        /* Ana Konteyner */
+        main {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 8rem 2rem 4rem 2rem;
         }
 
+        /* Başlık Alanı */
         .page-title {
-            font-size: 32px;
-            font-weight: 800;
-            color: #2b2d42;
-            margin-bottom: 8px;
+            margin-bottom: 2.5rem;
+        }
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(to bottom, #ffffff 60%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .page-title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .update-date {
-            font-size: 14px;
-            color: #8d99ae;
-            margin-bottom: 32px;
-        }
-
-        .intro {
-            font-size: 16px;
-            color: #2b2d42;
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 20px;
-            border: 1px solid #e2e8ee;
-            margin-bottom: 28px;
-            line-height: 1.8;
-        }
-
-        .section {
-            background: #ffffff;
-            border-radius: 14px;
-            border: 1px solid #e2e8ee;
-            margin-bottom: 16px;
+        /* Yasal Metin Paneli (Liquid Glass) */
+        .terms-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
             overflow: hidden;
         }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 20px;
-            border-bottom: 1px solid #e2e8ee;
+        .terms-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--glass-shine) 0%, transparent 30%);
+            pointer-events: none;
         }
 
-        .section-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
+        /* Tipografi ve Doküman Düzeni */
+        .terms-content h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        .terms-content p {
+            color: rgba(245, 245, 247, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+        .terms-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: rgba(245, 245, 247, 0.8);
+            font-size: 0.95rem;
+        }
+        .terms-content li {
+            margin-bottom: 0.5rem;
         }
 
-        .section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #2b2d42;
-        }
-
-        .section-body {
-            padding: 16px 20px;
-            font-size: 15px;
-            color: #4a4e69;
-            line-height: 1.8;
-        }
-
-        .footer {
+        /* Footer Alt Bilgisi */
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 2.5rem 2rem;
+            margin-top: 4rem;
             text-align: center;
-            font-size: 13px;
-            color: #8d99ae;
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid #e2e8ee;
+        }
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .footer a {
-            color: #EF233C;
-            text-decoration: none;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body { background: #1c1c1e; color: #f2f2f7; }
-            .header { background: #2c2c2e; border-bottom-color: #3a3a3c; }
-            .app-name { color: #f2f2f7; }
-            .page-title { color: #f2f2f7; }
-            .intro { background: #2c2c2e; border-color: #3a3a3c; color: #f2f2f7; }
-            .section { background: #2c2c2e; border-color: #3a3a3c; }
-            .section-header { border-bottom-color: #3a3a3c; }
-            .section-title { color: #f2f2f7; }
-            .section-body { color: #ebebf5cc; }
-            .footer { border-top-color: #3a3a3c; }
-        }
-
-        @media (max-width: 480px) {
-            .page-title { font-size: 26px; }
-            .container { padding: 28px 16px 60px; }
+        /* Mobil Uyum Ayarları */
+        @media (max-width: 768px) {
+            main {
+                padding: 7rem 1.5rem 3rem 1.5rem;
+            }
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            .terms-container {
+                padding: 1.75rem;
+            }
+            .app-name {
+                font-size: 0.95rem;
+            }
+            .back-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="header-left">
-            <div class="app-icon">🍳</div>
-            <span class="app-name">Mutfak Defteri</span>
-        </div>
-        <a href="https://zekioge.github.io/codoge/index.html" class="close-btn">Kapat</a>
+    <div class="blur-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
     </div>
 
-    <div class="container">
-        <h1 class="page-title">Kullanım Koşulları</h1>
-        <p class="update-date">Son güncelleme: Haziran 2026</p>
+    <header>
+        <div class="nav-container">
+            <div class="app-info">
+                <img src="mutfaknotlari.png" alt="Kitap Notları" class="app-icon">
+                <h1>Mutfak Notları</h1>
+            </div>
+            <a href="../index.html" class="back-btn">Kapat</a>
+        </div>
+    </header>
 
-        <div class="intro">
-            Mutfak Defteri mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak aşağıdaki kullanım koşullarını kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.
+    <main>
+        <div class="page-title">
+            <h1>Kullanım Koşulları</h1>
+            <p>Son güncelleme: Haziran 2026</p>
+            <p>Mutfak Defteri mobil uygulamasını ("Uygulama") cihazınıza indirerek, kurarak veya kullanarak aşağıdaki kullanım koşullarını kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.</p>
         </div>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#fff3f5;">📱</div>
-                <span class="section-title">1. Uygulamanın Kullanımı</span>
-            </div>
-            <div class="section-body">
-                Mutfak Defteri, tarif kaydetme, alışveriş listesi oluşturma ve mutfak organizasyonu amacıyla geliştirilmiş kişisel kullanım odaklı bir uygulamadır. Uygulama yalnızca kişisel ve ticari olmayan amaçlarla kullanılabilir. Uygulamayı yasadışı, zararlı veya başkalarının haklarını ihlal edecek şekillerde kullanamazsınız.
-            </div>
-        </div>
+        <div class="terms-container">
+            <div class="terms-content">
+                
+                <h2>1. Uygulamanın Kullanımı</h2>
+                <p>Mutfak Defteri, tarif kaydetme, alışveriş listesi oluşturma ve mutfak organizasyonu amacıyla geliştirilmiş kişisel kullanım odaklı bir uygulamadır. Uygulama yalnızca kişisel ve ticari olmayan amaçlarla kullanılabilir. Uygulamayı yasadışı, zararlı veya başkalarının haklarını ihlal edecek şekillerde kullanamazsınız.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#f0f4ff;">🍽️</div>
-                <span class="section-title">2. İçerik ve Tarifler</span>
-            </div>
-            <div class="section-body">
-                Uygulama içinde sunulan hazır tarifler yalnızca bilgilendirme amaçlıdır. Tariflerin doğruluğu, beslenme değerleri ve sağlık üzerindeki etkileri konusunda herhangi bir garanti verilmemektedir. Kullanıcı tarafından eklenen tarifler ve içerikler tamamen kullanıcının sorumluluğundadır.
-            </div>
-        </div>
+                <h2>2. İçerik ve Tarifler</h2>
+                <p>Uygulama içinde sunulan hazır tarifler yalnızca bilgilendirme amaçlıdır. Tariflerin doğruluğu, beslenme değerleri ve sağlık üzerindeki etkileri konusunda herhangi bir garanti verilmemektedir. Kullanıcı tarafından eklenen tarifler ve içerikler tamamen kullanıcının sorumluluğundadır.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#f0fff4;">💾</div>
-                <span class="section-title">3. Veri Sorumluluğu</span>
-            </div>
-            <div class="section-body">
-                Uygulamaya girdiğiniz tüm veriler yalnızca cihazınızda yerel olarak saklanır. Cihaz kaybı, fabrika ayarlarına sıfırlama veya uygulama silinmesi durumunda verileriniz geri alınamayabilir. Verilerinizin yedeklenmesinden kullanıcı sorumludur. iCloud yedekleme özelliği aktifse Apple'ın yedekleme altyapısı devreye girer.
-            </div>
-        </div>
+                <h2>3. Veri Sorumluluğu</h2>
+                <p>Uygulamaya girdiğiniz tüm veriler yalnızca cihazınızda yerel olarak saklanır. Cihaz kaybı, fabrika ayarlarına sıfırlama veya uygulama silinmesi durumunda verileriniz geri alınamayabilir. Verilerinizin yedeklenmesinden kullanıcı sorumludur. iCloud yedekleme özelliği aktifse Apple'ın yedekleme altyapısı devreye girer.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#fffbf0;">⚖️</div>
-                <span class="section-title">4. Fikri Mülkiyet</span>
-            </div>
-            <div class="section-body">
-                Uygulamada yer alan tüm tasarım, ikon, kod ve içerikler Codoge — Creative by Zeki Öge'ye aittir ve telif hukuku kapsamında korunmaktadır. Uygulamanın herhangi bir bölümü izinsiz kopyalanamaz, dağıtılamaz veya ticari amaçlarla kullanılamaz.
-            </div>
-        </div>
+                <h2>4. Fikri Mülkiyet</h2>
+                <p>Uygulamada yer alan tüm tasarım, ikon, kod ve içerikler Codoge — Creative by Zeki Öge'ye aittir ve telif hukuku kapsamında korunmaktadır. Uygulamanın herhangi bir bölümü izinsiz kopyalanamaz, dağıtılamaz veya ticari amaçlarla kullanılamaz.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#f5f0ff;">🔄</div>
-                <span class="section-title">5. Güncellemeler ve Değişiklikler</span>
-            </div>
-            <div class="section-body">
-                Codoge, bu kullanım koşullarını önceden haber vermeksizin güncelleme hakkını saklı tutar. Güncellenmiş koşullar uygulama veya web sitesi üzerinden yayınlandığı andan itibaren geçerli olur. Uygulamayı kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.
-            </div>
-        </div>
+                <h2>5. Güncellemeler ve Değişiklikler</h2>
+                <p>Codoge, bu kullanım koşullarını önceden haber vermeksizin güncelleme hakkını saklı tutar. Güncellenmiş koşullar uygulama veya web sitesi üzerinden yayınlandığı andan itibaren geçerli olur. Uygulamayı kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#fff8f0;">🚫</div>
-                <span class="section-title">6. Sorumluluk Reddi</span>
-            </div>
-            <div class="section-body">
-                Mutfak Defteri "olduğu gibi" sunulmaktadır. Uygulama kullanımından doğabilecek doğrudan veya dolaylı zararlar, veri kayıpları veya hizmet kesintilerinden Codoge sorumlu tutulamaz. Uygulama kesintisiz veya hatasız çalışacağına dair bir garanti verilmemektedir.
-            </div>
-        </div>
+                <h2>6. Sorumluluk Reddi</h2>
+                <p>Mutfak Defteri "olduğu gibi" sunulmaktadır. Uygulama kullanımından doğabilecek doğrudan veya dolaylı zararlar, veri kayıpları veya hizmet kesintilerinden Codoge sorumlu tutulamaz. Uygulama kesintisiz veya hatasız çalışacağına dair bir garanti verilmemektedir.</p>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background:#f0fff4;">📬</div>
-                <span class="section-title">7. İletişim</span>
-            </div>
-            <div class="section-body">
-                Bu kullanım koşullarına ilişkin soru ve görüşleriniz için bize ulaşabilirsiniz:<br><br>
-                <strong>E-posta:</strong> <a href="mailto:destek@codoge.com" style="color:#EF233C;">destek@codoge.com</a>
             </div>
         </div>
+    </main>
 
-        <div class="footer">
-            Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.<br>
-            <a href="mailto:destek@codoge.com">destek@codoge.com</a>
-        </div>
-    </div>
+    <footer>
+        <p class="copyright">Codoge, Creative by Zeki Öge © 2026. Tüm hakları saklıdır.</p>
+    </footer>
 
 </body>
 </html>
