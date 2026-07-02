@@ -1,5 +1,271 @@
 [
-{
+  {
+    "tarih": "2026-08-04",
+    "editorNotu": "Bu hafta suç ve gizem dünyasına dalıyoruz. İyi bir gizem, son sayfaya kadar sizi elinden bırakmayan, insan doğasının karanlık köşelerini de gösteren bir şey. Bu hafta üç farklı türde üç usta seçtim.",
+    "tema": "Suç & Gizem",
+    "soru": "Sizi en çok şaşırtan bir kitap ya da film sonu hangisiydi?",
+    "haftaninKitabi": {
+      "ad": "Doğu Ekspresinde Cinayet",
+      "yazar": "Agatha Christie",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062693662-L.jpg",
+      "aciklama": "Karlar altında mahsur kalan bir trende işlenen gizemli bir cinayeti çözmeye çalışan Hercule Poirot'nun, polisiye edebiyatının en şaşırtıcı finallerinden birine uzandığı klasik.",
+      "isbn": "9780062693662",
+      "sayfaSayisi": 274,
+      "tur": "Polisiye",
+      "editorYorumu": "Sonu tahmin ettiğimi sandığım anda beni tamamen şaşırtan nadir kitaplardan biri."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Suç ve Ceza",
+        "yazar": "Fyodor Dostoyevski",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143058144-L.jpg",
+        "aciklama": "Bir cinayeti işledikten sonra vicdanının pençesinde kıvranan Raskolnikov üzerinden, suçun ve ahlakın derinliklerine inen edebi bir başyapıt.",
+        "isbn": "9780143058144",
+        "sayfaSayisi": 671,
+        "tur": "Roman",
+        "editorYorumu": "Bir polisiye değil ama bu kitaptan sonra suç kavramına hiç aynı gözle bakamadım."
+      },
+      {
+        "ad": "Kayıp Kız",
+        "yazar": "Gillian Flynn",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg",
+        "aciklama": "Karısının ortadan kaybolmasıyla baş şüpheli haline gelen bir kocanın hikâyesi üzerinden evlilik, yalan ve algı üzerine çarpıcı bir gerilim.",
+        "isbn": "9780307588371",
+        "sayfaSayisi": 419,
+        "tur": "Gerilim",
+        "editorYorumu": "Hangi karaktere inanacağımı bilemeden okudum, tam da bunun için harika bir kitap."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-28",
+    "editorNotu": "Bu hafta aşk ve ilişkiler üzerine. Kalbin mantığın hep önüne geçtiği, bağlanmanın hem en güzel hem en zor tarafını anlatan kitaplar seçtim.",
+    "tema": "Aşk & İlişkiler",
+    "soru": "İlişkilerinizde en çok neyi önceliklendiriyorsunuz: güven mi, tutku mu, yoksa özgürlük mü?",
+    "haftaninKitabi": {
+      "ad": "Sevginin Beş Dili",
+      "yazar": "Gary Chapman",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780802412706-L.jpg",
+      "aciklama": "İnsanların sevgiyi verme ve alma biçimlerinin farklı olduğunu gösteren, ilişkilerdeki birçok yanlış anlaşılmayı çözen pratik bir rehber.",
+      "isbn": "9780802412706",
+      "sayfaSayisi": 208,
+      "tur": "İlişkiler",
+      "editorYorumu": "Kendi sevgi dilimi öğrendikten sonra çevremdeki insanları daha iyi anlamaya başladım."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Bağlanma",
+        "yazar": "Amir Levine, Rachel S. F. Heller",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781585429134-L.jpg",
+        "aciklama": "Yetişkinlikte kurduğumuz ilişkilerin, çocuklukta öğrendiğimiz bağlanma biçimlerinden nasıl etkilendiğini bilimsel bir temelle anlatan bir kitap.",
+        "isbn": "9781585429134",
+        "sayfaSayisi": 304,
+        "tur": "Psikoloji",
+        "editorYorumu": "Kendi bağlanma stilimi tanımak, geçmiş ilişkilerimi çok daha net görmemi sağladı."
+      },
+      {
+        "ad": "Kolera Günlerinde Aşk",
+        "yazar": "Gabriel García Márquez",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781400034910-L.jpg",
+        "aciklama": "Yarım asrı aşkın bir bekleyişin öyküsü; aşkın zamana, yaşa ve koşullara rağmen nasıl direnebileceğini anlatan büyülü bir roman.",
+        "isbn": "9781400034910",
+        "sayfaSayisi": 348,
+        "tur": "Roman",
+        "editorYorumu": "Aşkın gençlere özgü olmadığını, ömür boyu sürebileceğini bu kadar güzel anlatan başka bir kitap okumadım."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-21",
+    "editorNotu": "Bu hafta doğaya ve içinde yaşadığımız ekosisteme bakıyoruz. İnsanın doğayla kurduğu ilişkiyi sorgulayan, bazen umut veren bazen ürküten kitaplar seçtim.",
+    "tema": "Doğa & Ekoloji",
+    "soru": "Doğayla ilişkinizi sorguladığınız bir an oldu mu? Ne değişti?",
+    "haftaninKitabi": {
+      "ad": "Sessiz Bahar",
+      "yazar": "Rachel Carson",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780618249060-L.jpg",
+      "aciklama": "Tarım ilaçlarının doğaya verdiği geri dönüşü olmayan zararı gözler önüne seren, çevre hareketinin doğuşuna öncülük eden çığır açıcı bir eser.",
+      "isbn": "9780618249060",
+      "sayfaSayisi": 378,
+      "tur": "Doğa & Ekoloji",
+      "editorYorumu": "Yıllar önce yazılmış olmasına rağmen bugün okuduğumda hâlâ bu kadar güncel olması beni ürküttü."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Ağaçların Gizli Hayatı",
+        "yazar": "Peter Wohlleben",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781771642484-L.jpg",
+        "aciklama": "Ağaçların birbirleriyle nasıl 'iletişim kurduğunu', birbirlerine nasıl yardım ettiğini anlatan, bir ormancının gözünden şaşırtıcı bir doğa kitabı.",
+        "isbn": "9781771642484",
+        "sayfaSayisi": 288,
+        "tur": "Doğa & Ekoloji",
+        "editorYorumu": "Bir ormanda yürürken artık ağaçlara çok daha farklı bakıyorum."
+      },
+      {
+        "ad": "Altıncı Yok Oluş",
+        "yazar": "Elizabeth Kolbert",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780805092998-L.jpg",
+        "aciklama": "Dünya tarihindeki beş büyük kitlesel yok oluşun ardından, insan eliyle tetiklenen altıncısını gazetecilik titizliğiyle anlatan bir eser.",
+        "isbn": "9780805092998",
+        "sayfaSayisi": 336,
+        "tur": "Doğa & Ekoloji",
+        "editorYorumu": "Kitabı bitirdikten sonra tükettiğim her şeyi bir kere daha düşünür oldum."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-14",
+    "editorNotu": "Bu hafta distopyalara dönüyoruz. Bazen geleceği en iyi anlatan kitaplar, aslında bugünü anlatır. Gözetim, itaat ve bireyin toplum karşısındaki yalnızlığı üzerine üç güçlü eser seçtim.",
+    "tema": "Distopya & Toplum Eleştirisi",
+    "soru": "Sizce yaşadığımız dünya, okuduğunuz distopyalardan hangisine daha çok benziyor?",
+    "haftaninKitabi": {
+      "ad": "1984",
+      "yazar": "George Orwell",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+      "aciklama": "Her hareketin izlendiği, gerçeğin devlet tarafından yeniden yazıldığı bir dünyada, bireyin özgürlük mücadelesini anlatan distopya edebiyatının başyapıtı.",
+      "isbn": "9780451524935",
+      "sayfaSayisi": 328,
+      "tur": "Distopya",
+      "editorYorumu": "'Büyük Birader seni izliyor' cümlesini bu kadar çok yerde duyduktan sonra bile, kitabı okuyunca bambaşka bir ürperti hissettim."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Cesur Yeni Dünya",
+        "yazar": "Aldous Huxley",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg",
+        "aciklama": "Baskı yerine hazla, yasak yerine tüketimle kontrol edilen bir toplumu anlatan, belki de Orwell'den daha ürkütücü bir gelecek tahayyülü.",
+        "isbn": "9780060850524",
+        "sayfaSayisi": 288,
+        "tur": "Distopya",
+        "editorYorumu": "Bizi zincirlerle değil, mutluluk vaadiyle kontrol eden bir dünya fikri, 1984'ten çok daha ürkütücü geldi bana."
+      },
+      {
+        "ad": "Fahrenheit 451",
+        "yazar": "Ray Bradbury",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
+        "aciklama": "Kitapların yakıldığı, düşünmenin tehlikeli sayıldığı bir gelecekte, bir itfaiyecinin uyanışını anlatan çarpıcı bir distopya.",
+        "isbn": "9781451673319",
+        "sayfaSayisi": 194,
+        "tur": "Distopya",
+        "editorYorumu": "Kitap yakmanın sadece kağıdı değil, hafızayı da yok etmek olduğunu bu kitapla daha derinden hissettim."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-07",
+    "editorNotu": "Bu hafta girişimcilik ve inovasyon üzerine. Fikirlerin nasıl büyük şirketlere, büyük şirketlerin nasıl fikirlere yenildiğini anlatan kitaplar seçtim.",
+    "tema": "Girişimcilik & İnovasyon",
+    "soru": "Hiç hayata geçirmeyi düşündüğünüz ama bir türlü başlayamadığınız bir fikriniz var mı?",
+    "haftaninKitabi": {
+      "ad": "Yalın Girişim",
+      "yazar": "Eric Ries",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307887894-L.jpg",
+      "aciklama": "Girişimlerin büyük planlar yerine sürekli deney ve öğrenme döngüsüyle nasıl büyüyebileceğini anlatan, girişimcilik dünyasının başucu kitabı.",
+      "isbn": "9780307887894",
+      "sayfaSayisi": 336,
+      "tur": "Girişimcilik",
+      "editorYorumu": "'Erken başarısız ol, ucuza başarısız ol' fikri, bir projeye başlarken kafamdaki en büyük bloğu kaldırdı."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "İyiden Harikaya",
+        "yazar": "Jim Collins",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780066620992-L.jpg",
+        "aciklama": "İyi şirketleri harika şirketlerden ayıran şeyin ne olduğunu, yıllar süren araştırmalarla ortaya koyan bir yönetim klasiği.",
+        "isbn": "9780066620992",
+        "sayfaSayisi": 300,
+        "tur": "İş & Yönetim",
+        "editorYorumu": "'Kirpi kavramı' bölümünü okuduktan sonra kendi işime bambaşka bir netlikle bakmaya başladım."
+      },
+      {
+        "ad": "Yenilikçinin İkilemi",
+        "yazar": "Clayton Christensen",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062060242-L.jpg",
+        "aciklama": "Başarılı şirketlerin, doğru şeyi yaparken bile nasıl pazarı kaybedebileceğini anlatan, 'yıkıcı inovasyon' kavramını ortaya atan temel eser.",
+        "isbn": "9780062060242",
+        "sayfaSayisi": 336,
+        "tur": "İş & Yönetim",
+        "editorYorumu": "Bir şirketin başarısının, gelecekteki en büyük tehdidi olabileceğini bu kitapla kavradım."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-30",
+    "editorNotu": "Bu hafta yaratıcılığın kaynağına iniyoruz. Sanatı sadece izlemek değil, onu nasıl 'gördüğümüzü' ve nasıl ürettiğimizi sorgulayan kitaplar seçtim.",
+    "tema": "Sanat & Yaratıcılık",
+    "soru": "Size ilham veren, hayata bakışınızı değiştiren bir sanat eseri var mı?",
+    "haftaninKitabi": {
+      "ad": "Görme Biçimleri",
+      "yazar": "John Berger",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780140135152-L.jpg",
+      "aciklama": "Bir görüntüyü nasıl 'gördüğümüzün', kim olduğumuzdan ve neye sahip olduğumuzdan bağımsız olmadığını gösteren, sanat eleştirisinin sınırlarını zorlayan bir klasik.",
+      "isbn": "9780140135152",
+      "sayfaSayisi": 166,
+      "tur": "Sanat",
+      "editorYorumu": "Bu kitaptan sonra bir müzeye eskisi gibi giremiyorsunuz; her tabloya farklı bir gözle bakıyorsunuz."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Sanat Savaşı",
+        "yazar": "Steven Pressfield",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781936891023-L.jpg",
+        "aciklama": "Yaratıcı çalışmanın önündeki en büyük engelin 'direniş' olduğunu söyleyen, her sanatçının ve yaratıcının okuması gereken kısa ama vurucu bir rehber.",
+        "isbn": "9781936891023",
+        "sayfaSayisi": 165,
+        "tur": "Kişisel Gelişim",
+        "editorYorumu": "Ertelemenin aslında korku olduğunu bu kadar net anlatan başka bir kitap okumadım."
+      },
+      {
+        "ad": "Yaratıcılık A.Ş.",
+        "yazar": "Ed Catmull",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780812993011-L.jpg",
+        "aciklama": "Pixar'ın kurucularından Catmull, yaratıcı bir kültürün nasıl inşa edildiğini, başarısızlığın yaratıcılık için neden gerekli olduğunu anlatıyor.",
+        "isbn": "9780812993011",
+        "sayfaSayisi": 368,
+        "tur": "İş & Yönetim",
+        "editorYorumu": "Yaratıcılığın tek kişilik bir dahilik değil, doğru kurulmuş bir ekip kültürünün ürünü olduğunu bu kitapla anladım."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-23",
+    "editorNotu": "Bu hafta hayatın anlamı üzerine düşünen kitaplara yöneldim. Zor günlerden geçen, kendine 'bunun bir anlamı var mı?' diye soran herkes için bir rehber niteliğinde kitaplar seçtim.",
+    "tema": "Felsefe & Anlam Arayışı",
+    "soru": "Hayatınızda en çok anlam bulduğunuz an ya da dönem hangisiydi?",
+    "haftaninKitabi": {
+      "ad": "İnsanın Anlam Arayışı",
+      "yazar": "Viktor E. Frankl",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780807014271-L.jpg",
+      "aciklama": "Bir toplama kampı hayatta kalanının, en acı koşullarda bile anlam bulmanın mümkün olduğunu anlattığı sarsıcı bir tanıklık. Frankl, acının kendisinin değil ona yüklediğimiz anlamın bizi biçimlendirdiğini gösteriyor.",
+      "isbn": "9780807014271",
+      "sayfaSayisi": 165,
+      "tur": "Felsefe",
+      "editorYorumu": "Bu kitabı okurken defalarca durup düşünmek zorunda kaldım. En karanlık koşullarda bile seçim özgürlüğümüzün elimizden alınamayacağını hatırlatıyor."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Var Olmanın Dayanılmaz Hafifliği",
+        "yazar": "Milan Kundera",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060932138-L.jpg",
+        "aciklama": "Aşk, siyaset ve varoluşun ağırlığı ile hafifliği arasındaki gerilimi işleyen, Prag Baharı'nın gölgesinde geçen unutulmaz bir roman.",
+        "isbn": "9780060932138",
+        "sayfaSayisi": 320,
+        "tur": "Roman",
+        "editorYorumu": "Kundera'nın 'bir kere yaşanan hiç yaşanmamış gibidir' önermesi aklımdan hiç çıkmadı."
+      },
+      {
+        "ad": "Zen ve Motosiklet Bakım Sanatı",
+        "yazar": "Robert M. Pirsig",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060589462-L.jpg",
+        "aciklama": "Bir baba-oğul motosiklet yolculuğu üzerinden kalite, akıl ve yaşamın anlamı gibi derin felsefi sorulara uzanan sıra dışı bir eser.",
+        "isbn": "9780060589462",
+        "sayfaSayisi": 418,
+        "tur": "Felsefe",
+        "editorYorumu": "Hem bir yol romanı hem bir felsefe kitabı; ikisinin birleşimi beklenmedik şekilde çok işe yarıyor."
+      }
+    ]
+  },
+  {
     "tarih": "2026-06-16",
     "editorNotu": "Bu hafta zaman tüneline giriyoruz. 20. yüzyıl; savaşların, ideolojilerin ve büyük dönüşümlerin yüzyılıydı. O dönemi anlamak, bugünü anlamlandırmak için belki de en kısa yol.",
     "tema": "Tarih & Medeniyet",
@@ -38,44 +304,44 @@
     ]
   },
   {
-  "tarih": "2026-06-09",
-  "tema": "İnanılması Güç Bir Bakış Açısı",
-  "editorNotu": "Bu hafta gerçekliği sorgulatacak kitaplar seçtim. Bazen en sıradan şeyler, en derin soruları taşır. Varoluşun ağırlığını hisseden, kendi kararlarının ne kadar 'kendi' kararı olduğunu merak eden, toplumun gözüyle değil kendi gözüyle bakmak isteyen herkes için.",
-  "soru": "Kendinizi hiç toplumun beklentilerine tamamen yabancı hissettiniz mi? O an ne yaptınız?",
-  "haftaninKitabi": {
-    "ad": "Bulantı",
-    "yazar": "Jean-Paul Sartre",
-    "kapakURL": "https://covers.openlibrary.org/b/isbn/9789755102108-L.jpg",
-    "aciklama": "Varoluşçuluğun kült romanı. Roquentin'in günlük nesnelere, insanlara ve kendi bedenine duyduğu derin tiksinti, aslında varoluşun kendisiyle yüzleşmektir.",
-    "isbn": "9789755102108",
-    "sayfaSayisi": 260,
-    "tur": "Roman",
-    "editorYorumu": "Bir sabah eline bir bardak alıyorsunuz ve 'bu nesne neden var?' diye soruyorsunuz kendinize. Sartre tam olarak bu soruyu 260 sayfaya yaydı."
-  },
-  "digerKitaplar": [
-    {
-      "ad": "Yabancı",
-      "yazar": "Albert Camus",
-      "kapakURL": "https://covers.openlibrary.org/b/isbn/9789750748677-L.jpg",
-      "aciklama": "Annesinin cenazesinde ağlamayan, güneşin yüzüne vurduğu için adam öldüren Meursault. Toplumun beklentilerine sığmayan bir varoluşun hikâyesi.",
-      "isbn": "9789750748677",
-      "sayfaSayisi": 112,
+    "tarih": "2026-06-09",
+    "tema": "İnanılması Güç Bir Bakış Açısı",
+    "editorNotu": "Bu hafta gerçekliği sorgulatacak kitaplar seçtim. Bazen en sıradan şeyler, en derin soruları taşır. Varoluşun ağırlığını hisseden, kendi kararlarının ne kadar 'kendi' kararı olduğunu merak eden, toplumun gözüyle değil kendi gözüyle bakmak isteyen herkes için.",
+    "soru": "Kendinizi hiç toplumun beklentilerine tamamen yabancı hissettiniz mi? O an ne yaptınız?",
+    "haftaninKitabi": {
+      "ad": "Bulantı",
+      "yazar": "Jean-Paul Sartre",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9789755102108-L.jpg",
+      "aciklama": "Varoluşçuluğun kült romanı. Roquentin'in günlük nesnelere, insanlara ve kendi bedenine duyduğu derin tiksinti, aslında varoluşun kendisiyle yüzleşmektir.",
+      "isbn": "9789755102108",
+      "sayfaSayisi": 260,
       "tur": "Roman",
-      "editorYorumu": "110 sayfada bu kadar çok şey söyleyen başka bir kitap bilmiyorum."
+      "editorYorumu": "Bir sabah eline bir bardak alıyorsunuz ve 'bu nesne neden var?' diye soruyorsunuz kendinize. Sartre tam olarak bu soruyu 260 sayfaya yaydı."
     },
-    {
-      "ad": "Akıldışı Ama Öngörülebilir",
-      "yazar": "Dan Ariely",
-      "kapakURL": "https://covers.openlibrary.org/b/isbn/9786055655396-L.jpg",
-      "aciklama": "Kararlarımızın ne kadarı gerçekten bizim? Ariely, aklın sandığımız kadar akılcı olmadığını deneylerle kanıtlıyor.",
-      "isbn": "9786055655396",
-      "sayfaSayisi": 341,
-      "tur": "Psikoloji",
-      "editorYorumu": "Kitabı okuduktan sonra bir daha 'özgür irade' lafını aynı gözle bakamadım."
-    }
-  ]
-},
-   {
+    "digerKitaplar": [
+      {
+        "ad": "Yabancı",
+        "yazar": "Albert Camus",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9789750748677-L.jpg",
+        "aciklama": "Annesinin cenazesinde ağlamayan, güneşin yüzüne vurduğu için adam öldüren Meursault. Toplumun beklentilerine sığmayan bir varoluşun hikâyesi.",
+        "isbn": "9789750748677",
+        "sayfaSayisi": 112,
+        "tur": "Roman",
+        "editorYorumu": "110 sayfada bu kadar çok şey söyleyen başka bir kitap bilmiyorum."
+      },
+      {
+        "ad": "Akıldışı Ama Öngörülebilir",
+        "yazar": "Dan Ariely",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9786055655396-L.jpg",
+        "aciklama": "Kararlarımızın ne kadarı gerçekten bizim? Ariely, aklın sandığımız kadar akılcı olmadığını deneylerle kanıtlıyor.",
+        "isbn": "9786055655396",
+        "sayfaSayisi": 341,
+        "tur": "Psikoloji",
+        "editorYorumu": "Kitabı okuduktan sonra bir daha 'özgür irade' lafını aynı gözle bakamadım."
+      }
+    ]
+  },
+  {
     "tarih": "2026-06-05",
     "editorNotu": "Bu hafta para ve ekonomi üzerine düşünüyorum. Günlük hayatımızda farkında olmadan verdiğimiz kararların büyük çoğunluğu ekonomik. Bu kitaplar o kararları daha bilinçli vermenize yardımcı olacak.",
     "tema": "Para & Ekonomi",
