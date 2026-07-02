@@ -1,55 +1,321 @@
 [
   {
+    "tarih": "2026-08-04",
+    "editorNotu": "This week we're diving into the world of crime and mystery. A good mystery is one that won't let go of you until the last page, while also revealing the darker corners of human nature. I picked three masters across three different flavors of the genre.",
+    "tema": "Crime & Mystery",
+    "soru": "What's a book or movie ending that surprised you the most?",
+    "haftaninKitabi": {
+      "ad": "Murder on the Orient Express",
+      "yazar": "Agatha Christie",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062693662-L.jpg",
+      "aciklama": "A classic in which Hercule Poirot, trying to solve a mysterious murder aboard a train stranded in the snow, arrives at one of crime fiction's most astonishing endings.",
+      "isbn": "9780062693662",
+      "sayfaSayisi": 274,
+      "tur": "Mystery",
+      "editorYorumu": "One of the rare books that completely surprised me right when I thought I'd guessed the ending."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Crime and Punishment",
+        "yazar": "Fyodor Dostoevsky",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143058144-L.jpg",
+        "aciklama": "A literary masterpiece that plunges into the depths of crime and morality through Raskolnikov, who is gripped by his own conscience after committing a murder.",
+        "isbn": "9780143058144",
+        "sayfaSayisi": 671,
+        "tur": "Fiction",
+        "editorYorumu": "Not a mystery novel, but I've never looked at the idea of crime the same way since reading it."
+      },
+      {
+        "ad": "Gone Girl",
+        "yazar": "Gillian Flynn",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg",
+        "aciklama": "A striking thriller about marriage, lies, and perception, told through a husband who becomes the prime suspect when his wife disappears.",
+        "isbn": "9780307588371",
+        "sayfaSayisi": 419,
+        "tur": "Thriller",
+        "editorYorumu": "I read it without knowing which character to believe — and that's exactly what makes it great."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-28",
+    "editorNotu": "This week is about love and relationships. I picked books about the moments when the heart wins over logic, and about both the beautiful and the difficult sides of attachment.",
+    "tema": "Love & Relationships",
+    "soru": "What do you prioritize most in your relationships: trust, passion, or freedom?",
+    "haftaninKitabi": {
+      "ad": "The 5 Love Languages",
+      "yazar": "Gary Chapman",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780802412706-L.jpg",
+      "aciklama": "A practical guide that shows how people give and receive love differently, resolving many of the misunderstandings common in relationships.",
+      "isbn": "9780802412706",
+      "sayfaSayisi": 208,
+      "tur": "Relationships",
+      "editorYorumu": "Once I learned my own love language, I started understanding the people around me much better."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Attached",
+        "yazar": "Amir Levine, Rachel S. F. Heller",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781585429134-L.jpg",
+        "aciklama": "A scientifically grounded book explaining how our adult relationships are shaped by the attachment styles we learned in childhood.",
+        "isbn": "9781585429134",
+        "sayfaSayisi": 304,
+        "tur": "Psychology",
+        "editorYorumu": "Recognizing my own attachment style let me see my past relationships much more clearly."
+      },
+      {
+        "ad": "Love in the Time of Cholera",
+        "yazar": "Gabriel García Márquez",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781400034910-L.jpg",
+        "aciklama": "The story of a wait spanning more than half a century — a magical novel about how love can endure time, age, and circumstance.",
+        "isbn": "9781400034910",
+        "sayfaSayisi": 348,
+        "tur": "Fiction",
+        "editorYorumu": "I've never read another book that shows so beautifully that love isn't just for the young — it can last a lifetime."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-21",
+    "editorNotu": "This week we're looking at nature and the ecosystem we live in. I picked books that question humanity's relationship with nature — some hopeful, some unsettling.",
+    "tema": "Nature & Ecology",
+    "soru": "Was there a moment when you questioned your relationship with nature? What changed?",
+    "haftaninKitabi": {
+      "ad": "Silent Spring",
+      "yazar": "Rachel Carson",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780618249060-L.jpg",
+      "aciklama": "A groundbreaking work that exposed the irreversible damage pesticides do to nature and helped spark the birth of the environmental movement.",
+      "isbn": "9780618249060",
+      "sayfaSayisi": 378,
+      "tur": "Nature & Ecology",
+      "editorYorumu": "Written decades ago, yet it unsettled me how relevant it still feels today."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Hidden Life of Trees",
+        "yazar": "Peter Wohlleben",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781771642484-L.jpg",
+        "aciklama": "A surprising nature book, told through a forester's eyes, about how trees 'communicate' with and help one another.",
+        "isbn": "9781771642484",
+        "sayfaSayisi": 288,
+        "tur": "Nature & Ecology",
+        "editorYorumu": "Now when I walk through a forest, I look at the trees completely differently."
+      },
+      {
+        "ad": "The Sixth Extinction",
+        "yazar": "Elizabeth Kolbert",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780805092998-L.jpg",
+        "aciklama": "With journalistic rigor, this book explores the sixth mass extinction — this time triggered by humans — following five great extinctions in Earth's history.",
+        "isbn": "9780805092998",
+        "sayfaSayisi": 336,
+        "tur": "Nature & Ecology",
+        "editorYorumu": "After finishing this book, I started thinking twice about everything I consume."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-14",
+    "editorNotu": "This week we turn to dystopias. Sometimes the books that best describe the future are really describing the present. I picked three powerful works on surveillance, obedience, and the individual's loneliness against society.",
+    "tema": "Dystopia & Social Critique",
+    "soru": "Which dystopia you've read do you think our world most resembles?",
+    "haftaninKitabi": {
+      "ad": "1984",
+      "yazar": "George Orwell",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+      "aciklama": "The masterpiece of dystopian literature, telling the story of one individual's fight for freedom in a world where every move is watched and truth is rewritten by the state.",
+      "isbn": "9780451524935",
+      "sayfaSayisi": 328,
+      "tur": "Dystopian",
+      "editorYorumu": "Even after hearing 'Big Brother is watching you' quoted everywhere, reading the book itself still gave me a completely different chill."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Brave New World",
+        "yazar": "Aldous Huxley",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg",
+        "aciklama": "A vision of the future perhaps even more chilling than Orwell's — a society controlled through pleasure and consumption rather than oppression and prohibition.",
+        "isbn": "9780060850524",
+        "sayfaSayisi": 288,
+        "tur": "Dystopian",
+        "editorYorumu": "A world controlled not by chains but by the promise of happiness felt far more frightening to me than 1984."
+      },
+      {
+        "ad": "Fahrenheit 451",
+        "yazar": "Ray Bradbury",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
+        "aciklama": "A striking dystopia about a fireman's awakening in a future where books are burned and thinking itself is considered dangerous.",
+        "isbn": "9781451673319",
+        "sayfaSayisi": 194,
+        "tur": "Dystopian",
+        "editorYorumu": "This book made me feel, more deeply than ever, that burning books destroys not just paper but memory itself."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-07-07",
+    "editorNotu": "This week is about entrepreneurship and innovation. I picked books about how ideas grow into great companies, and how great companies can be undone by new ideas.",
+    "tema": "Entrepreneurship & Innovation",
+    "soru": "Is there an idea you've thought about bringing to life but never quite got started on?",
+    "haftaninKitabi": {
+      "ad": "The Lean Startup",
+      "yazar": "Eric Ries",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307887894-L.jpg",
+      "aciklama": "A cornerstone of the startup world, explaining how ventures can grow through continuous experimentation and learning instead of big upfront plans.",
+      "isbn": "9780307887894",
+      "sayfaSayisi": 336,
+      "tur": "Entrepreneurship",
+      "editorYorumu": "The idea of 'fail early, fail cheap' removed the biggest mental block I had when starting a project."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Good to Great",
+        "yazar": "Jim Collins",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780066620992-L.jpg",
+        "aciklama": "A management classic that uses years of research to reveal what separates good companies from great ones.",
+        "isbn": "9780066620992",
+        "sayfaSayisi": 300,
+        "tur": "Business & Management",
+        "editorYorumu": "After reading the 'hedgehog concept' chapter, I started looking at my own work with completely new clarity."
+      },
+      {
+        "ad": "The Innovator's Dilemma",
+        "yazar": "Clayton Christensen",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062060242-L.jpg",
+        "aciklama": "The seminal work that introduced the concept of 'disruptive innovation,' showing how successful companies can lose the market even while doing everything right.",
+        "isbn": "9780062060242",
+        "sayfaSayisi": 336,
+        "tur": "Business & Management",
+        "editorYorumu": "This book made me realize a company's success can become its biggest future threat."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-30",
+    "editorNotu": "This week we're getting to the source of creativity. I picked books that question not just how we look at art, but how we truly 'see' it and how we create.",
+    "tema": "Art & Creativity",
+    "soru": "Is there a work of art that inspired you or changed how you see life?",
+    "haftaninKitabi": {
+      "ad": "Ways of Seeing",
+      "yazar": "John Berger",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780140135152-L.jpg",
+      "aciklama": "A classic that pushes the boundaries of art criticism, showing that how we 'see' an image is never separate from who we are and what we own.",
+      "isbn": "9780140135152",
+      "sayfaSayisi": 166,
+      "tur": "Art",
+      "editorYorumu": "After this book, you can't walk into a museum the same way again — you look at every painting differently."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The War of Art",
+        "yazar": "Steven Pressfield",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781936891023-L.jpg",
+        "aciklama": "A short but powerful guide, essential reading for any artist or creator, arguing that 'resistance' is the biggest obstacle to creative work.",
+        "isbn": "9781936891023",
+        "sayfaSayisi": 165,
+        "tur": "Self-Help",
+        "editorYorumu": "I've never read another book that so clearly shows procrastination is really just fear."
+      },
+      {
+        "ad": "Creativity, Inc.",
+        "yazar": "Ed Catmull",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780812993011-L.jpg",
+        "aciklama": "Pixar co-founder Catmull explains how a creative culture is built, and why failure is essential to creativity.",
+        "isbn": "9780812993011",
+        "sayfaSayisi": 368,
+        "tur": "Business & Management",
+        "editorYorumu": "This book taught me that creativity isn't a one-person genius act — it's the product of a well-built team culture."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-06-23",
+    "editorNotu": "This week I turned to books that reflect on the meaning of life. I picked books that can serve as a guide for anyone going through hard times and asking themselves, 'does this even mean anything?'",
+    "tema": "Philosophy & the Search for Meaning",
+    "soru": "What moment or period in your life did you find the most meaning in?",
+    "haftaninKitabi": {
+      "ad": "Man's Search for Meaning",
+      "yazar": "Viktor E. Frankl",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780807014271-L.jpg",
+      "aciklama": "A harrowing testimony from a concentration camp survivor, showing that it's possible to find meaning even in the most painful circumstances. Frankl shows it's not suffering itself but the meaning we give it that shapes us.",
+      "isbn": "9780807014271",
+      "sayfaSayisi": 165,
+      "tur": "Philosophy",
+      "editorYorumu": "I had to stop and think, over and over, while reading this book. It's a reminder that even in the darkest circumstances, our freedom to choose can't be taken from us."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Unbearable Lightness of Being",
+        "yazar": "Milan Kundera",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060932138-L.jpg",
+        "aciklama": "An unforgettable novel set in the shadow of the Prague Spring, exploring the tension between love, politics, and the weight and lightness of existence.",
+        "isbn": "9780060932138",
+        "sayfaSayisi": 320,
+        "tur": "Fiction",
+        "editorYorumu": "Kundera's line 'what happens but once might as well not have happened at all' has never left my mind."
+      },
+      {
+        "ad": "Zen and the Art of Motorcycle Maintenance",
+        "yazar": "Robert M. Pirsig",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060589462-L.jpg",
+        "aciklama": "An extraordinary work that uses a father-son motorcycle journey to reach deep philosophical questions about quality, reason, and the meaning of life.",
+        "isbn": "9780060589462",
+        "sayfaSayisi": 418,
+        "tur": "Philosophy",
+        "editorYorumu": "It's both a road novel and a philosophy book — and the combination works surprisingly well."
+      }
+    ]
+  },
+  {
     "tarih": "2026-06-16",
-    "editorNotu": "This week we step into a time tunnel. The 20th century was the century of wars, ideologies, and great transformations. Understanding that era is perhaps the shortest path to making sense of today.",
+    "editorNotu": "This week we're stepping into a time tunnel. The 20th century was a century of wars, ideologies, and great transformations. Understanding that era may be the shortest path to making sense of today.",
     "tema": "History & Civilization",
-    "soru": "Which event do you think changed the course of history the most? Why?",
+    "soru": "Which event do you think changed the course of history the most, and why?",
     "haftaninKitabi": {
       "ad": "Sapiens: A Brief History of Humankind",
       "yazar": "Yuval Noah Harari",
       "kapakURL": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
-      "aciklama": "A groundbreaking work that follows the journey of Homo sapiens from the Stone Age to the digital era, offering a radically different perspective on human history.",
+      "aciklama": "A groundbreaking work that traces Homo sapiens' journey from the Stone Age to the digital era, offering a completely different perspective on human history.",
       "isbn": "9780062316097",
       "sayfaSayisi": 443,
       "tur": "History",
-      "editorYorumu": "After reading this book, the way I see the world changed. A reading experience that makes you question what it means to be human — and thrills you at the same time."
+      "editorYorumu": "This book changed how I see the world. It's a reading experience that's as thought-provoking as it is exciting, questioning what it even means to be human."
     },
     "digerKitaplar": [
       {
         "ad": "The Second World War",
         "yazar": "Antony Beevor",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9780316023740-L.jpg",
-        "aciklama": "A comprehensive war history that covers the bloodiest conflict of the 20th century across all fronts, weaving in the personal stories of those who lived it.",
+        "aciklama": "A comprehensive history of the 20th century's bloodiest conflict, blending every front with the human stories behind it.",
         "isbn": "9780316023740",
         "sayfaSayisi": 880,
         "tur": "History",
-        "editorYorumu": "A heavy but deeply valuable book that shows how war took shape not only on the battlefield, but in the hearts of human beings."
+        "editorYorumu": "A heavy but invaluable book about how war took shape not just on the battlefields, but in people's hearts."
       },
       {
         "ad": "The Cold War: A New History",
         "yazar": "John Lewis Gaddis",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143038276-L.jpg",
-        "aciklama": "An authoritative account of the half-century of tension between the US and the Soviet Union, examined through declassified documents and new sources.",
+        "aciklama": "An authoritative work that examines half a century of tension between the US and the Soviet Union in light of declassified documents and new sources.",
         "isbn": "9780143038276",
         "sayfaSayisi": 352,
         "tur": "History",
-        "editorYorumu": "Reading about how close we came to the edge of nuclear war sent a chill down my spine. Those who understand history see the future more clearly."
+        "editorYorumu": "Reading how close we came to the brink of nuclear war sent chills down my spine. Understanding history helps you see the future more clearly."
       }
     ]
   },
   {
     "tarih": "2026-06-09",
-    "editorNotu": "This week I picked books that will make you question reality. Sometimes the most ordinary things carry the deepest questions. For anyone who feels the weight of existence, wonders how much of their decisions are truly their own, and wants to see the world through their own eyes — not society's.",
-    "tema": "An Unbelievable Perspective",
-    "soru": "Have you ever felt completely alienated from society's expectations? What did you do in that moment?",
+    "tema": "A Hard-to-Believe Perspective",
+    "editorNotu": "This week I picked books that will make you question reality itself. Sometimes the most ordinary things carry the deepest questions. For anyone who feels the weight of existence, wonders how much of their own decisions are truly 'their own,' and wants to see through their own eyes rather than society's.",
+    "soru": "Have you ever felt completely alien to society's expectations? What did you do in that moment?",
     "haftaninKitabi": {
       "ad": "Nausea",
       "yazar": "Jean-Paul Sartre",
       "kapakURL": "https://covers.openlibrary.org/b/isbn/9789755102108-L.jpg",
-      "aciklama": "The cult novel of existentialism. Roquentin's deep repulsion toward everyday objects, people, and his own body is, in truth, a confrontation with existence itself.",
+      "aciklama": "The cult novel of existentialism. Roquentin's deep revulsion toward everyday objects, people, and his own body is, at its core, a confrontation with existence itself.",
       "isbn": "9789755102108",
       "sayfaSayisi": 260,
-      "tur": "Novel",
+      "tur": "Fiction",
       "editorYorumu": "One morning you pick up a glass and ask yourself, 'why does this object exist?' Sartre stretched exactly that question across 260 pages."
     },
     "digerKitaplar": [
@@ -57,45 +323,45 @@
         "ad": "The Stranger",
         "yazar": "Albert Camus",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9789750748677-L.jpg",
-        "aciklama": "Meursault didn't cry at his mother's funeral, and killed a man because the sun was in his eyes. The story of an existence that doesn't fit society's expectations.",
+        "aciklama": "Meursault doesn't cry at his mother's funeral, and kills a man because the sun was in his eyes. The story of an existence that doesn't fit society's expectations.",
         "isbn": "9789750748677",
         "sayfaSayisi": 112,
-        "tur": "Novel",
-        "editorYorumu": "I don't know another book that says this much in just 110 pages."
+        "tur": "Fiction",
+        "editorYorumu": "I don't know another book that says so much in just over a hundred pages."
       },
       {
         "ad": "Predictably Irrational",
         "yazar": "Dan Ariely",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9786055655396-L.jpg",
-        "aciklama": "How much of our decisions are truly ours? Ariely proves through experiments that the mind is far less rational than we think.",
+        "aciklama": "How much of our decisions are really our own? Ariely uses experiments to prove that the mind is far less rational than we think.",
         "isbn": "9786055655396",
         "sayfaSayisi": 341,
         "tur": "Psychology",
-        "editorYorumu": "After reading this book, I could never look at the phrase 'free will' the same way again."
+        "editorYorumu": "After reading this, I could never hear the phrase 'free will' the same way again."
       }
     ]
   },
   {
     "tarih": "2026-06-05",
-    "editorNotu": "This week I've been thinking about money and economics. The vast majority of the decisions we make in daily life, without even realizing it, are economic. These books will help you make those decisions more consciously.",
+    "editorNotu": "This week I'm thinking about money and economics. Most of the decisions we make every day without even realizing it are economic ones. These books will help you make those decisions more consciously.",
     "tema": "Money & Economics",
-    "soru": "What was the most important financial decision you made in the last month? How do you evaluate it now?",
+    "soru": "What was the most important financial decision you made in the last month? How do you view that decision now?",
     "haftaninKitabi": {
       "ad": "Rich Dad Poor Dad",
       "yazar": "Robert T. Kiyosaki",
       "kapakURL": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg",
-      "aciklama": "This book covers what school never taught us about money, clearly laying out the difference between assets and liabilities.",
+      "aciklama": "This book explains what school never taught about money, drawing a clear line between assets and liabilities.",
       "isbn": "9781612680194",
       "sayfaSayisi": 336,
       "tur": "Economics",
-      "editorYorumu": "This was the first book that changed my perspective on money. I recommend it to everyone who hasn't read it yet."
+      "editorYorumu": "This was the first book that changed my perspective on money. I recommend it to anyone who hasn't read it yet."
     },
     "digerKitaplar": [
       {
         "ad": "The Intelligent Investor",
         "yazar": "Benjamin Graham",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
-        "aciklama": "The investment book most recommended by Warren Buffett.",
+        "aciklama": "The investing book most often recommended by Warren Buffett.",
         "isbn": "9780060555665",
         "sayfaSayisi": 640,
         "tur": "Economics",
@@ -105,11 +371,11 @@
         "ad": "Zero to One",
         "yazar": "Peter Thiel",
         "kapakURL": "https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg",
-        "aciklama": "A different perspective on entrepreneurship and innovation.",
+        "aciklama": "A distinctive perspective on entrepreneurship and innovation.",
         "isbn": "9780804139021",
         "sayfaSayisi": 224,
         "tur": "Economics",
-        "editorYorumu": "An original book that explains why creating a monopoly is more valuable than competing."
+        "editorYorumu": "An original book explaining why creating a monopoly is more valuable than competing."
       }
     ]
   }
