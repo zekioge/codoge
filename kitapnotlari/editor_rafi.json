@@ -1,5 +1,347 @@
 [
   {
+    "tarih": "2026-10-06",
+    "editorNotu": "Ekime geleceğe bakarak giriyoruz. İyi bilim kurgu, uzayı değil aslında bizi anlatır. Türün üç köşe taşını seçtim.",
+    "tema": "Bilim Kurgu & Gelecek",
+    "soru": "Geleceğe dair seni en çok heyecanlandıran ya da korkutan şey ne?",
+    "haftaninKitabi": {
+      "ad": "Dune",
+      "yazar": "Frank Herbert",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
+      "aciklama": "Bir çöl gezegeni, kıt bir kaynak ve genç bir liderin yükselişi üzerinden güç, ekoloji ve kaderi anlatan epik başyapıt.",
+      "isbn": "9780441172719",
+      "sayfaSayisi": 688,
+      "tur": "Bilim Kurgu",
+      "editorYorumu": "Kurduğu dünyanın derinliği hâlâ beni hayrete düşürüyor."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Karanlığın Sol Eli",
+        "yazar": "Ursula K. Le Guin",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780441478125-L.jpg",
+        "aciklama": "Cinsiyetin sabit olmadığı bir gezegende geçen, önyargı ve yakınlık üzerine düşündüren zarif bir bilim kurgu.",
+        "isbn": "9780441478125",
+        "sayfaSayisi": 304,
+        "tur": "Bilim Kurgu",
+        "editorYorumu": "Bilim kurgunun ne kadar felsefi olabileceğini gösteren bir kitap."
+      },
+      {
+        "ad": "Vakıf",
+        "yazar": "Isaac Asimov",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780553293357-L.jpg",
+        "aciklama": "Bir galaktik imparatorluğun çöküşünü ve bilginin uygarlığı nasıl kurtarabileceğini anlatan efsanevi seri.",
+        "isbn": "9780553293357",
+        "sayfaSayisi": 244,
+        "tur": "Bilim Kurgu",
+        "editorYorumu": "Fikirlerin kahraman olduğu, ölçeğiyle insanı büyüleyen bir seri."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-29",
+    "editorNotu": "Havalar serinledi, geceler uzadı — korku için tam zamanı. Bu hafta gotik edebiyatın karanlık ama zarif köşesine giriyoruz. Perde arkasından üç klasik.",
+    "tema": "Korku & Gotik",
+    "soru": "Seni gerçekten korkutan bir kitap oldu mu?",
+    "haftaninKitabi": {
+      "ad": "Frankenstein",
+      "yazar": "Mary Shelley",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780141439471-L.jpg",
+      "aciklama": "Yarattığı canlıyı reddeden bir bilim insanının trajedisi üzerinden sorumluluk ve yalnızlığı sorgulayan gotik başyapıt.",
+      "isbn": "9780141439471",
+      "sayfaSayisi": 273,
+      "tur": "Klasik",
+      "editorYorumu": "Asıl canavarın kim olduğunu düşündüren, korkudan çok hüzünlü bir kitap."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Drakula",
+        "yazar": "Bram Stoker",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780141439846-L.jpg",
+        "aciklama": "Mektuplar ve günlükler aracılığıyla anlatılan, vampir mitinin modern kalıbını döken ürpertici gotik roman.",
+        "isbn": "9780141439846",
+        "sayfaSayisi": 454,
+        "tur": "Klasik",
+        "editorYorumu": "Bu kadar eski olmasına rağmen hâlâ gerilimini koruması etkileyici."
+      },
+      {
+        "ad": "Tepedeki Ev",
+        "yazar": "Shirley Jackson",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143039983-L.jpg",
+        "aciklama": "Bir evin sessiz kötülüğünü ve içindeki insanların çözülüşünü anlatan, korku türünün ustalık örneği.",
+        "isbn": "9780143039983",
+        "sayfaSayisi": 246,
+        "tur": "Korku",
+        "editorYorumu": "Tek bir kanlı sahne olmadan insanın tüylerini diken diken edebiliyor."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-22",
+    "editorNotu": "Sonbaharın ilk haftası, hatırlamak için iyi bir zaman. Şehirler hafızamızın haritasıdır; her sokak bir anıyı saklar. Şehir ve hafıza üzerine üç kitap.",
+    "tema": "Şehir & Hafıza",
+    "soru": "Hangi şehir sende bir kitap kadar iz bıraktı?",
+    "haftaninKitabi": {
+      "ad": "Görünmez Kentler",
+      "yazar": "Italo Calvino",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780156453806-L.jpg",
+      "aciklama": "Marco Polo ile Kubilay Han arasındaki hayali söyleşiler üzerinden, arzu ve hafızayla örülmüş elli beş şehri anlatan büyülü bir metin.",
+      "isbn": "9780156453806",
+      "sayfaSayisi": 165,
+      "tur": "Roman",
+      "editorYorumu": "İstediğin sayfadan açıp okuyabileceğin, bitmeyen bir düşünce bahçesi."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "İstanbul: Hatıralar ve Şehir",
+        "yazar": "Orhan Pamuk",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781400033881-L.jpg",
+        "aciklama": "Bir şehrin ortak duygusu olan hüznü, yazarın kendi çocukluğuyla iç içe anlatan siyah-beyaz bir portre.",
+        "isbn": "9781400033881",
+        "sayfaSayisi": 400,
+        "tur": "Anı",
+        "editorYorumu": "İstanbul'u bir daha aynı gözle görmemi engelleyen bir kitap."
+      },
+      {
+        "ad": "Bir Son Duygusu",
+        "yazar": "Julian Barnes",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307947727-L.jpg",
+        "aciklama": "Hafızanın ne kadar güvenilmez olabildiğini, geçmişini yeniden gözden geçiren bir adamın hikâyesiyle anlatan ince bir roman.",
+        "isbn": "9780307947727",
+        "sayfaSayisi": 176,
+        "tur": "Roman",
+        "editorYorumu": "Kısacık ama son sayfası insanı uzun süre düşündüren bir kitap."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-15",
+    "editorNotu": "Bu hafta masaya aileyi koyuyoruz. Kuşaklar arası hikâyeler hem nereden geldiğimizi hem de nasıl tekrar ettiğimizi gösterir. Üç geniş, sıcak destan.",
+    "tema": "Aile & Kuşaklar",
+    "soru": "Ailenden sana geçen en değerli şey ne oldu?",
+    "haftaninKitabi": {
+      "ad": "Yüzyıllık Yalnızlık",
+      "yazar": "Gabriel García Márquez",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060883287-L.jpg",
+      "aciklama": "Bir ailenin yedi kuşağını büyülü gerçekçiliğin doruğunda anlatan, dünya edebiyatının köşe taşı.",
+      "isbn": "9780060883287",
+      "sayfaSayisi": 417,
+      "tur": "Roman",
+      "editorYorumu": "İsimler karışıyor ama o dünyadan bir türlü çıkmak istemiyorsunuz."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Pachinko",
+        "yazar": "Min Jin Lee",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781455563937-L.jpg",
+        "aciklama": "Japonya'da yaşayan Koreli bir ailenin kuşaklar boyu süren dayanıklılığını anlatan, sürükleyici ve dokunaklı bir destan.",
+        "isbn": "9781455563937",
+        "sayfaSayisi": 496,
+        "tur": "Roman",
+        "editorYorumu": "İlk cümlesinden son sayfasına kadar beni bırakmayan bir aile hikâyesi."
+      },
+      {
+        "ad": "Küçük Kadınlar",
+        "yazar": "Louisa May Alcott",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780147712516-L.jpg",
+        "aciklama": "Dört kız kardeşin büyüme, hayaller ve birbirlerine olan sevgilerinin kuşaklardır sevilen klasiği.",
+        "isbn": "9780147712516",
+        "sayfaSayisi": 528,
+        "tur": "Klasik",
+        "editorYorumu": "Yıllar sonra yeniden okuduğumda bambaşka bir kitap gibi geldi."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-08",
+    "editorNotu": "Bu hafta merceği kendi zihnimize çeviriyoruz. Neden böyle düşünürüz, neden böyle hissederiz? Aklın işleyişine dair üç aydınlatıcı kitap.",
+    "tema": "Zihin & Psikoloji",
+    "soru": "Kendinle ilgili en son ne zaman şaşırtıcı bir şey fark ettin?",
+    "haftaninKitabi": {
+      "ad": "Hızlı ve Yavaş Düşünme",
+      "yazar": "Daniel Kahneman",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+      "aciklama": "Zihnimizin hızlı sezgisel ve yavaş mantıklı iki sistemini anlatarak karar verme biçimimizi kökten sorgulatan bir başyapıt.",
+      "isbn": "9780374533557",
+      "sayfaSayisi": 499,
+      "tur": "Psikoloji",
+      "editorYorumu": "Okuduktan sonra kendi kararlarıma biraz daha şüpheyle bakmaya başladım, iyi anlamda."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Beden Kayıt Tutar",
+        "yazar": "Bessel van der Kolk",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143127741-L.jpg",
+        "aciklama": "Travmanın yalnızca zihinde değil bedende de nasıl iz bıraktığını anlatan, sarsıcı ve şefkatli bir kitap.",
+        "isbn": "9780143127741",
+        "sayfaSayisi": 464,
+        "tur": "Psikoloji",
+        "editorYorumu": "Ağır bir konuyu bu kadar insanca anlatabilmesi beni etkiledi."
+      },
+      {
+        "ad": "Sessiz",
+        "yazar": "Susan Cain",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307352156-L.jpg",
+        "aciklama": "İçe dönük insanların sessiz gücünü, konuşkanlığa övgü düzen bir dünyada değerlerini savunan bir kitap.",
+        "isbn": "9780307352156",
+        "sayfaSayisi": 368,
+        "tur": "Psikoloji",
+        "editorYorumu": "Sessiz olmanın bir eksiklik olmadığını hatırlatan, rahatlatıcı bir kitap."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-01",
+    "editorNotu": "Eylül, herkesin sessizce yeniden başladığı ay. Bu hafta büyük hedeflerden çok küçük ama sürdürülebilir değişimlere bakıyoruz. Kendini geliştirmek isteyenlere üç sağlam rehber.",
+    "tema": "Büyüme & Alışkanlıklar",
+    "soru": "Hayatını değiştiren en küçük alışkanlık neydi?",
+    "haftaninKitabi": {
+      "ad": "Atomik Alışkanlıklar",
+      "yazar": "James Clear",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+      "aciklama": "Büyük değişimin, minik ve tekrar eden seçimlerin toplamından doğduğunu somut bir sistemle anlatan çok satan rehber.",
+      "isbn": "9780735211292",
+      "sayfaSayisi": 320,
+      "tur": "Kişisel Gelişim",
+      "editorYorumu": "Motivasyon değil sistem kurmayı öğreten, gerçekten işe yarayan bir kitap."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Mindset: Başarının Yeni Psikolojisi",
+        "yazar": "Carol S. Dweck",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780345472328-L.jpg",
+        "aciklama": "Yeteneğin sabit değil geliştirilebilir olduğuna inanmanın hayatı nasıl değiştirdiğini anlatan psikoloji klasiği.",
+        "isbn": "9780345472328",
+        "sayfaSayisi": 320,
+        "tur": "Psikoloji",
+        "editorYorumu": "'Henüz beceremiyorum' demenin gücünü bu kitaptan öğrendim."
+      },
+      {
+        "ad": "Derin Çalışma",
+        "yazar": "Cal Newport",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg",
+        "aciklama": "Dikkatin dağıldığı bir çağda, derin ve kesintisiz odaklanmanın neden en değerli beceri olduğunu savunan bir kitap.",
+        "isbn": "9781455586691",
+        "sayfaSayisi": 296,
+        "tur": "Kişisel Gelişim",
+        "editorYorumu": "Telefonu başka odaya koymayı bu kitaptan sonra ciddiye almaya başladım."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-25",
+    "editorNotu": "Bu hafta kısa ama derin duralım. İyi bir öykü, koca bir romanın anlattığını birkaç sayfada yakalar. Az zamanı olanlar için tam üç kitap.",
+    "tema": "Kısa Öyküler",
+    "soru": "Aklından hiç çıkmayan kısa bir öykü var mı?",
+    "haftaninKitabi": {
+      "ad": "Dert Yorumcusu",
+      "yazar": "Jhumpa Lahiri",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780395927205-L.jpg",
+      "aciklama": "İki kültür arasında sıkışmış insanların yalnızlığını ve sessiz sevgisini anlatan, Pulitzer ödüllü öykü kitabı.",
+      "isbn": "9780395927205",
+      "sayfaSayisi": 198,
+      "tur": "Öykü",
+      "editorYorumu": "Her öyküsü bittiğinde bir süre durup düşünmek istediğim ender kitaplardan."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Dublinliler",
+        "yazar": "James Joyce",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780142437131-L.jpg",
+        "aciklama": "Bir şehrin sıradan insanlarının hayatındaki o küçük ama sarsıcı aydınlanma anlarını yakalayan öykülerin klasiği.",
+        "isbn": "9780142437131",
+        "sayfaSayisi": 240,
+        "tur": "Öykü",
+        "editorYorumu": "Son öykü 'Ölüler' tek başına bütün kitabı okumaya değer."
+      },
+      {
+        "ad": "Taşıdıkları Şeyler",
+        "yazar": "Tim O'Brien",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780618706419-L.jpg",
+        "aciklama": "Savaşın askerlere taşıttığı somut ve görünmez yükleri anlatan, gerçekle kurmacanın iç içe geçtiği güçlü bir kitap.",
+        "isbn": "9780618706419",
+        "sayfaSayisi": 233,
+        "tur": "Öykü",
+        "editorYorumu": "Kurmaca mı gerçek mi diye düşünmeyi bıraktığım, sadece hissettiğim bir kitap."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-18",
+    "editorNotu": "Bu hafta valizleri topluyoruz. Bazı kitaplar bizi bir yere götürür, bazılarındansa geri döndüğümüzde biraz değişmiş oluruz. Yol üzerine üç farklı hikâye seçtim.",
+    "tema": "Yolculuk & Keşif",
+    "soru": "Seni en çok değiştiren yolculuk hangisiydi?",
+    "haftaninKitabi": {
+      "ad": "Simyacı",
+      "yazar": "Paulo Coelho",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
+      "aciklama": "Hazine peşindeki bir çobanın, asıl aradığının yolun kendisi olduğunu keşfettiği modern bir masal.",
+      "isbn": "9780061122415",
+      "sayfaSayisi": 208,
+      "tur": "Roman",
+      "editorYorumu": "Basit görünür ama doğru zamanda okuyunca insanın içini ısıtan bir kitap."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Yolda",
+        "yazar": "Jack Kerouac",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780140283297-L.jpg",
+        "aciklama": "Özgürlüğün, dostluğun ve Amerika'nın uçsuz yollarının peşine düşen bir neslin manifestosu.",
+        "isbn": "9780140283297",
+        "sayfaSayisi": 307,
+        "tur": "Roman",
+        "editorYorumu": "Okurken pencereyi açıp yola çıkma isteği uyandıran türden bir enerjisi var."
+      },
+      {
+        "ad": "Vahşi",
+        "yazar": "Cheryl Strayed",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307476074-L.jpg",
+        "aciklama": "Hayatı dağılan bir kadının, tek başına binlerce kilometrelik bir patikada kendini yeniden toparlayışının gerçek hikâyesi.",
+        "isbn": "9780307476074",
+        "sayfaSayisi": 315,
+        "tur": "Anı",
+        "editorYorumu": "Yürümenin bir tür iyileşme olabileceğini bana hatırlatan dürüst bir anı."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-11",
+    "editorNotu": "Bu hafta başımızı kaldırıp yukarı bakıyoruz. Evreni anlatan iyi bir kitap insanı hem küçültür hem de tuhaf biçimde büyütür. Karmaşık fikirleri sıcak bir dille anlatan üç yazar seçtim.",
+    "tema": "Bilim & Evren",
+    "soru": "Gökyüzüne bakıp evrende yalnız mıyız diye düşündüğün son an neydi?",
+    "haftaninKitabi": {
+      "ad": "Kozmos",
+      "yazar": "Carl Sagan",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
+      "aciklama": "Bir atomdan galaksilere, insanlığın bilgi arayışını şiirsel bir dille anlatan popüler bilimin en sevilen klasiği.",
+      "isbn": "9780345539434",
+      "sayfaSayisi": 432,
+      "tur": "Bilim",
+      "editorYorumu": "Beni bilime âşık eden kitap; her okuyuşta yeniden hayrete düşürüyor."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Meraklısı İçin Astrofizik",
+        "yazar": "Neil deGrasse Tyson",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780393609394-L.jpg",
+        "aciklama": "Evrenin en büyük sorularını, bir kahve molasına sığacak kısa ve keyifli bölümlerle anlatan bir başucu kitabı.",
+        "isbn": "9780393609394",
+        "sayfaSayisi": 224,
+        "tur": "Bilim",
+        "editorYorumu": "Astrofizik bu kadar eğlenceli olabilir mi dedirten, hafif ama doyurucu bir kitap."
+      },
+      {
+        "ad": "Zamanın Kısa Tarihi",
+        "yazar": "Stephen Hawking",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
+        "aciklama": "Zamanın, kara deliklerin ve evrenin doğasını tek bir denklemle bile korkutmadan anlatan modern bir klasik.",
+        "isbn": "9780553380163",
+        "sayfaSayisi": 212,
+        "tur": "Bilim",
+        "editorYorumu": "Anlamadığım yerleri bile okumaktan keyif aldığım nadir bir kitap."
+      }
+    ]
+  },
+  {
     "tarih": "2026-08-04",
     "editorNotu": "Bu hafta suç ve gizem dünyasına dalıyoruz. İyi bir gizem, son sayfaya kadar sizi elinden bırakmayan, insan doğasının karanlık köşelerini de gösteren bir şey. Bu hafta üç farklı türde üç usta seçtim.",
     "tema": "Suç & Gizem",
