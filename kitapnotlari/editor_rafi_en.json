@@ -1,5 +1,347 @@
 [
   {
+    "tarih": "2026-10-06",
+    "editorNotu": "We enter October looking forward. Good science fiction isn't really about space — it's about us. I picked three cornerstones of the genre.",
+    "tema": "Science Fiction & the Future",
+    "soru": "What excites — or scares — you most about the future?",
+    "haftaninKitabi": {
+      "ad": "Dune",
+      "yazar": "Frank Herbert",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
+      "aciklama": "An epic masterpiece of power, ecology, and destiny, set on a desert planet, a scarce resource, and the rise of a young leader.",
+      "isbn": "9780441172719",
+      "sayfaSayisi": 688,
+      "tur": "Science Fiction",
+      "editorYorumu": "The sheer depth of the world it builds still astonishes me."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Left Hand of Darkness",
+        "yazar": "Ursula K. Le Guin",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780441478125-L.jpg",
+        "aciklama": "An elegant science fiction set on a world without fixed gender, meditating on prejudice and closeness.",
+        "isbn": "9780441478125",
+        "sayfaSayisi": 304,
+        "tur": "Science Fiction",
+        "editorYorumu": "A book that shows just how philosophical science fiction can be."
+      },
+      {
+        "ad": "Foundation",
+        "yazar": "Isaac Asimov",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780553293357-L.jpg",
+        "aciklama": "The legendary series about the fall of a galactic empire and how knowledge might save civilization.",
+        "isbn": "9780553293357",
+        "sayfaSayisi": 244,
+        "tur": "Science Fiction",
+        "editorYorumu": "A series where ideas are the heroes — its sheer scale is mesmerizing."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-29",
+    "editorNotu": "The air has cooled and the nights are longer — perfect timing for a scare. This week we step into the dark, elegant corner of gothic literature. Three classics from behind the curtain.",
+    "tema": "Horror & Gothic",
+    "soru": "Has a book ever genuinely frightened you?",
+    "haftaninKitabi": {
+      "ad": "Frankenstein",
+      "yazar": "Mary Shelley",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780141439471-L.jpg",
+      "aciklama": "A gothic masterpiece questioning responsibility and loneliness through the tragedy of a scientist who rejects the creature he made.",
+      "isbn": "9780141439471",
+      "sayfaSayisi": 273,
+      "tur": "Classic",
+      "editorYorumu": "More sorrowful than scary — it leaves you wondering who the real monster is."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Dracula",
+        "yazar": "Bram Stoker",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780141439846-L.jpg",
+        "aciklama": "A chilling gothic novel, told through letters and diaries, that cast the modern mold of the vampire myth.",
+        "isbn": "9780141439846",
+        "sayfaSayisi": 454,
+        "tur": "Classic",
+        "editorYorumu": "Impressive how, despite its age, the tension still holds."
+      },
+      {
+        "ad": "The Haunting of Hill House",
+        "yazar": "Shirley Jackson",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143039983-L.jpg",
+        "aciklama": "A masterclass in horror about the quiet malice of a house and the unraveling of the people inside it.",
+        "isbn": "9780143039983",
+        "sayfaSayisi": 246,
+        "tur": "Horror",
+        "editorYorumu": "It raises the hairs on your neck without a single drop of blood."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-22",
+    "editorNotu": "The first week of autumn is a good time to remember. Cities are the maps of our memory; every street keeps something. Three books on the city and memory.",
+    "tema": "City & Memory",
+    "soru": "Which city left a mark on you as deep as any book?",
+    "haftaninKitabi": {
+      "ad": "Invisible Cities",
+      "yazar": "Italo Calvino",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780156453806-L.jpg",
+      "aciklama": "A magical text of fifty-five cities woven from desire and memory, told through imagined conversations between Marco Polo and Kublai Khan.",
+      "isbn": "9780156453806",
+      "sayfaSayisi": 165,
+      "tur": "Fiction",
+      "editorYorumu": "An endless garden of thought you can open to any page and wander."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Istanbul: Memories and the City",
+        "yazar": "Orhan Pamuk",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781400033881-L.jpg",
+        "aciklama": "A black-and-white portrait that reads a city's shared melancholy through the lens of the author's own childhood.",
+        "isbn": "9781400033881",
+        "sayfaSayisi": 400,
+        "tur": "Memoir",
+        "editorYorumu": "A book that made it impossible to see Istanbul the same way again."
+      },
+      {
+        "ad": "The Sense of an Ending",
+        "yazar": "Julian Barnes",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307947727-L.jpg",
+        "aciklama": "A slim novel about how unreliable memory can be, told through a man forced to re-examine his own past.",
+        "isbn": "9780307947727",
+        "sayfaSayisi": 176,
+        "tur": "Fiction",
+        "editorYorumu": "Short, but its final pages stay with you far longer than its length."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-15",
+    "editorNotu": "This week, family takes the table. Stories across generations show us both where we came from and how we repeat ourselves. Three sweeping, warm sagas.",
+    "tema": "Family & Generations",
+    "soru": "What's the most precious thing that was passed down to you?",
+    "haftaninKitabi": {
+      "ad": "One Hundred Years of Solitude",
+      "yazar": "Gabriel García Márquez",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780060883287-L.jpg",
+      "aciklama": "A cornerstone of world literature, telling seven generations of one family at the height of magical realism.",
+      "isbn": "9780060883287",
+      "sayfaSayisi": 417,
+      "tur": "Fiction",
+      "editorYorumu": "The names blur together, and yet you never want to leave that world."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Pachinko",
+        "yazar": "Min Jin Lee",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781455563937-L.jpg",
+        "aciklama": "A gripping, tender saga following the generations-long resilience of a Korean family living in Japan.",
+        "isbn": "9781455563937",
+        "sayfaSayisi": 496,
+        "tur": "Fiction",
+        "editorYorumu": "A family story that held me from its very first sentence to the last page."
+      },
+      {
+        "ad": "Little Women",
+        "yazar": "Louisa May Alcott",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780147712516-L.jpg",
+        "aciklama": "The beloved classic of four sisters growing up, following their dreams, ambitions, and love for one another.",
+        "isbn": "9780147712516",
+        "sayfaSayisi": 528,
+        "tur": "Classic",
+        "editorYorumu": "Rereading it years later, it felt like an entirely different book."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-08",
+    "editorNotu": "This week we turn the lens on our own minds. Why do we think the way we think, feel the way we feel? Three illuminating books on how the mind works.",
+    "tema": "Mind & Psychology",
+    "soru": "When did you last notice something surprising about yourself?",
+    "haftaninKitabi": {
+      "ad": "Thinking, Fast and Slow",
+      "yazar": "Daniel Kahneman",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+      "aciklama": "A masterwork on the mind's two systems — fast and intuitive, slow and deliberate — that upends how you think about your own decisions.",
+      "isbn": "9780374533557",
+      "sayfaSayisi": 499,
+      "tur": "Psychology",
+      "editorYorumu": "After reading it I started second-guessing my own judgments — in the best possible way."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "The Body Keeps the Score",
+        "yazar": "Bessel van der Kolk",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780143127741-L.jpg",
+        "aciklama": "A harrowing yet compassionate account of how trauma leaves its mark not only on the mind but on the body itself.",
+        "isbn": "9780143127741",
+        "sayfaSayisi": 464,
+        "tur": "Psychology",
+        "editorYorumu": "What moved me was how humanely it handles such heavy material."
+      },
+      {
+        "ad": "Quiet",
+        "yazar": "Susan Cain",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307352156-L.jpg",
+        "aciklama": "A defense of the quiet strength of introverts, and their value in a world that can't stop celebrating the loud.",
+        "isbn": "9780307352156",
+        "sayfaSayisi": 368,
+        "tur": "Psychology",
+        "editorYorumu": "A reassuring reminder that being quiet was never a flaw."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-09-01",
+    "editorNotu": "September is the month everyone quietly starts over. This week we look past grand goals toward small, sustainable change. Three solid guides for anyone ready to grow.",
+    "tema": "Growth & Habits",
+    "soru": "What's the smallest habit that changed your life?",
+    "haftaninKitabi": {
+      "ad": "Atomic Habits",
+      "yazar": "James Clear",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+      "aciklama": "The bestselling guide showing, with a concrete system, that big change is the sum of tiny, repeated choices.",
+      "isbn": "9780735211292",
+      "sayfaSayisi": 320,
+      "tur": "Self-Help",
+      "editorYorumu": "It taught me to build systems instead of chasing motivation — and it actually works."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Mindset",
+        "yazar": "Carol S. Dweck",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780345472328-L.jpg",
+        "aciklama": "A psychology classic on how believing ability can grow — rather than being fixed — quietly reshapes a life.",
+        "isbn": "9780345472328",
+        "sayfaSayisi": 320,
+        "tur": "Psychology",
+        "editorYorumu": "This is where I learned the quiet power of the word 'yet.'"
+      },
+      {
+        "ad": "Deep Work",
+        "yazar": "Cal Newport",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg",
+        "aciklama": "An argument that in an age of distraction, deep and uninterrupted focus is becoming the most valuable skill there is.",
+        "isbn": "9781455586691",
+        "sayfaSayisi": 296,
+        "tur": "Self-Help",
+        "editorYorumu": "After this book I finally started taking 'leave the phone in another room' seriously."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-25",
+    "editorNotu": "This week we go short but deep. A good short story captures in a few pages what a whole novel reaches for. Three books for when time is scarce.",
+    "tema": "Short Stories",
+    "soru": "Is there a short story that has never quite left you?",
+    "haftaninKitabi": {
+      "ad": "Interpreter of Maladies",
+      "yazar": "Jhumpa Lahiri",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780395927205-L.jpg",
+      "aciklama": "A Pulitzer-winning collection about the loneliness and quiet love of people caught between two cultures.",
+      "isbn": "9780395927205",
+      "sayfaSayisi": 198,
+      "tur": "Short Stories",
+      "editorYorumu": "One of those rare books where I had to pause after every story just to sit with it."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Dubliners",
+        "yazar": "James Joyce",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780142437131-L.jpg",
+        "aciklama": "The classic collection that captures the small, shattering moments of clarity in the lives of ordinary city dwellers.",
+        "isbn": "9780142437131",
+        "sayfaSayisi": 240,
+        "tur": "Short Stories",
+        "editorYorumu": "The final story, 'The Dead,' is worth the whole book on its own."
+      },
+      {
+        "ad": "The Things They Carried",
+        "yazar": "Tim O'Brien",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780618706419-L.jpg",
+        "aciklama": "A powerful, genre-blurring book about the tangible and invisible weights war makes soldiers carry.",
+        "isbn": "9780618706419",
+        "sayfaSayisi": 233,
+        "tur": "Fiction",
+        "editorYorumu": "I stopped asking what was fact or fiction and simply let myself feel it."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-18",
+    "editorNotu": "This week we pack our bags. Some books take you somewhere; with others, you come back a little changed. Three very different stories about the road.",
+    "tema": "Travel & Discovery",
+    "soru": "Which journey changed you the most?",
+    "haftaninKitabi": {
+      "ad": "The Alchemist",
+      "yazar": "Paulo Coelho",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
+      "aciklama": "A modern fable about a shepherd chasing treasure, who discovers that the real treasure was the journey itself.",
+      "isbn": "9780061122415",
+      "sayfaSayisi": 208,
+      "tur": "Fiction",
+      "editorYorumu": "It looks simple, but read at the right moment it quietly warms you from the inside."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "On the Road",
+        "yazar": "Jack Kerouac",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780140283297-L.jpg",
+        "aciklama": "The restless manifesto of a generation chasing freedom, friendship, and the endless roads of America.",
+        "isbn": "9780140283297",
+        "sayfaSayisi": 307,
+        "tur": "Fiction",
+        "editorYorumu": "It carries a restless energy that makes you want to roll down the window and just drive."
+      },
+      {
+        "ad": "Wild",
+        "yazar": "Cheryl Strayed",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780307476074-L.jpg",
+        "aciklama": "The true story of a woman whose life fell apart, who slowly puts herself back together over a thousand-mile trail, alone.",
+        "isbn": "9780307476074",
+        "sayfaSayisi": 315,
+        "tur": "Memoir",
+        "editorYorumu": "An honest memoir that reminded me walking can be its own kind of healing."
+      }
+    ]
+  },
+  {
+    "tarih": "2026-08-11",
+    "editorNotu": "This week we look up. A good book about the universe makes you feel small and, strangely, larger at the same time. I picked three writers who turn dizzying ideas into warm, human prose.",
+    "tema": "Science & the Cosmos",
+    "soru": "When did you last look at the night sky and wonder whether we're alone?",
+    "haftaninKitabi": {
+      "ad": "Cosmos",
+      "yazar": "Carl Sagan",
+      "kapakURL": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
+      "aciklama": "From a single atom to distant galaxies, the beloved classic of popular science that tells humanity's search for knowledge with poetic clarity.",
+      "isbn": "9780345539434",
+      "sayfaSayisi": 432,
+      "tur": "Science",
+      "editorYorumu": "The book that made me fall in love with science — it leaves me in awe every single time."
+    },
+    "digerKitaplar": [
+      {
+        "ad": "Astrophysics for People in a Hurry",
+        "yazar": "Neil deGrasse Tyson",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780393609394-L.jpg",
+        "aciklama": "The universe's biggest questions, served in short, delightful chapters that fit into a coffee break.",
+        "isbn": "9780393609394",
+        "sayfaSayisi": 224,
+        "tur": "Science",
+        "editorYorumu": "Proof that astrophysics can be genuinely fun — light on the page, but it stays with you."
+      },
+      {
+        "ad": "A Brief History of Time",
+        "yazar": "Stephen Hawking",
+        "kapakURL": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
+        "aciklama": "A modern classic that explains time, black holes, and the nature of the universe without a single intimidating equation.",
+        "isbn": "9780553380163",
+        "sayfaSayisi": 212,
+        "tur": "Science",
+        "editorYorumu": "One of those rare books I enjoyed even in the parts I didn't fully understand."
+      }
+    ]
+  },
+  {
     "tarih": "2026-08-04",
     "editorNotu": "This week we're diving into the world of crime and mystery. A good mystery is one that won't let go of you until the last page, while also revealing the darker corners of human nature. I picked three masters across three different flavors of the genre.",
     "tema": "Crime & Mystery",
